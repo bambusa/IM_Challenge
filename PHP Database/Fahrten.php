@@ -112,7 +112,7 @@ if ($fzgfahrten = $mysqli->query($query)) {
     $fzgfahrten->free();
 
     $count = count($batch);
-    printf("Allocated " . $count . " rows " . ceil($count / 5000) . "<br><br>");
+    printf("Allocated " . $count . " rows<br>");
 
 //    for ($i = 0; $i < ceil($count / 5000); $i++) {
 //        $start = $i * 5000;
@@ -131,12 +131,13 @@ if ($fzgfahrten = $mysqli->query($query)) {
 //        $jquery .= ")";
 //    }
 
-
-    $file = fopen("C://xampp/im1.csv","w");
+    printf("Writing CSV...<br>");
+    $file = fopen("C://xampp/htdocs/im1.csv","w");
+    fputcsv($file, array("Ab_HST_Nr", "Ab_HST_Name", "ABFAHRT", "LINIE", "An_HST_Nr", "An_HST_Name", "ANKUNFT", "DAUER", "Ab_X", "Ab_Y", "An_X", "An_Y"), ";",'"');
 
     foreach ($batch as $line)
     {
-        fputcsv($file,$line,";");
+        fputcsv($file,$line,";",'"');
     }
 
     fclose($file);
@@ -145,7 +146,7 @@ if ($fzgfahrten = $mysqli->query($query)) {
 
 /* close connection */
 $mysqli->close();
-printf ("<br><<< Finished in  " . number_format(( microtime(true) - $startTime), 4) . " Seconds / " . number_format(( microtime(true) - $startTime) / 60, 2) . " Minutes >>> <br>");
+printf ("<br><br><<< Finished in  " . number_format(( microtime(true) - $startTime), 4) . " Seconds / " . number_format(( microtime(true) - $startTime) / 60, 2) . " Minutes >>> <br>");
 
 function calc_date($from, $add) {
     $from_array = explode(":", $from);
