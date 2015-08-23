@@ -41,7 +41,7 @@ if ($mysqli->connect_errno) {
 
 
 
-
+printf("Allocating trips...<br>");
 
 $query = "SELECT fzgf.ABFAHRT, fzgf.LINROUTENAME, fzgf.FZPROFILNAME FROM fahrzeugfahrtabschnitt fzgfa ".
             "LEFT JOIN fzgfahrt fzgf ON fzgfa.FZGFAHRTNR = fzgf.NR ".
@@ -131,8 +131,8 @@ if ($fzgfahrten = $mysqli->query($query)) {
 //        $jquery .= ")";
 //    }
 
-    printf("Writing CSV...<br>");
-    $file = fopen("C://xampp/htdocs/im1.csv","w");
+    printf("Writing IM_Trips.csv...<br>");
+    $file = fopen("C://xampp/htdocs/IM_Trips.csv","w");
     fputcsv($file, array("Ab_HST_Nr", "Ab_HST_Name", "ABFAHRT", "LINIE", "An_HST_Nr", "An_HST_Name", "ANKUNFT", "DAUER", "Ab_X", "Ab_Y", "An_X", "An_Y"), ";",'"');
 
     foreach ($batch as $line)
@@ -144,9 +144,38 @@ if ($fzgfahrten = $mysqli->query($query)) {
 
 }
 
+
+
+printf ("<<< Finished in  " . number_format(( microtime(true) - $startTime), 4) . " Seconds / " . number_format(( microtime(true) - $startTime) / 60, 2) . " Minutes >>> <br><br><br>");
+$startTime = microtime(true);
+printf("Allocating transfer times...<br>");
+
+$query = "SELECT vhs.NR VNR, vhs.NAME VNAME, nhs.NR NNR, nhs.NAME NName, ugz.ZEIT ZEIT FROM uebergangsgehzeiten ugz ".
+    "LEFT JOIN haltestellenbereich vhsb ON ugz.VONHSTBERNR = vhsb.NR ".
+    "LEFT JOIN haltestellenbereich nhsb ON ugz.NACHHSTBERNR = nhsb.NR ".
+    "LEFT JOIN haltestellen vhs ON vhsb.HSTNR = vhs.NR ".
+    "LEFT JOIN haltestellen nhs ON nhsb.HSTNR = nhs.NR ".
+    "ORDER BY ugz.VONHSTBERNR ASC";
+$batch = array();
+
+if ($uebergaenge = $mysqli->query($query)) {
+    printf("Übergänge: %s<br>", $uebergaenge->num_rows);
+
+    printf("Writing IM_Transfers.csv...<br>");
+    $file = fopen("C://xampp/htdocs/IM_Transfers.csv","w");
+    fputcsv($file, array("VNR", "VNAME", "NNR", "NNAME", "ZEIT"), ";",'"');
+
+    while ($row = $uebergaenge->fetch_assoc()) {
+        $row["ZEIT"] = rtrim($row["ZEIT"], "s");
+        fputcsv($file,$row,";",'"');
+    }
+
+    fclose($file);
+    printf ("<<< Finished in  " . number_format(( microtime(true) - $startTime), 4) . " Seconds / " . number_format(( microtime(true) - $startTime) / 60, 2) . " Minutes >>> <br><br><br>");
+}
+
 /* close connection */
 $mysqli->close();
-printf ("<br><br><<< Finished in  " . number_format(( microtime(true) - $startTime), 4) . " Seconds / " . number_format(( microtime(true) - $startTime) / 60, 2) . " Minutes >>> <br>");
 
 function calc_date($from, $add) {
     $from_array = explode(":", $from);
