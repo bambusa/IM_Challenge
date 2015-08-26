@@ -1,3 +1,4 @@
+/*
 package Calculation;
 
 import Models.Edge;
@@ -9,9 +10,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
+*/
 /**
  * Created by BSD on 11.07.2015.
- */
+ *//*
+
 public class Dijkstra {
 
     private Graph graph;
@@ -95,9 +98,9 @@ public class Dijkstra {
     }
 
     private void updateDistance(Vertex thisVertex, Edge neighborEdge) {
-        int thisDistance = distance.get(thisVertex) + neighborEdge.getCost();
+        int thisDistance = distance.get(thisVertex) + neighborEdge.getLength();
         if (thisDistance < distance.get(neighborEdge.getDestination())) {
-            log("Updating distance from " + thisVertex.getName() + " to " + neighborEdge.getDestination().getName() + ": " + neighborEdge.getCost());
+            log("Updating distance from " + thisVertex.getName() + " to " + neighborEdge.getDestination().getName() + ": " + neighborEdge.getLength());
             distance.put(neighborEdge.getDestination(), thisDistance);
             predecessor.put(neighborEdge.getDestination(), thisVertex);
             preEdge.put(neighborEdge.getDestination(), neighborEdge);
@@ -129,3 +132,4 @@ public class Dijkstra {
     }
 
 }
+*/

@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 */
-/**
- * Created by BSD on 11.07.2015.
+/*
+ * Created by BSD on 23.08.2015.
  *
- * Algorythmus Mk I
- * Für statischen (Test-)Graphen
+ * Algorythmus Mk II
+ * Für echten Graphen
  *
  * 1. Startpunkt Südvorstadt
  * 2. Suche kürzeste, ausgehende, unbesuchte Kante
@@ -22,11 +22,13 @@ import java.util.List;
  * * Wiederhole 2. - 3. bis alle Kanten besucht sind
  *//*
 
-public class Mk_I {
+
+
+public class Mk_II {
 
     Graph graph;
 
-    public Mk_I(Graph graph) {
+    public Mk_II(Graph graph) {
         this.graph = graph;
     }
 
@@ -34,9 +36,8 @@ public class Mk_I {
 
         // 1. Startpunkt Südvorstadt
         long startTime = System.currentTimeMillis();
-        log("Starting Mk I");
+        log("Starting Mk II");
 
-        int costs = 0;
         Vertex currentVertex = graph.getStartVertex();
         List<Edge> unvisited = new ArrayList<>(graph.getEdges());
         List<Edge> route = new ArrayList<>();
@@ -61,28 +62,25 @@ public class Mk_I {
                 log("Current route:" + edgeString);
 
                 List<Edge> edgesBetween = graph.getEdgesBetween(currentVertex, nextEdge.getSource());
-                        */
-/*edgeString = "";
+edgeString = "";
                         for (Edge edge : edgesBetween) {
                             edgeString += " " + edge.getId();
                         }
-                        log("edges between:" + edgeString);*//*
+                        log("edges between:" + edgeString);
 
                 without.addAll(edgesBetween);
-                        */
-/*edgeString = "";
+edgeString = "";
                         for (Edge edge : without) {
                             edgeString += " " + edge.getId();
                         }
-                        log("Current without:" + edgeString);*//*
+                        log("Current without:" + edgeString);
 
                 unvisited.removeAll(edgesBetween);
-                        */
-/*edgeString = "";
+edgeString = "";
                         for (Edge edge : unvisited) {
                             edgeString += " " + edge.getId();
                         }
-                        log("Current unvisited:" + edgeString);*//*
+                        log("Current unvisited:" + edgeString);
 
 
                 double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 10) * 100;

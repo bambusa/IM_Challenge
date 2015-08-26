@@ -1,3 +1,4 @@
+/*
 package Tests;
 
 import Calculation.Mk_I;
@@ -9,9 +10,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+*/
 /**
  * Created by BSD on 11.07.2015.
- */
+ *//*
+
 public class Test {
 
     public static void main(String[] args) {
@@ -34,18 +37,18 @@ public class Test {
         Vertex c = new Vertex(3, "C", "", "");
         Vertex d = new Vertex(3, "D", "", "");
 
-        Edge ab = new Edge("AB", a, b, 1);
-        Edge ba = new Edge("BA", b ,a, 1);
-        Edge ad = new Edge("AD", a, d, 2);
-        Edge da = new Edge("DA", d, a, 2);
+        Edge ab = new Edge("AB", a, b, 1, 0, 0, 0);
+        Edge ba = new Edge("BA", b ,a, 1, 0, 0, 0);
+        Edge ad = new Edge("AD", a, d, 2, 0, 0, 0);
+        Edge da = new Edge("DA", d, a, 2, 0, 0, 0);
 
-        Edge bc = new Edge("BC", b, c, 1);
-        Edge cb = new Edge("CB", c, b, 1);
-        Edge bd = new Edge("BD", b, d, 3);
-        Edge db = new Edge("DB", d, b, 3);
+        Edge bc = new Edge("BC", b, c, 1, 0, 0, 0);
+        Edge cb = new Edge("CB", c, b, 1, 0, 0, 0);
+        Edge bd = new Edge("BD", b, d, 3, 0, 0, 0);
+        Edge db = new Edge("DB", d, b, 3, 0, 0, 0);
 
-        Edge cd = new Edge("CD", c, d, 3);
-        Edge dc = new Edge("DC", d, c, 3);
+        Edge cd = new Edge("CD", c, d, 3, 0, 0, 0);
+        Edge dc = new Edge("DC", d, c, 3, 0, 0, 0);
 
         List<Vertex> verteces = new ArrayList<>();
         verteces.addAll(Arrays.asList(new Vertex[]{a, b, c, d}));
@@ -62,3 +65,4 @@ public class Test {
         System.out.println("[TEST] " + message);
     }
 }
+*/
