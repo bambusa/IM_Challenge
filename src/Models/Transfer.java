@@ -10,28 +10,30 @@ import java.util.Map;
  */
 public class Transfer {
 
-    private String id; // Departure ID + Arrival ID
-    private Vertex departure;
-    private Vertex arrival;
+    private String id; // VHSBNR + NHSBNR
+    private String vhsbnr;
+    private String nhsbnr;
     private int time;
 
-    public Transfer (String id, Vertex departure, Vertex arrival, int time) {
+    public Transfer (String id, String vhsbnr, String nhsbnr, int time) {
         this.id = id;
-        this.departure = departure;
-        this.arrival = arrival;
+        this.vhsbnr = vhsbnr;
+        this.nhsbnr = nhsbnr;
         this.time = time;
     }
 
     public String getId() {
         return id;
     }
-    public Vertex getDeparture() {
-        return departure;
-    }
-    public Vertex getArrival() {
-        return arrival;
-    }
     public int getTime() {
         return time;
+    }
+
+    public String getVhsbnr() {
+        return vhsbnr;
+    }
+
+    public String getNhsbnr() {
+        return nhsbnr;
     }
 }

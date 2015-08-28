@@ -13,7 +13,7 @@ public class Edge {
     private final String id; // Departure ID + Arrival ID
     private final Vertex departure;
     private final Vertex arrival;
-    private Map<Integer, ArrayList<int[]>> trips; // <departure, [departure, arrival, length, line]>
+    private Map<Integer, ArrayList<Trip>> trips;
 
     public Edge (String id, Vertex departure, Vertex arrival) {
         this.id = id;
@@ -25,22 +25,15 @@ public class Edge {
     /**
      * Trip Array should be [departure, arrival, length, line]
      */
-    public boolean addTrip(int[] trip) {
-        if (trip.length != 4) {
-            System.out.println("trip Array should consist of [departure, arrival, length, line], " + trip.length + " given");
-            return false;
+    public void addTrip(Trip trip) {
+        ArrayList<Trip> tripArray = null;
+        if (trips.containsKey(trip.getDeparture())) {
+           tripArray = trips.get(trip.getDeparture());
+        } else {
+           tripArray = new ArrayList<>();
         }
-        else {
-            ArrayList<int[]> tripArray = null;
-            if (trips.containsKey(trip[0])) {
-               tripArray = trips.get(trip[0]);
-            } else {
-               tripArray = new ArrayList<>();
-            }
-            tripArray.add(new int[]{trip[0], trip[1], trip[2], trip[3]});
-            trips.put(trip[0], tripArray);
-            return true;
-        }
+        tripArray.add(trip);
+        trips.put(trip.getDeparture(), tripArray);
     }
 
     public boolean containsTrip(int departure) {
@@ -50,7 +43,7 @@ public class Edge {
     /**
      * Search for the next trip within an hour from departure
      */
-    public ArrayList<int[]> getNextTrips(int departure) {
+    public ArrayList<Trip> getNextTrips(int departure) {
         int i = 0;
         while (!trips.containsKey(departure)) {
             departure += 60;

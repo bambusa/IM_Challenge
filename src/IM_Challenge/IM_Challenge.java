@@ -1,9 +1,6 @@
 package IM_Challenge;
 
-import Models.Edge;
-import Models.Graph;
-import Models.Transfer;
-import Models.Vertex;
+import Models.*;
 import au.com.bytecode.opencsv.CSVReader;
 
 import java.io.FileNotFoundException;
@@ -18,24 +15,28 @@ import java.util.Map;
 public class IM_Challenge {
 
     // Trips Columns
-    public static int Ab_HST_Nr = 0;
-    public static int Ab_HST_Name = 1;
-    public static int ABFAHRT = 2;
-    public static int LINIE = 3;
-    public static int An_HST_Nr = 4;
-    public static int An_HST_Name = 5;
-    public static int ANKUNFT = 6;
-    public static int DAUER = 7;
-    public static int Ab_X = 8;
-    public static int Ab_Y = 9;
-    public static int An_X = 10;
-    public static int An_Y = 11;
+    public static int Ab_HSTB_Nr = 0;
+    public static int Ab_HST_Nr = 1;
+    public static int Ab_HST_Name = 2;
+    public static int ABFAHRT = 3;
+    public static int LINIE = 4;
+    public static int An_HSTB_Nr = 5;
+    public static int An_HST_Nr = 6;
+    public static int An_HST_Name = 7;
+    public static int ANKUNFT = 8;
+    public static int DAUER = 9;
+    public static int Ab_X = 10;
+    public static int Ab_Y = 11;
+    public static int An_X = 12;
+    public static int An_Y = 13;
     // Transfers Columns
-    public static int VNR = 0;
-    public static int VNAME = 1;
-    public static int NNR = 2;
-    public static int NNAME = 3;
-    public static int ZEIT = 4;
+    public static int VHSBNR = 0;
+    public static int VNR = 1;
+    public static int VNAME = 2;
+    public static int NHSBNR = 3;
+    public static int NNR = 4;
+    public static int NNAME = 5;
+    public static int ZEIT = 6;
 
     public static void main(String[] args) {
         Graph graph = mapGraph();
@@ -116,14 +117,16 @@ public class IM_Challenge {
                 // Edge Trips
                 int departure = Integer.parseInt(row[ABFAHRT]);
                 int arrival = Integer.parseInt(row[ANKUNFT]);
+                String departureHSB = String.format("%05d", Integer.parseInt(row[An_HSTB_Nr]));
+                String arrivalHSB = String.format("%05d", Integer.parseInt(row[Ab_HSTB_Nr]));
                 int length = Integer.parseInt(row[DAUER]);
                 int line = Integer.parseInt(row[LINIE]);
-                edge.addTrip(new int[] {departure, arrival, length, line});
+                edge.addTrip(new Trip(departure, arrival, departureHSB, arrivalHSB, length, line));
                 added += "Added Trip " + departure + ", ";
                 tripCount++;
 
                 edgeMap.put(edgeID, edge);
-//                log(added);
+                //log(added);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -159,15 +162,16 @@ public class IM_Challenge {
             csvReader.readNext(); // Header
             while((row = csvReader.readNext()) != null) {
                 rows++;
-                String dID = String.format("%03d", Integer.parseInt(row[VNR]));
-                String aID = String.format("%03d", Integer.parseInt(row[NNR]));
-                if (edgeMap.containsKey(dID) && edgeMap.containsKey(aID)) {
-                    String edgeID = dID + aID;
-                    Transfer transfer = new Transfer(edgeID, vertexMap.get(dID), vertexMap.get(aID), Integer.parseInt(row[ZEIT]));
-                } else {
-                    log("ERROR: Vertex not found for transfer: " + dID + aID);
+                String vhsbnr = String.format("%05d", Integer.parseInt(row[VHSBNR]));
+                String nhsbnr = String.format("%05d", Integer.parseInt(row[NHSBNR]));
+                String tID = vhsbnr + nhsbnr;
+                if (!transferMap.containsKey(tID)) {
+                    Transfer transfer = new Transfer(tID, vhsbnr, nhsbnr, Integer.parseInt(row[ZEIT]));
+                    transferMap.put(tID, transfer);
                 }
-
+                else {
+                    log("ERROR: Transfer already existing: " + tID);
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -178,9 +182,12 @@ public class IM_Challenge {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        log("Mapped transfers with " + vertexMap.size() + " transfers from " + rows + " lines");
+        log("Mapped transfers with " + transferMap.size() + " transfers from " + rows + " lines");
 
         measureTime(startTime, "mapping graph");
+        if (!vertexMap.containsKey(133)) {
+            log("Vertex 133 not existing");
+        }
         return new Graph(vertexMap, edgeMap, transferMap, vertexMap.get(133));
     }
 

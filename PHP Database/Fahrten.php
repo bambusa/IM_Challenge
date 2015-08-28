@@ -135,7 +135,7 @@ if ($fzgfahrten = $mysqli->query($query)) {
 
     printf("Writing IM_Trips.csv...<br>");
     $file = fopen("C://xampp/htdocs/IM_Trips.csv","w");
-    fputcsv($file, array("Ab_HSTB_Nr", "Ab_HST_Nr", "Ab_HST_Name", "ABFAHRT", "LINIE", "An_HSTB_Nr", "An_HST_Nr", "An_HST_Name", "ANKUNFT", "DAUER", "Ab_X", "Ab_Y", "An_X", "An_Y"), ";",'"');
+    fputcsv($file, array("VHSBNR", "VNR", "VNAME", "ABFAHRT", "LINIE", "NHSBNR", "NNR", "NNAME", "ANKUNFT", "DAUER", "VX", "VY", "NX", "NY"), ";",'"');
 
     foreach ($batch as $line)
     {
@@ -152,7 +152,7 @@ printf ("<<< Finished in  " . number_format(( microtime(true) - $startTime), 4) 
 $startTime = microtime(true);
 printf("Allocating transfer times...<br>");
 
-$query = "SELECT vhs.NR VNR, vhs.NAME VNAME, nhs.NR NNR, nhs.NAME NName, ugz.ZEIT ZEIT FROM uebergangsgehzeiten ugz ".
+$query = "SELECT vhsb.NR VHSBNR, vhs.NR VNR, vhs.NAME VNAME, nhsb.NR NHSBNR, nhs.NR NNR, nhs.NAME NName, ugz.ZEIT ZEIT FROM uebergangsgehzeiten ugz ".
     "LEFT JOIN haltestellenbereich vhsb ON ugz.VONHSTBERNR = vhsb.NR ".
     "LEFT JOIN haltestellenbereich nhsb ON ugz.NACHHSTBERNR = nhsb.NR ".
     "LEFT JOIN haltestellen vhs ON vhsb.HSTNR = vhs.NR ".
@@ -165,7 +165,7 @@ if ($uebergaenge = $mysqli->query($query)) {
 
     printf("Writing IM_Transfers.csv...<br>");
     $file = fopen("C://xampp/htdocs/IM_Transfers.csv","w");
-    fputcsv($file, array("VNR", "VNAME", "NNR", "NNAME", "ZEIT"), ";",'"');
+    fputcsv($file, array("VHSBNR", "VNR", "VNAME", "NHSBNR", "NNR", "NNAME", "ZEIT"), ";",'"');
 
     while ($row = $uebergaenge->fetch_assoc()) {
         $row["ZEIT"] = rtrim($row["ZEIT"], "s");

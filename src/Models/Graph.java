@@ -25,6 +25,7 @@ public class Graph {
         this.edgeMap = edgeMap;
         this.transferMap = transferMap;
         this.startVertex = startVertex;
+        log("New graph with start vertex " + startVertex.getName());
     }
 
     public Vertex getStartVertex() {
