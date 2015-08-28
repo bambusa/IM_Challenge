@@ -48,14 +48,14 @@ public class IM_Challenge {
         /*
         Mapping Trips
          */
-        Map<Integer, Vertex> vertexMap = new HashMap<>();
-        Map<Integer, Edge> edgeMap = new HashMap<>();
+        Map<String, Vertex> vertexMap = new HashMap<>();
+        Map<String, Edge> edgeMap = new HashMap<>();
         long startTime = System.currentTimeMillis();
         int rows = 0;
         int tripCount = 0;
         log("Mapping trips...");
 
-        String csvFilename = "C://xampp/htdocs/IM_Trips.csv";
+        String csvFilename = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Trips.csv";
         CSVReader csvReader = null;
 
         try {
@@ -76,7 +76,7 @@ public class IM_Challenge {
 
                 // Departure Vertex
                 Vertex dVertex = null;
-                int dID = Integer.parseInt(row[Ab_HST_Nr]);
+                String dID = String.format("%03d", Integer.parseInt(row[Ab_HST_Nr]));
                 if (!vertexMap.containsKey(dID)) {
                     dVertex = new Vertex(dID, row[Ab_HST_Name], row[Ab_X], row[Ab_Y]);
                     vertexMap.put(dID, dVertex);
@@ -88,7 +88,7 @@ public class IM_Challenge {
 
                 // Arrival Vertex
                 Vertex aVertex = null;
-                int aID = Integer.parseInt(row[An_HST_Nr]);
+                String aID = String.format("%03d", Integer.parseInt(row[An_HST_Nr]));
                 if (!vertexMap.containsKey(aID)) {
                     aVertex = new Vertex(aID, row[An_HST_Name], row[An_X], row[An_Y]);
                     vertexMap.put(aID, aVertex);
@@ -104,7 +104,7 @@ public class IM_Challenge {
 
                 // Edge Mapping
                 Edge edge = null;
-                int edgeID = Integer.parseInt(row[Ab_HST_Nr] + row[An_HST_Nr]);
+                String edgeID = String.format("%03d", Integer.parseInt(row[Ab_HST_Nr])) + String.format("%03d", Integer.parseInt(row[An_HST_Nr]));
                 if (!edgeMap.containsKey(edgeID)) {
                     edge = new Edge(edgeID, dVertex, aVertex);
                     added += "Added Edge " + edgeID;
@@ -141,11 +141,11 @@ public class IM_Challenge {
         /*
         Mapping Transfers
          */
-        Map<Integer, Transfer> transferMap = new HashMap<>();
+        Map<String, Transfer> transferMap = new HashMap<>();
         rows = 0;
         log("Mapping transfers...");
 
-        csvFilename = "C://xampp/htdocs/IM_Transfers.csv";
+        csvFilename = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Transfers.csv";
         csvReader = null;
 
         try {
@@ -159,10 +159,10 @@ public class IM_Challenge {
             csvReader.readNext(); // Header
             while((row = csvReader.readNext()) != null) {
                 rows++;
-                int dID = Integer.parseInt(row[VNR]);
-                int aID = Integer.parseInt(row[NNR]);
+                String dID = String.format("%03d", Integer.parseInt(row[VNR]));
+                String aID = String.format("%03d", Integer.parseInt(row[NNR]));
                 if (edgeMap.containsKey(dID) && edgeMap.containsKey(aID)) {
-                    int edgeID = Integer.parseInt("" + dID + aID);
+                    String edgeID = dID + aID;
                     Transfer transfer = new Transfer(edgeID, vertexMap.get(dID), vertexMap.get(aID), Integer.parseInt(row[ZEIT]));
                 } else {
                     log("ERROR: Vertex not found for transfer: " + dID + aID);

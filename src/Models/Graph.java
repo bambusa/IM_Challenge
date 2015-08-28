@@ -9,9 +9,9 @@ import java.util.Map;
  * Created by BSD on 11.07.2015.
  */
 public class Graph {
-    private Map<Integer, Vertex> vertexMap;
-    private Map<Integer, Edge> edgeMap;
-    private Map<Integer, Transfer> transferMap;
+    private Map<String, Vertex> vertexMap;
+    private Map<String, Edge> edgeMap;
+    private Map<String, Transfer> transferMap;
     private Vertex startVertex;
 
     public Graph() {
@@ -20,7 +20,7 @@ public class Graph {
         transferMap = new HashMap<>();
     }
 
-    public Graph(Map<Integer, Vertex> vertexMap, Map<Integer, Edge> edgeMap, Map<Integer, Transfer> transferMap, Vertex startVertex) {
+    public Graph(Map<String, Vertex> vertexMap, Map<String, Edge> edgeMap, Map<String, Transfer> transferMap, Vertex startVertex) {
         this.vertexMap = vertexMap;
         this.edgeMap = edgeMap;
         this.transferMap = transferMap;
@@ -35,11 +35,11 @@ public class Graph {
         this.startVertex = startVertex;
     }
 
-    public Map<Integer, Vertex> getVerteces() {
+    public Map<String, Vertex> getVerteces() {
         return vertexMap;
     }
 
-    public Map<Integer, Edge> getEdges() {
+    public Map<String, Edge> getEdges() {
         return edgeMap;
     }
 

@@ -58,7 +58,7 @@ if ($fzgfahrten = $mysqli->query($query)) {
     $jcount = 0;
     while ($row = $fzgfahrten->fetch_assoc()) {
 
-        $query = "SELECT fzpe.ANKUNFT, fzpe.ABFAHRT, l.PUBDIVALINNAM, hs.NR, hs.NAME, hs.XKOORD, hs.YKOORD FROM fahrzeitprofilelement fzpe ".
+        $query = "SELECT fzpe.ANKUNFT, fzpe.ABFAHRT, l.PUBDIVALINNAM, hsb.NR HSBNR, hs.NR, hs.NAME, hs.XKOORD, hs.YKOORD FROM fahrzeitprofilelement fzpe ".
                     "LEFT JOIN linie l ON fzpe.LINNAME = l.NAME ".
                     "LEFT JOIN linienroutenelement lre ON fzpe.LRELEMINDEX = lre.INDEX AND fzpe.LINROUTENAME = lre.LINROUTENAME ".
                     "LEFT JOIN haltepunkt hp ON lre.HPUNKTNR = hp.NR ".
@@ -86,10 +86,12 @@ if ($fzgfahrten = $mysqli->query($query)) {
 //                $entry["An_X"] = '"'.$row_0["XKOORD"].'"';
 //                $entry["An_Y"] = '"'.$row_0["YKOORD"].'"';
 
+                $entry["Ab_HSTB_Nr"] = $row_1["HSBNR"];
                 $entry["Ab_HST_Nr"] = $row_1["NR"];
                 $entry["Ab_HST_Name"] = $row_1["NAME"];
                 $entry["ABFAHRT"] = calc_date($row["ABFAHRT"], $row_1["ABFAHRT"]);
                 $entry["LINIE"] = $row_1["PUBDIVALINNAM"];
+                $entry["An_HSTB_Nr"] = $row_0["HSBNR"];
                 $entry["An_HST_Nr"] = $row_0["NR"];
                 $entry["An_HST_Name"] = $row_0["NAME"];
                 $entry["ANKUNFT"] = calc_date($row["ABFAHRT"], $row_0["ANKUNFT"]);
@@ -133,7 +135,7 @@ if ($fzgfahrten = $mysqli->query($query)) {
 
     printf("Writing IM_Trips.csv...<br>");
     $file = fopen("C://xampp/htdocs/IM_Trips.csv","w");
-    fputcsv($file, array("Ab_HST_Nr", "Ab_HST_Name", "ABFAHRT", "LINIE", "An_HST_Nr", "An_HST_Name", "ANKUNFT", "DAUER", "Ab_X", "Ab_Y", "An_X", "An_Y"), ";",'"');
+    fputcsv($file, array("Ab_HSTB_Nr", "Ab_HST_Nr", "Ab_HST_Name", "ABFAHRT", "LINIE", "An_HSTB_Nr", "An_HST_Nr", "An_HST_Name", "ANKUNFT", "DAUER", "Ab_X", "Ab_Y", "An_X", "An_Y"), ";",'"');
 
     foreach ($batch as $line)
     {

@@ -5,19 +5,19 @@ package Models;
  */
 public class Vertex {
 
-    private final int id;
+    private final String id;
     private final String name;
     private final String geoX;
     private final String geoY;
 
-    public Vertex(int id, String name, String geoX, String geoY) {
+    public Vertex(String id, String name, String geoX, String geoY) {
         this.id = id;
         this.name = name;
         this.geoX = geoX;
         this.geoY = geoY;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
     public String getName() {

@@ -10,12 +10,12 @@ import java.util.Map;
  */
 public class Edge {
 
-    private final int id; // Departure ID + Arrival ID
+    private final String id; // Departure ID + Arrival ID
     private final Vertex departure;
     private final Vertex arrival;
     private Map<Integer, ArrayList<int[]>> trips; // <departure, [departure, arrival, length, line]>
 
-    public Edge (int id, Vertex departure, Vertex arrival) {
+    public Edge (String id, Vertex departure, Vertex arrival) {
         this.id = id;
         this.departure = departure;
         this.arrival = arrival;
@@ -64,7 +64,7 @@ public class Edge {
         return trips.get(departure);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
     public Vertex getDeparture() {
