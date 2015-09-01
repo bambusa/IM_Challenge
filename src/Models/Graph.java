@@ -1,5 +1,7 @@
 package Models;
 
+import Calculation.Dijkstra;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +14,6 @@ public class Graph {
     private Map<String, Vertex> vertexMap;
     private Map<String, Edge> edgeMap;
     private Map<String, Transfer> transferMap;
-    private Vertex startVertex;
 
     public Graph() {
         vertexMap = new HashMap<>();
@@ -20,20 +21,10 @@ public class Graph {
         transferMap = new HashMap<>();
     }
 
-    public Graph(Map<String, Vertex> vertexMap, Map<String, Edge> edgeMap, Map<String, Transfer> transferMap, Vertex startVertex) {
+    public Graph(Map<String, Vertex> vertexMap, Map<String, Edge> edgeMap, Map<String, Transfer> transferMap) {
         this.vertexMap = vertexMap;
         this.edgeMap = edgeMap;
         this.transferMap = transferMap;
-        this.startVertex = startVertex;
-        log("New graph with start vertex " + startVertex.getName());
-    }
-
-    public Vertex getStartVertex() {
-        return startVertex;
-    }
-
-    public void setStartVertex(Vertex startVertex) {
-        this.startVertex = startVertex;
     }
 
     public Map<String, Vertex> getVerteces() {
@@ -44,71 +35,109 @@ public class Graph {
         return edgeMap;
     }
 
-    public Edge getEdgesBetween(Vertex dVertex, Vertex aVertex) {
-//        log("getEdgesBetween | Checking edges in between for in total " + edges.size() + " edges");
-        int eID = Integer.parseInt(dVertex.getName()+aVertex.getName());
-        if (edgeMap.containsKey(eID)) {
-            Edge edgeBetween = edgeMap.get(eID);
-            if (edgeBetween.getDeparture() == dVertex && edgeBetween.getArrival() == aVertex) {
-                return edgeBetween;
-            }
-            else {
-                log("ERROR: EdgeBetween ID and verteces not corresponding:, ID: " + eID + ", verteces: " + dVertex.getId() + "-" + aVertex.getId());
+    public ArrayList<Edge> getEdgesBetween(Vertex dVertex, Vertex aVertex) {
+        ArrayList<Edge> edges = new ArrayList<>();
+        String[] eIDs = new String[] {dVertex.getId() + aVertex.getId(), aVertex.getId() + dVertex.getId()};
+        for (String eID : eIDs) {
+            if (edgeMap.containsKey(eID)) {
+                edges.add(edgeMap.get(eID));
             }
         }
-        else {
-            log("ERROR: No edge found between " + dVertex.getName() + " and " + aVertex.getName());
-        }
-        return null;
+        return edges;
     }
 
-    /*public Edge searchNextShortestEdgeWithout(Vertex currentVertex, List<Edge> whithout, int departure) {
+    public Edge searchNextShortestEdgeWithout(Edge lastEdge, ArrayList<Edge> route) {
         // Remove excluded edges
-        log("searchNextShortestEdgeWithout | From " + currentVertex.getName() + " without " + whithout.size() + " edges");
-        Edge shortestEdge = null;
+//        log("searchNextShortestEdgeWithout | From " + lastEdge.getArrival().getName() + " without " + route.size() + " edges");
         List<Edge> remainingEdges = new ArrayList<>(edgeMap.values());
-        remainingEdges.removeAll(whithout);
+        remainingEdges.removeAll(route);
+        Edge shortestEdge = null;
 
         // Remove edges with other departure verteces than current vertex
-//        log("searchNextShortestEdgeWithout | Edge sum: " + remainingEdges.size());
         List<Edge> removeEdges = new ArrayList<>();
         for (Edge edge : remainingEdges) {
-            if (edge.getDeparture() != currentVertex) {
-//                log("remove edge " + edge.getId());
+            if (edge.getDeparture() != lastEdge.getArrival()) {
                 removeEdges.add(edge);
             }
         }
         remainingEdges.removeAll(removeEdges);
+//        log("searchNextShortestEdgeWithout | Removed edges where departure is not " + lastEdge.getArrival().getName() + ", " + remainingEdges.size() + " remaining");
 
-        // Find shortest edge
-//        log("searchNextShortestEdgeWithout | " + remainingEdges.size() + " potential edges");
+        // Find shortest trip, limit search to 1 hour
         if (remainingEdges.size() > 0) {
             for (Edge edge : remainingEdges) {
-                ArrayList<int[]> length = edge.getNextTrips(departure);
-                if (shortestEdge == null || edge.getLength() < shortestEdge.getLength()) {
+//                log("searchNextShortestEdgeWithout | Checking edge " + edge.getId());
+                Trip thisTrip = findNextShortestTrip(edge, lastEdge.getActiveTrip());
+                if (shortestEdge == null || thisTrip.getDeparture() < shortestEdge.getActiveTrip().getDeparture()) {
+                    edge.setActiveTrip(thisTrip);
                     shortestEdge = edge;
                 }
             }
+            if (shortestEdge != null && shortestEdge.getActiveTrip() != null) {
+//                log("searchNextShortestEdgeWithout | Found shortest Edge to " + shortestEdge.getArrival().getName());
+            }
+            else {
+                log("searchNextShortestEdgeWithout | ERROR: Found no trip");
+            }
         }
         else {
-            return null;
+            log("searchNextShortestEdgeWithout | ERROR: Found no remaining edeges");
         }
 
         return shortestEdge;
     }
 
-    public List<Edge> searchNextVertexWithUnvisited(Vertex currentVertex, List<Edge> unvisited) {
+    public Trip findNextShortestTrip(Edge edge, Trip activeTrip) {
+        Trip bestTrip = null;
+        int departure = activeTrip.getArrival();
+        int wait = 0;
+//        log("findNextShortestTrip | Starting search at " + departure);
+        while (wait <= 3600) {
+//            log("findNextShortestTrip | Waiting " + wait + " seconds...");
+            int thisDeparture = departure + wait;
+            if (edge.containsTrips(thisDeparture)) {
+                for (Trip trip : edge.getTrips(thisDeparture)) {
+//                    log("findNextShortestTrip | Checking trip at " + thisDeparture + " on line " + trip.getLine());
+                    if (bestTrip == null) {
+                        log("findNextShortestTrip | Starting with first trip at " + thisDeparture + " on line " + trip.getLine());
+                        bestTrip = trip;
+                    }
+                    else if (activeTrip.getLine() == 0 || (trip.getLine() == activeTrip.getLine() && trip.getDeparture() == thisDeparture)) {
+                        if (bestTrip.getArrival() > trip.getArrival()) {
+                            log("findNextShortestTrip | Found better trip on same line " + trip.getLine());
+                            bestTrip = trip;
+                        }
+                    }
+                    else {
+                        String transferID = activeTrip.getArrivalHSB() + trip.getDepartureHSB();
+                        if (transferMap.containsKey(transferID) &&
+                                (thisDeparture + transferMap.get(transferID).getTime()) <= trip.getDeparture() ) {
+                            if (bestTrip.getArrival() > trip.getArrival()) {
+                                log("findNextShortestTrip | Found better trip, switching to line " + trip.getLine());
+                                bestTrip = trip;
+                            }
+                        }
+                    }
+                }
+            }
+            wait += 60;
+        }
+//        log("findNextShortestTrip | Best trip is at " + bestTrip.getDeparture() + " on line " + bestTrip.getLine());
+        return bestTrip;
+    }
+
+    public List<Edge> searchNextVertexWithUnvisited(Edge lastEdge, List<Edge> unvisited) {
         List<Vertex> potentialVerteces = new ArrayList<>();
         for (Edge edge : unvisited) {
-            if (!potentialVerteces.contains(edge.getSource())) {
-                potentialVerteces.add(edge.getSource());
+            if (!potentialVerteces.contains(edge.getDeparture())) {
+                potentialVerteces.add(edge.getDeparture());
             }
         }
-        log("searchNextVertexWithUnvisited | From " + currentVertex.getName() + ", " + potentialVerteces.size() + " remaining verteces with unvisited edges");
+        log("searchNextVertexWithUnvisited | From " + lastEdge.getArrival().getName() + ", " + potentialVerteces.size() + " remaining verteces with unvisited edges");
 
-        Dijkstra dijkstra = new Dijkstra(this, currentVertex, potentialVerteces);
-        return  dijkstra.getShortestPath();
-    }*/
+        Dijkstra dijkstra = new Dijkstra(this, lastEdge, potentialVerteces);
+        return  dijkstra.getShortestPaths();
+    }
 
 
 

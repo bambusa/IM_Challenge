@@ -1,5 +1,6 @@
 package IM_Challenge;
 
+import Calculation.Mk_II;
 import Models.*;
 import au.com.bytecode.opencsv.CSVReader;
 
@@ -40,6 +41,8 @@ public class IM_Challenge {
 
     public static void main(String[] args) {
         Graph graph = mapGraph();
+        Mk_II mk_ii = new Mk_II(graph, graph.getVerteces().get("133"), 40560, "13301", 8);
+        mk_ii.start();
     }
 
     /**
@@ -126,7 +129,7 @@ public class IM_Challenge {
                 tripCount++;
 
                 edgeMap.put(edgeID, edge);
-                //log(added);
+//                 log(added);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -185,10 +188,7 @@ public class IM_Challenge {
         log("Mapped transfers with " + transferMap.size() + " transfers from " + rows + " lines");
 
         measureTime(startTime, "mapping graph");
-        if (!vertexMap.containsKey(133)) {
-            log("Vertex 133 not existing");
-        }
-        return new Graph(vertexMap, edgeMap, transferMap, vertexMap.get(133));
+        return new Graph(vertexMap, edgeMap, transferMap);
     }
 
     private static void measureTime(long startTime, String task) {

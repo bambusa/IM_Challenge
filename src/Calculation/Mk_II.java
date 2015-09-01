@@ -1,16 +1,16 @@
-/*
 package Calculation;
 
 import Models.Edge;
 import Models.Graph;
+import Models.Trip;
 import Models.Vertex;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-*/
-/*
- * Created by BSD on 23.08.2015.
+ /* Created by BSD on 23.08.2015.
  *
  * Algorythmus Mk II
  * Für echten Graphen
@@ -20,95 +20,65 @@ import java.util.List;
  * * Wiederhole 2. bis keine ausgehende, unbesuchte Kante
  * 3. Suche nähesten Knoten mit unbesuchter, ausgehender Kante
  * * Wiederhole 2. - 3. bis alle Kanten besucht sind
- *//*
+ */
 
 
 
 public class Mk_II {
 
-    Graph graph;
+    private Graph graph;
+    private Vertex startVertex;
+    private int startTime;
+    private String startHSB;
+    private int startLine;
 
-    public Mk_II(Graph graph) {
+    public Mk_II(Graph graph, Vertex startVertex, int startTime, String startHSB, int startLine) {
         this.graph = graph;
+        this.startVertex = startVertex;
+        this.startTime = startTime;
+        this.startHSB = startHSB;
+        this.startLine = startLine;
     }
 
     public void start() {
 
         // 1. Startpunkt Südvorstadt
-        long startTime = System.currentTimeMillis();
+        long iterationTime = System.currentTimeMillis();
         log("Starting Mk II");
 
-        Vertex currentVertex = graph.getStartVertex();
-        List<Edge> unvisited = new ArrayList<>(graph.getEdges());
-        List<Edge> route = new ArrayList<>();
-        List<Edge> without = new ArrayList<>();
+        Edge lastEdge = new Edge("INIT", null, startVertex);
+        lastEdge.setActiveTrip(new Trip(0, startTime, "", startHSB, 0, startLine));
+        ArrayList<Edge> unvisited = new ArrayList<>(graph.getEdges().values());
+        ArrayList<Edge> route = new ArrayList<>();
+
 
         int iteration = 0;
-        while (unvisited.size() > 0 && iteration < 10) {
+        while (unvisited.size() > 0) {
 
             // 2. Suche kürzeste, ausgehende, unbesuchte Kante
             iteration++;
             long stepTime = System.currentTimeMillis();
-            Edge nextEdge = graph.searchNextShortestEdgeWithout(currentVertex, without);
-            if (nextEdge != null) {
-                currentVertex = nextEdge.getDestination();
-                log("Driving to " + currentVertex.getName() + " at costs: " + nextEdge.getLength());
-                costs += nextEdge.getLength();
-                route.add(nextEdge);
-                String edgeString = "";
-                for (Edge edge : route) {
-                    edgeString += " " + edge.getId();
-                }
-                log("Current route:" + edgeString);
+            lastEdge = graph.searchNextShortestEdgeWithout(lastEdge, route);
+            if (lastEdge != null && lastEdge.getActiveTrip() != null) {
+                log("New Trip " + lastEdge.getActiveTrip().getLine() + " | " + lastEdge.getDeparture().getName() + " -> " + lastEdge.getArrival().getName() + " | " + lastEdge.getActiveTrip().getDeparture() + " -> " + lastEdge.getActiveTrip().getArrival() + ", " + unvisited.size() + " edges remaining");
+                route.add(lastEdge);
 
-                List<Edge> edgesBetween = graph.getEdgesBetween(currentVertex, nextEdge.getSource());
-edgeString = "";
-                        for (Edge edge : edgesBetween) {
-                            edgeString += " " + edge.getId();
-                        }
-                        log("edges between:" + edgeString);
-
-                without.addAll(edgesBetween);
-edgeString = "";
-                        for (Edge edge : without) {
-                            edgeString += " " + edge.getId();
-                        }
-                        log("Current without:" + edgeString);
-
-                unvisited.removeAll(edgesBetween);
-edgeString = "";
-                        for (Edge edge : unvisited) {
-                            edgeString += " " + edge.getId();
-                        }
-                        log("Current unvisited:" + edgeString);
-
+                unvisited.remove(graph.getEdgesBetween(lastEdge.getDeparture(), lastEdge.getArrival()));
 
                 double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 10) * 100;
-                log("Finished Iteration " + iteration + " in " + elapsedTime + " seconds");
-                log("___________________________________________________________________");
+//                measureTime(iterationTime, "iteration");
             }
 
             else {
 
                 // 3. Suche nähesten Knoten mit unbesuchter, ausgehender Kante
-                log("No unvisited edge in " + currentVertex.getName() + " remaining");
-                List<Edge> routeToVertex = graph.searchNextVertexWithUnvisited(currentVertex, unvisited);
-                String edgeString = "";
-                for (Edge edge : routeToVertex) {
-                    edgeString += " " + edge.getId();
-                }
-                log("Add route:" + edgeString);
+                log("No unvisited edge in " + lastEdge.getArrival().getName() + " remaining");
+                List<Edge> routeToVertex = graph.searchNextVertexWithUnvisited(lastEdge, unvisited);
                 route.addAll(routeToVertex);
+
                 for (Edge edge : routeToVertex) {
-                    costs += edge.getLength();
-                    if (unvisited.contains(edge)) {
-                        log("Added route contained unvisited edge " + edge.getId());
-                        List<Edge> edgesBetween = graph.getEdgesBetween(edge.getDestination(), edge.getSource());
-                        without.addAll(edgesBetween);
-                        unvisited.removeAll(edgesBetween);
-                    }
+                    unvisited.remove(graph.getEdgesBetween(lastEdge.getDeparture(), lastEdge.getArrival()));
                 }
-                currentVertex = routeToVertex.get(routeToVertex.size()-1).getDestination();
             }
         }
 
@@ -117,7 +87,7 @@ edgeString = "";
         if (unvisited.size() == 0) {
             log("");
             log("<<< ___________________________________________________________________ >>>");
-            log("<<< Success! Found complete route at costs: " + costs);
+            log("<<< Success! Found complete route");
             String edgeString = "";
             for (Edge edge : route) {
                 edgeString += " " + edge.getId();
@@ -128,11 +98,17 @@ edgeString = "";
 
         }
         double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 10) * 100;
-        log("Finished Mk I in " + elapsedTime + " seconds");
+        log("Finished Mk II in " + elapsedTime + " seconds");
     }
 
     private void log(String message) {
-        System.out.println("[Mk_I] " + message);
+        System.out.println("[Mk_II] " + message);
+    }
+
+    private void measureTime(long startTime, String task) {
+        double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 1000);
+        log("<<< Finished " + task + " in " + elapsedTime + " seconds >>>");
+        log("<<< ___________________________________________________________________ >>>");
+        log("");
     }
 }
-*/

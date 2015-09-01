@@ -14,6 +14,7 @@ public class Edge {
     private final Vertex departure;
     private final Vertex arrival;
     private Map<Integer, ArrayList<Trip>> trips;
+    private Trip activeTrip = null;
 
     public Edge (String id, Vertex departure, Vertex arrival) {
         this.id = id;
@@ -36,24 +37,10 @@ public class Edge {
         trips.put(trip.getDeparture(), tripArray);
     }
 
-    public boolean containsTrip(int departure) {
+    public boolean containsTrips(int departure) {
         return trips.containsKey(departure);
     }
-
-    /**
-     * Search for the next trip within an hour from departure
-     */
-    public ArrayList<Trip> getNextTrips(int departure) {
-        int i = 0;
-        while (!trips.containsKey(departure)) {
-            departure += 60;
-            i++;
-            if (i == 60) {
-                log("No trip found in the next hour from " + departure);
-                return null;
-            }
-        }
-
+    public ArrayList<Trip> getTrips(int departure) {
         return trips.get(departure);
     }
 
@@ -69,5 +56,13 @@ public class Edge {
 
     private void log(String message) {
         System.out.println("[Edge] " + message);
+    }
+
+    public Trip getActiveTrip() {
+        return activeTrip;
+    }
+
+    public void setActiveTrip(Trip activeTrip) {
+        this.activeTrip = activeTrip;
     }
 }

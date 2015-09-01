@@ -1,135 +1,120 @@
-/*
 package Calculation;
 
 import Models.Edge;
 import Models.Graph;
+import Models.Trip;
 import Models.Vertex;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
-*/
-/**
+/*
  * Created by BSD on 11.07.2015.
- *//*
+ */
 
 public class Dijkstra {
 
     private Graph graph;
     private Vertex startVertex;
+    private int startTime;
+    private int startLine;
+    // private List<Vertex> searching;
+
     private List<Vertex> Q;
     private List<Vertex> searching;
-    private HashMap<Vertex, Vertex> predecessor;
+    private HashMap<Vertex, Edge> predecessor;
     private HashMap<Vertex, Integer> distance;
-    private HashMap<Vertex, Edge> preEdge;
+    // private HashMap<Vertex, Edge> preEdge;
 
 
 
-    public Dijkstra(Graph graph, Vertex startVertex, List<Vertex> searching) {
+    public Dijkstra(Graph graph, Edge lastEdge, List<Vertex> searching) {
         this.graph = graph;
-        this.startVertex = startVertex;
+        this.startVertex = lastEdge.getArrival();
+        this.startTime = lastEdge.getActiveTrip().getArrival();
+        this.startLine = lastEdge.getActiveTrip().getLine();
+        this.searching = searching;
 
         if (searching == null) {
-            this.searching = new ArrayList<>();
-            this.searching.addAll(graph.getVerteces());
+            Q = new ArrayList<>();
+            Q.addAll(graph.getVerteces().values());
         }
         else {
-            this.searching = searching;
+            Q = new ArrayList<>(searching);
+            if (Q.contains(startVertex)) {
+            }
         }
     }
 
-    public List<Edge> getShortestPath() {
-
-        // Start Algorithm
-        log("Starting from " + startVertex.getName() + " searching for " + searching.size() + " verteces");
-        initialize();
-        while (Q.size() > 0) {
-
-            // Nearest vertex
-            Vertex thisVertex = null;
-            int thisDistance = 1000000000;
-            for (Vertex vertex : Q) {
-                if (distance.get(vertex) < thisDistance) {
-                    thisVertex = vertex;
-                    thisDistance = distance.get(vertex);
-                }
-            }
-            log("Selecting vertex " + thisVertex.getName());
-
-            // Remove vertex
-            Q.remove(thisVertex);
-
-            // Check Neighbors
-            for (Edge edge : graph.getEdges()) {
-                if (edge.getSource() == thisVertex) {
-                    updateDistance(thisVertex, edge);
-                }
-            }
-        }
-
-        Vertex routeTo = null;
-        int routeLength = 1000000000;
-        for (Vertex vertex : searching) {
-            if (routeTo == null || distance.get(vertex) < routeLength) {
-                routeTo = vertex;
-                routeLength = distance.get(vertex);
-            }
-        }
-        log("Found nearest vertex " + routeTo.getName() + " at cost " + routeLength);
-        return createRoute(routeTo);
-
-    }
-
-    private void initialize() {
-        this.Q = new ArrayList<>();
-        Q.addAll(graph.getVerteces());
-        predecessor = new HashMap<>();
-        distance = new HashMap<>();
-        preEdge = new HashMap<>();
-
-        for (Vertex vertex : Q) {
-            predecessor.put(vertex, null);
-            distance.put(vertex, 1000000000);
-            preEdge.put(vertex, null);
-        }
+    public List<Edge> getShortestPaths() {
+        // Initialize
+        log("Getting shortest path for " + Q.size() + " verteces");
         distance.put(startVertex, 0);
-    }
-
-    private void updateDistance(Vertex thisVertex, Edge neighborEdge) {
-        int thisDistance = distance.get(thisVertex) + neighborEdge.getLength();
-        if (thisDistance < distance.get(neighborEdge.getDestination())) {
-            log("Updating distance from " + thisVertex.getName() + " to " + neighborEdge.getDestination().getName() + ": " + neighborEdge.getLength());
-            distance.put(neighborEdge.getDestination(), thisDistance);
-            predecessor.put(neighborEdge.getDestination(), thisVertex);
-            preEdge.put(neighborEdge.getDestination(), neighborEdge);
+        predecessor.put(startVertex, null);
+        for (Vertex vertex : Q) {
+            distance.put(vertex, 999999999);
+            predecessor.put(vertex, null);
         }
-    }
 
-    private List<Edge> createRoute(Vertex destination) {
+        // Distance calculation
+        while (Q.size() > 0) {
+            Vertex nearestVertex = getNearestVertex();
+            Q.remove(nearestVertex);
+
+            for (Edge edge : graph.getEdges().values()) { // for each neighbor, which is still in Q
+                if (edge.getDeparture() == nearestVertex && Q.contains(edge.getArrival())) {
+                    Trip activeTrip = null;
+                    if (predecessor.get(edge.getDeparture()) != null && predecessor.get(edge.getDeparture()).getActiveTrip() != null) {
+                        activeTrip = predecessor.get(edge.getDeparture()).getActiveTrip();
+                    }
+                    else {
+                        activeTrip = new Trip(-1, startTime, "", "", -1, startLine);
+                    }
+
+                    edge.setActiveTrip(graph.findNextShortestTrip(edge, activeTrip));
+                    if (edge.getActiveTrip().getArrival() < distance.get(edge.getArrival())) {
+                        distance.put(edge.getArrival(), edge.getActiveTrip().getArrival());
+                        predecessor.put(edge.getArrival(), edge);
+                    }
+                }
+            }
+        }
+
+        // Get shortest path
+        Vertex nearest = null;
+        for (Vertex vertex : searching) {
+            if (nearest == null || distance.get(vertex) < distance.get(nearest)) {
+                nearest = vertex;
+            }
+        }
+        Vertex current = nearest;
         List<Edge> route = new ArrayList<>();
-        route.add(preEdge.get(destination));
-        Vertex thisVertex = destination;
-        while (predecessor.get(thisVertex) != startVertex) {
-            thisVertex = predecessor.get(thisVertex);
-            route.add(preEdge.get(thisVertex));
+        while (current != startVertex) {
+            route.add(predecessor.get(current));
+            current = predecessor.get(current).getDeparture();
         }
 
         Collections.reverse(route);
-        String message = "Found route";
-        for (Edge edge : route) {
-            message += " " + edge.getId();
-        }
-        log(message);
         return route;
+    }
+
+    private Vertex getNearestVertex() {
+        Vertex bestVertex = null;
+        int bestDistance = 999999;
+
+        for (Vertex vertex : Q) {
+            if (bestVertex == null || distance.get(vertex) < bestDistance) {
+                bestVertex = vertex;
+                bestDistance = distance.get(vertex);
+            }
+        }
+
+        return bestVertex;
     }
 
 
 
     private void log(String message) {
-        System.out.println("[DIJKSTRA] " + message);
+        System.out.println("[Dijkstra] " + message);
     }
 
 }
-*/
