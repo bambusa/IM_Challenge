@@ -118,14 +118,16 @@ public class IM_Challenge {
                 }
 
                 // Edge Trips
-                int departure = Integer.parseInt(row[ABFAHRT]);
-                int arrival = Integer.parseInt(row[ANKUNFT]);
-                String departureHSB = String.format("%05d", Integer.parseInt(row[An_HSTB_Nr]));
-                String arrivalHSB = String.format("%05d", Integer.parseInt(row[Ab_HSTB_Nr]));
+                int departureTime = Integer.parseInt(row[ABFAHRT]);
+                int arrivalTime = Integer.parseInt(row[ANKUNFT]);
+                String departureHSB = String.format("%05d", Integer.parseInt(row[Ab_HSTB_Nr]));
+                String arrivalHSB = String.format("%05d", Integer.parseInt(row[An_HSTB_Nr]));
+                String departure = row[Ab_HST_Name];
+                String arrival = row[An_HST_Name];
                 int length = Integer.parseInt(row[DAUER]);
                 int line = Integer.parseInt(row[LINIE]);
-                edge.addTrip(new Trip(departure, arrival, departureHSB, arrivalHSB, length, line));
-                added += "Added Trip " + departure + ", ";
+                edge.addTrip(new Trip(departureTime, arrivalTime, departureHSB, arrivalHSB, departure, arrival, length, line));
+                added += "Added Trip " + departureTime + ", ";
                 tripCount++;
 
                 edgeMap.put(edgeID, edge);

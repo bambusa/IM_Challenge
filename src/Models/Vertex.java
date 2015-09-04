@@ -29,4 +29,8 @@ public class Vertex {
     public String getGeoY() {
         return geoY;
     }
+
+    public String toString() {
+        return "[VERTEX " + name + " | " + geoX + ", " + geoY + "]";
+    }
 }

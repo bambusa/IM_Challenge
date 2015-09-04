@@ -30,7 +30,7 @@ public class Dijkstra {
     public Dijkstra(Graph graph, Edge lastEdge, List<Vertex> searching) {
         this.graph = graph;
         this.startVertex = lastEdge.getArrival();
-        this.startTime = lastEdge.getActiveTrip().getArrival();
+        this.startTime = lastEdge.getActiveTrip().getArrivalTime();
         this.startLine = lastEdge.getActiveTrip().getLine();
         this.searching = searching;
 
@@ -67,12 +67,12 @@ public class Dijkstra {
                         activeTrip = predecessor.get(edge.getDeparture()).getActiveTrip();
                     }
                     else {
-                        activeTrip = new Trip(-1, startTime, "", "", -1, startLine);
+                        activeTrip = new Trip(-1, startTime, "", "", "", "", -1, startLine);
                     }
 
                     edge.setActiveTrip(graph.findNextShortestTrip(edge, activeTrip));
-                    if (edge.getActiveTrip().getArrival() < distance.get(edge.getArrival())) {
-                        distance.put(edge.getArrival(), edge.getActiveTrip().getArrival());
+                    if (edge.getActiveTrip().getArrivalTime() < distance.get(edge.getArrival())) {
+                        distance.put(edge.getArrival(), edge.getActiveTrip().getArrivalTime());
                         predecessor.put(edge.getArrival(), edge);
                     }
                 }

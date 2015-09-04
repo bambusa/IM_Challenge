@@ -36,4 +36,8 @@ public class Transfer {
     public String getNhsbnr() {
         return nhsbnr;
     }
+
+    public String toString() {
+        return "[TRANSFER " + vhsbnr + " -> " + nhsbnr + " | " + time + "s]";
+    }
 }

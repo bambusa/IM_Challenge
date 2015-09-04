@@ -12,13 +12,13 @@ import java.util.Map;
 
  /* Created by BSD on 23.08.2015.
  *
- * Algorythmus Mk II
+ * Algorithmus Mk II
  * Für echten Graphen
  *
  * 1. Startpunkt Südvorstadt
- * 2. Suche kürzeste, ausgehende, unbesuchte Kante
- * * Wiederhole 2. bis keine ausgehende, unbesuchte Kante
- * 3. Suche nähesten Knoten mit unbesuchter, ausgehender Kante
+ * 2. Suche nächsten, ausgehenden, unbesuchten Trip vom aktuellen Knoten (Minimierung Wartezeit)
+ * * Wiederhole 2. bis keine ausgehende, unbesuchte Kante mehr übrig
+ * 3. Suche nächsten Knoten mit nächsten, unbesuchten, ausgehenden Trip (Minimierung Fahrtzeit + Wartezeit)
  * * Wiederhole 2. - 3. bis alle Kanten besucht sind
  */
 
@@ -46,8 +46,8 @@ public class Mk_II {
         long iterationTime = System.currentTimeMillis();
         log("Starting Mk II");
 
-        Edge lastEdge = new Edge("INIT", null, startVertex);
-        lastEdge.setActiveTrip(new Trip(0, startTime, "", startHSB, 0, startLine));
+        Edge lastEdge = new Edge("INIT", startVertex, startVertex);
+        lastEdge.setActiveTrip(new Trip(0, startTime, startHSB, startHSB, startVertex.getName(), startVertex.getName(), 0, startLine));
         ArrayList<Edge> unvisited = new ArrayList<>(graph.getEdges().values());
         ArrayList<Edge> route = new ArrayList<>();
 
@@ -60,7 +60,8 @@ public class Mk_II {
             long stepTime = System.currentTimeMillis();
             lastEdge = graph.searchNextShortestEdgeWithout(lastEdge, route);
             if (lastEdge != null && lastEdge.getActiveTrip() != null) {
-                log("New Trip " + lastEdge.getActiveTrip().getLine() + " | " + lastEdge.getDeparture().getName() + " -> " + lastEdge.getArrival().getName() + " | " + lastEdge.getActiveTrip().getDeparture() + " -> " + lastEdge.getActiveTrip().getArrival() + ", " + unvisited.size() + " edges remaining");
+                log("<<< New Trip " + lastEdge.toString() + ", " + lastEdge.getActiveTrip().toString() + ", " + unvisited.size() + " edges remaining >>>");
+                log("<<< ---------------------------------------------------------------------------------------------------------------------------------------- >>>");
                 route.add(lastEdge);
 
                 unvisited.remove(graph.getEdgesBetween(lastEdge.getDeparture(), lastEdge.getArrival()));

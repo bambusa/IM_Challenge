@@ -5,28 +5,32 @@ package Models;
  */
 public class Trip {
 
-    private int departure;
-    private int arrival;
+    private int departureTime;
+    private int arrivalTime;
     private String departureHSB;
     private String arrivalHSB;
+    private String departure;
+    private String arrival;
     private int length;
     private int line;
 
-    public Trip (int departure, int arrival, String departureHSB, String arrivalHSB, int length, int line) {
-        this.departure = departure;
-        this.arrival = arrival;
+    public Trip (int departureTime, int arrivalTime, String departureHSB, String arrivalHSB, String departure, String arrival, int length, int line) {
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
         this.departureHSB = departureHSB;
         this.arrivalHSB = arrivalHSB;
+        this.departure = departure;
+        this.arrival = arrival;
         this.length = length;
         this.line = line;
     }
 
-    public int getDeparture() {
-        return departure;
+    public int getDepartureTime() {
+        return departureTime;
     }
 
-    public int getArrival() {
-        return arrival;
+    public int getArrivalTime() {
+        return arrivalTime;
     }
 
     public String getDepartureHSB() {
@@ -43,5 +47,24 @@ public class Trip {
 
     public int getLine() {
         return line;
+    }
+
+    public String getDeparture() {
+        return departure;
+    }
+
+    public String getArrival() {
+        return arrival;
+    }
+
+    public String timeFromSeconds(int seconds) {
+        int minutes = (int) Math.ceil(seconds / 60);
+        int hours = (int) Math.floor(minutes / 60);
+        String remainingMinutes = String.format("%02d", (minutes - (hours * 60)));
+        return hours + ":" + remainingMinutes;
+    }
+
+    public String toString() {
+        return "[TRIP " + departureHSB + " -> " + arrivalHSB + " | " + timeFromSeconds(departureTime) + " -> " + timeFromSeconds(arrivalTime) + " | " + line + "]";
     }
 }

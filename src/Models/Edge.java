@@ -34,7 +34,7 @@ public class Edge {
            tripArray = new ArrayList<>();
         }
         tripArray.add(trip);
-        trips.put(trip.getDeparture(), tripArray);
+        trips.put(trip.getDepartureTime(), tripArray);
     }
 
     public boolean containsTrips(int departure) {
@@ -64,5 +64,9 @@ public class Edge {
 
     public void setActiveTrip(Trip activeTrip) {
         this.activeTrip = activeTrip;
+    }
+
+    public String toString() {
+        return "[EDGE " + departure.getId() + " -> " + arrival.getId() + " | " + departure.getName() + " -> " + arrival.getName() + "]";
     }
 }
