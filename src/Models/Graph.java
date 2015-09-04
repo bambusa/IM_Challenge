@@ -27,7 +27,7 @@ public class Graph {
         this.transferMap = transferMap;
     }
 
-    public Map<String, Vertex> getVerteces() {
+    public Map<String, Vertex> getVertices() {
         return vertexMap;
     }
 
@@ -36,88 +36,86 @@ public class Graph {
     }
 
     public ArrayList<Edge> getEdgesBetween(Vertex dVertex, Vertex aVertex) {
+        log("getEdgesBetween | " + dVertex.toString() + " and " + aVertex.toString());
         ArrayList<Edge> edges = new ArrayList<>();
         String[] eIDs = new String[] {dVertex.getId() + aVertex.getId(), aVertex.getId() + dVertex.getId()};
         for (String eID : eIDs) {
             if (edgeMap.containsKey(eID)) {
+                log("getEdgesBetween | found " + edgeMap.get(eID).toString());
                 edges.add(edgeMap.get(eID));
+            }
+            else {
+                log("getEdgesBetween | WARNING: Edge " + eID + " not found");
             }
         }
         return edges;
     }
 
-    public Edge searchNextShortestEdgeWithout(Edge lastEdge, ArrayList<Edge> route) {
-        /*** Remove excluded edges ***/
-        log("searchNextShortestEdgeWithout | " + lastEdge.getDeparture().getName() + " -> " + lastEdge.getArrival().getName() + ", without " + route.size() + " edges");
-        List<Edge> remainingEdges = new ArrayList<>(edgeMap.values());
-        remainingEdges.removeAll(route);
+    public Edge searchNextShortestEdgeWith(Edge lastEdge, ArrayList<Edge> with) {
+        /*** Remove visited edges ***/
+        log("searchNextShortestEdgeWith | From " + lastEdge.getArrival().getName() + " with " + with.size() + " unvisited edges at " + timeFromSeconds(lastEdge.getActiveTrip().getArrivalTime()));
         Edge shortestEdge = null;
+        Trip lastTrip = lastEdge.getActiveTrip();
+        ArrayList<Edge> unvisited = new ArrayList<>(with);
 
-        /*** Remove edges with other departure verteces than current vertex ***/
-        List<Edge> removeEdges = new ArrayList<>();
-        for (Edge edge : remainingEdges) {
+        /*** Remove edges with other departure vertices than current vertex ***/
+        ArrayList<Edge> removeEdges = new ArrayList<>();
+        for (Edge edge : unvisited) {
             if (edge.getDeparture() != lastEdge.getArrival()) {
                 removeEdges.add(edge);
             }
         }
-        remainingEdges.removeAll(removeEdges);
-//        log("searchNextShortestEdgeWithout | Removed edges where departure is not " + lastEdge.getArrival().getName() + ", " + remainingEdges.size() + " remaining");
+        unvisited.removeAll(removeEdges);
+//        log("searchNextShortestEdgeWith | " + unvisited.size() + " edges remaining");
 
         /*** Find next departing trip ***/
-        if (remainingEdges.size() > 0) {
-            for (Edge edge : remainingEdges) {
-                log("searchNextShortestEdgeWithout | Checking " + edge.toString());
-                Trip lastTrip = null;
-                if (shortestEdge != null) {
-                    lastTrip = shortestEdge.getActiveTrip();
-                }
-                else {
-                    lastTrip = lastEdge.getActiveTrip();
-                }
-                Trip thisTrip = findNextShortestTrip(edge, lastTrip);
+        if (unvisited.size() > 0) {
+            for (Edge edge : unvisited) {
+//                log("searchNextShortestEdgeWith | Checking " + edge.toString());
+                Trip thisTrip = findNextShortestTrip(edge, lastTrip, -1);
                 if (shortestEdge == null || thisTrip.getDepartureTime() < shortestEdge.getActiveTrip().getDepartureTime()) {
-                    log("searchNextShortestEdgeWithout | Found better trip at " + timeFromSeconds(thisTrip.getDepartureTime()) + " on line " + thisTrip.getLine() + " | " + edge.getDeparture().getName() + " -> " + edge.getArrival().getName());
-                    if (shortestEdge != null) {
-                        log("searchNextShortestEdgeWithout | Previous trip was at " + timeFromSeconds(shortestEdge.getActiveTrip().getDepartureTime()) + " on line " + shortestEdge.getActiveTrip().getLine() + " to " + shortestEdge.getArrival().getName());
-                    }
+                    log("searchNextShortestEdgeWith | Found better trip at " + timeFromSeconds(thisTrip.getDepartureTime()) + " on line " + thisTrip.getLine() + " | " + edge.getDeparture().getName() + " -> " + edge.getArrival().getName());
                     edge.setActiveTrip(thisTrip);
                     shortestEdge = edge;
                 }
             }
             if (shortestEdge != null && shortestEdge.getActiveTrip() != null) {
-//                log("searchNextShortestEdgeWithout | Found shortest Edge to " + shortestEdge.getArrival().getName());
+//                log("searchNextShortestEdgeWith | Found shortest Edge to " + shortestEdge.getArrival().getName());
             }
             else {
-                log("searchNextShortestEdgeWithout | ERROR: Found no trip");
+//                log("searchNextShortestEdgeWith | ERROR: Found no trip");
             }
         }
         else {
-            log("searchNextShortestEdgeWithout | ERROR: Found no remaining edeges");
+//            log("searchNextShortestEdgeWith | Found no remaining edges");
         }
 
         return shortestEdge;
     }
 
-    public Trip findNextShortestTrip(Edge edge, Trip activeTrip) {
+    public Trip findNextShortestTrip(Edge edge, Trip activeTrip, int maxWait) {
+        if (maxWait == -1) {
+            maxWait = 3600;
+        }
         Trip bestTrip = null;
         int arrival = activeTrip.getArrivalTime();
         int line = activeTrip.getLine();
         String ahsb = activeTrip.getArrivalHSB();
         int wait = 0;
         ArrayList<Trip> possibleTrips = new ArrayList<>();
-        log("findNextShortestTrip | " + edge.toString() + ", coming from " + ahsb + " at " + timeFromSeconds(arrival));
+//        log("findNextShortestTrip | " + edge.toString() + ", coming from " + ahsb + " at " + timeFromSeconds(arrival));
 
         /*** Find possible trips, including transfer times, limited time window ***/
-        while (wait <= 3600) {
+        while (wait <= 86400) {
             int thisDeparture = arrival + wait;
             if (edge.containsTrips(thisDeparture)) {
-                log("findNextShortestTrip | Waiting " + wait + " seconds until " + timeFromSeconds(thisDeparture));
+//                log("findNextShortestTrip | Waiting " + wait + " seconds until " + timeFromSeconds(thisDeparture));
                 for (Trip trip : edge.getTrips(thisDeparture)) {
-                    log("findNextShortestTrip | Checking " + trip.toString());
+//                    log("findNextShortestTrip | Checking " + trip.toString());
 
                     /*** Same train, cancel furhter search ***/
                     if (line == trip.getLine() && arrival == trip.getDepartureTime()) {
-                        log("findNextShortestTrip | Same train is continuing on edge, cancel search");
+//                        log("findNextShortestTrip | Same train is continuing on edge, cancel search");
                         return trip;
                     }
 
@@ -141,16 +139,15 @@ public class Graph {
         }
 
         /*** Find next trip in possible trips ***/
-        log("findNextShortestTrip | Comparing " + possibleTrips.size() + " possible trips");
+//        log("findNextShortestTrip | Comparing " + possibleTrips.size() + " possible trips");
         for (Trip trip : possibleTrips) {
             if (bestTrip == null || trip.getDepartureTime() < bestTrip.getDepartureTime()) {
-                log("Setting better trip");
                 bestTrip = trip;
             }
         }
 
         if (bestTrip != null) {
-            log("findNextShortestTrip | Best " + bestTrip.toString());
+//            log("findNextShortestTrip | Best " + bestTrip.toString());
             return bestTrip;
         }
         else {
@@ -166,17 +163,21 @@ public class Graph {
                 potentialVerteces.add(edge.getDeparture());
             }
         }
-        log("searchNextVertexWithUnvisited | From " + lastEdge.getArrival().getName() + ", " + potentialVerteces.size() + " remaining verteces with unvisited edges");
+        log("searchNextVertexWithUnvisited | From " + lastEdge.getArrival().getName() + ", " + potentialVerteces.size() + " remaining vertices with unvisited edges");
 
         Dijkstra dijkstra = new Dijkstra(this, lastEdge, potentialVerteces);
-        return  dijkstra.getShortestPaths();
+        return  dijkstra.getShortestPath();
+    }
+
+    public Map<String, Transfer> getTransferMap() {
+        return transferMap;
     }
 
     public String timeFromSeconds(int seconds) {
         int minutes = (int) Math.ceil(seconds / 60);
         int hours = (int) Math.floor(minutes / 60);
-        int remainingMinutes = minutes - (hours * 60);
-        return hours + ":" + remainingMinutes;
+        String remainingMinutes = String.format("%02d", (minutes - (hours * 60)));
+        return hours + ":" + remainingMinutes + " (" + seconds + ")";
     }
 
 

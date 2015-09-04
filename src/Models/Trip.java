@@ -61,7 +61,7 @@ public class Trip {
         int minutes = (int) Math.ceil(seconds / 60);
         int hours = (int) Math.floor(minutes / 60);
         String remainingMinutes = String.format("%02d", (minutes - (hours * 60)));
-        return hours + ":" + remainingMinutes;
+        return hours + ":" + remainingMinutes + " (" + seconds + ")";
     }
 
     public String toString() {

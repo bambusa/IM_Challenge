@@ -3,11 +3,12 @@ package IM_Challenge;
 import Calculation.Mk_II;
 import Models.*;
 import au.com.bytecode.opencsv.CSVReader;
+import au.com.bytecode.opencsv.CSVWriter;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -41,8 +42,10 @@ public class IM_Challenge {
 
     public static void main(String[] args) {
         Graph graph = mapGraph();
-        Mk_II mk_ii = new Mk_II(graph, graph.getVerteces().get("133"), 40560, "13301", 8);
-        mk_ii.start();
+        Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), 0, "13301", 8);
+        ArrayList<Edge> route = mk_ii.start();
+        check(graph, route);
+        writeCSV(route);
     }
 
     /**
@@ -192,6 +195,93 @@ public class IM_Challenge {
         measureTime(startTime, "mapping graph");
         return new Graph(vertexMap, edgeMap, transferMap);
     }
+
+    private static boolean check(Graph graph, ArrayList<Edge> route) {
+        Edge lastEdge = null;
+        for (Edge edge : route) {
+            if (lastEdge != null) {
+                if (graph.getEdges().containsKey(edge.getId())) {
+                    if (graph.getEdges().get(edge.getId()).containsTrips(edge.getActiveTrip().getDepartureTime()) && graph.getEdges().get(edge.getId()).getTrips(edge.getActiveTrip().getDepartureTime()).contains(edge.getActiveTrip())) {
+                        if (lastEdge.getActiveTrip().getLine() == edge.getActiveTrip().getLine()) {
+                            lastEdge = edge;
+                        }
+                        else {
+                            Trip lastTrip = lastEdge.getActiveTrip();
+                            Trip newTrip = edge.getActiveTrip();
+                            String transferId = lastTrip.getArrivalHSB() + newTrip.getDepartureHSB();
+                            if (graph.getTransferMap().containsKey(transferId)) {
+                                int newTime = lastTrip.getArrivalTime() + graph.getTransferMap().get(transferId).getTime();
+                                if (newTime <= newTrip.getDepartureTime()) {
+                                    lastEdge = edge;
+                                }
+                                else {
+                                    log("check | ERROR: Transfer time " + graph.getTransferMap().get(transferId).getTime() + " - " + lastTrip.toString() + " -> " + newTrip.toString());
+                                    return false;
+                                }
+                            }
+                            else {
+                                log("check | ERROR: Transfer doesn't exist " + transferId + " - " + lastEdge.toString() + " -> " + edge.toString());
+                                return false;
+                            }
+                        }
+                    }
+                    else {
+                        log("check | ERROR: Trip doesn't exist " + edge.toString() + " - " + edge.getActiveTrip().toString());
+                        return false;
+                    }
+                }
+                else {
+                    log("check | ERROR: Edge doesn't exist " + edge.toString());
+                    return false;
+                }
+            }
+            else {
+                if (graph.getEdges().containsKey(edge.getId())) {
+                    if (graph.getEdges().get(edge.getId()).containsTrips(edge.getActiveTrip().getDepartureTime()) && graph.getEdges().get(edge.getId()).getTrips(edge.getActiveTrip().getDepartureTime()).contains(edge.getActiveTrip())) {
+                        lastEdge = edge;
+                    }
+                    else {
+                        log("check | ERROR: Trip doesn't exist " + edge.toString() + " - " + edge.getActiveTrip().toString());
+                        return false;
+                    }
+                }
+                else {
+                    log("check | ERROR: Edge doesn't exist " + edge.toString());
+                    return false;
+                }
+            }
+        }
+
+        log("check | Route check successful");
+        return true;
+    }
+
+    private static void writeCSV(List<Edge> route){
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter("C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Result.csv"), ';');
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE","AB_X","AB_Y","AN_X","AN_Y"};
+        writer.writeNext(values);
+
+        for (Edge edge : route) {
+//            log("writeCSV | Writing " + edge.toString() + " , " + edge.getActiveTrip().toString());
+            values = new String[]{edge.getActiveTrip().getDepartureTime()/60+"", edge.getActiveTrip().getArrivalTime()/60+"", edge.getDeparture().getName(), edge.getArrival().getName(),
+                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+"",
+                                    edge.getDeparture().getGeoX(), edge.getDeparture().getGeoY(), edge.getArrival().getGeoX(), edge.getArrival().getGeoY()};
+            writer.writeNext(values);
+        }
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     private static void measureTime(long startTime, String task) {
         double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 1000);

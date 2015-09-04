@@ -23,6 +23,14 @@ public class Edge {
         trips = new HashMap<>();
     }
 
+    public Edge (Edge lastEdge) {
+        id = lastEdge.getId();
+        departure = lastEdge.getDeparture();
+        arrival = lastEdge.getArrival();
+        trips = new HashMap<>(lastEdge.getTripMap());
+        activeTrip = lastEdge.getActiveTrip();
+    }
+
     /**
      * Trip Array should be [departure, arrival, length, line]
      */
@@ -42,6 +50,9 @@ public class Edge {
     }
     public ArrayList<Trip> getTrips(int departure) {
         return trips.get(departure);
+    }
+    public Map<Integer, ArrayList<Trip>> getTripMap() {
+        return trips;
     }
 
     public String getId() {
