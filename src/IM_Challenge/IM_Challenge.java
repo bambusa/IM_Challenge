@@ -39,6 +39,12 @@ public class IM_Challenge {
     public static int NNR = 4;
     public static int NNAME = 5;
     public static int ZEIT = 6;
+    // Files
+    private static final String tripCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Trips.csv";
+    private static final String transferCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Transfers.csv";
+    private static final String resultCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Result.csv";
+    private static final String waitingCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Long_Waiting_Time.csv";
+    private static final String unnecessaryCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Unnecessary_Trips.csv";
 
     public static void main(String[] args) {
         Graph graph = mapGraph();
@@ -46,6 +52,8 @@ public class IM_Challenge {
         ArrayList<Edge> route = mk_ii.start();
         check(graph, route);
         writeCSV(route);
+        printWaitingTime(graph.getLongWaitingTime());
+        printRoutes(graph.getUnnecessaryTrips());
     }
 
     /**
@@ -55,18 +63,16 @@ public class IM_Challenge {
         /*
         Mapping Trips
          */
-        Map<String, Vertex> vertexMap = new HashMap<>();
-        Map<String, Edge> edgeMap = new HashMap<>();
+        HashMap<String, Vertex> vertexMap = new HashMap<>();
+        HashMap<String, Edge> edgeMap = new HashMap<>();
         long startTime = System.currentTimeMillis();
         int rows = 0;
         int tripCount = 0;
         log("Mapping trips...");
 
-        String csvFilename = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Trips.csv";
         CSVReader csvReader = null;
-
         try {
-            csvReader = new CSVReader(new FileReader(csvFilename), ';');
+            csvReader = new CSVReader(new FileReader(tripCSV), ';');
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -152,15 +158,13 @@ public class IM_Challenge {
         /*
         Mapping Transfers
          */
-        Map<String, Transfer> transferMap = new HashMap<>();
+        HashMap<String, Transfer> transferMap = new HashMap<>();
         rows = 0;
         log("Mapping transfers...");
 
-        csvFilename = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Transfers.csv";
         csvReader = null;
-
         try {
-            csvReader = new CSVReader(new FileReader(csvFilename), ';');
+            csvReader = new CSVReader(new FileReader(transferCSV), ';');
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -178,7 +182,7 @@ public class IM_Challenge {
                     transferMap.put(tID, transfer);
                 }
                 else {
-                    log("ERROR: Transfer already existing: " + tID);
+//                    log("WARNING: Transfer already existing: " + tID);
                 }
             }
         } catch (IOException e) {
@@ -198,7 +202,16 @@ public class IM_Challenge {
 
     private static boolean check(Graph graph, ArrayList<Edge> route) {
         Edge lastEdge = null;
+        HashMap<String, Edge> allEdges = new HashMap<>(graph.getEdges());
         for (Edge edge : route) {
+            if (allEdges.containsKey(edge.getId())) {
+                allEdges.remove(edge.getId());
+            }
+            String reverseEdgeId = edge.getArrival().getId() + edge.getDeparture().getId();
+            if (allEdges.containsKey(reverseEdgeId)) {
+                allEdges.remove(reverseEdgeId);
+            }
+
             if (lastEdge != null) {
                 if (graph.getEdges().containsKey(edge.getId())) {
                     if (graph.getEdges().get(edge.getId()).containsTrips(edge.getActiveTrip().getDepartureTime()) && graph.getEdges().get(edge.getId()).getTrips(edge.getActiveTrip().getDepartureTime()).contains(edge.getActiveTrip())) {
@@ -252,23 +265,34 @@ public class IM_Challenge {
             }
         }
 
-        log("check | Route check successful");
-        return true;
+        if (allEdges.size() == 0) {
+            log("check | Route check successful");
+            return true;
+        }
+        else {
+            log("check | ERROR: " + allEdges.size() + " edges not visited");
+            return false;
+        }
     }
 
     private static void writeCSV(List<Edge> route){
+        deleteIfExists(resultCSV);
+
         CSVWriter writer = null;
         try {
-            writer = new CSVWriter(new FileWriter("C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Result.csv"), ';');
+            writer = new CSVWriter(new FileWriter(resultCSV), ';');
         } catch (IOException e) {
             e.printStackTrace();
         }
+//        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE"}; Lehrstuhl
         String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE","AB_X","AB_Y","AN_X","AN_Y"};
         writer.writeNext(values);
 
         for (Edge edge : route) {
 //            log("writeCSV | Writing " + edge.toString() + " , " + edge.getActiveTrip().toString());
-            values = new String[]{edge.getActiveTrip().getDepartureTime()/60+"", edge.getActiveTrip().getArrivalTime()/60+"", edge.getDeparture().getName(), edge.getArrival().getName(),
+            /*values = new String[]{edge.getActiveTrip().getDepartureTime()/60+"", edge.getActiveTrip().getArrivalTime()/60+"", edge.getDeparture().getName(), edge.getArrival().getName(),
+                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+""};*/
+            values = new String[]{timeFromSeconds(edge.getActiveTrip().getDepartureTime()), timeFromSeconds(edge.getActiveTrip().getArrivalTime()), edge.getDeparture().getName(), edge.getArrival().getName(),
                                     edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+"",
                                     edge.getDeparture().getGeoX(), edge.getDeparture().getGeoY(), edge.getArrival().getGeoX(), edge.getArrival().getGeoY()};
             writer.writeNext(values);
@@ -281,11 +305,106 @@ public class IM_Challenge {
         }
     }
 
+    private static void printRoutes(ArrayList<List<Edge>> unnecessaryTrips) {
+        deleteIfExists(unnecessaryCSV);
+
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter(unnecessaryCSV), ';');
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","TRANSPORTMITTEL","LINIE"};
+        writer.writeNext(values);
+
+        for (List<Edge> trip : unnecessaryTrips) {
+            Edge lastEdge = trip.get(0);
+            values = new String[] {"","","","","",""};
+            writer.writeNext(values);
+            values = new String[] {"Last","Trip","","","",""};
+            writer.writeNext(values);
+            values = new String[] {timeFromSeconds(lastEdge.getActiveTrip().getDepartureTime()),timeFromSeconds(lastEdge.getActiveTrip().getArrivalTime()),
+                    lastEdge.getDeparture().getName(),lastEdge.getArrival().getName(),"TRAM",lastEdge.getActiveTrip().getLine()+""};
+            writer.writeNext(values);
+            values = new String[] {"Next","Trips","","","Taking:",timeFromSeconds(trip.get(trip.size()-1).getActiveTrip().getArrivalTime() - lastEdge.getActiveTrip().getDepartureTime())};
+            writer.writeNext(values);
+
+            for (int i = 1; i < trip.size(); i++) {
+                lastEdge = trip.get(i);
+                values = new String[]{timeFromSeconds(lastEdge.getActiveTrip().getDepartureTime()),timeFromSeconds(lastEdge.getActiveTrip().getArrivalTime()),
+                        lastEdge.getDeparture().getName(),lastEdge.getArrival().getName(),"TRAM",lastEdge.getActiveTrip().getLine()+""};
+                writer.writeNext(values);
+            }
+        }
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void printWaitingTime(ArrayList<List<Edge>> longWaitingTime) {
+        deleteIfExists(waitingCSV);
+
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter(waitingCSV), ';');
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","TRANSPORTMITTEL","LINIE"};
+        writer.writeNext(values);
+
+        for (List<Edge> trip : longWaitingTime) {
+            Edge lastEdge = trip.get(0);
+            Edge newEdge = trip.get(1);
+            values = new String[] {"","","","","",""};
+            writer.writeNext(values);
+            values = new String[] {"Last","Trip","","","",""};
+            writer.writeNext(values);
+            values = new String[] {timeFromSeconds(lastEdge.getActiveTrip().getDepartureTime()),timeFromSeconds(lastEdge.getActiveTrip().getArrivalTime()),
+                    lastEdge.getDeparture().getName(),lastEdge.getArrival().getName(),"TRAM",lastEdge.getActiveTrip().getLine()+""};
+            writer.writeNext(values);
+            values = new String[] {"Next","Trip","","","Waiting:",timeFromSeconds(newEdge.getActiveTrip().getDepartureTime() - lastEdge.getActiveTrip().getArrivalTime())};
+            writer.writeNext(values);
+            values = new String[] {timeFromSeconds(newEdge.getActiveTrip().getDepartureTime()),timeFromSeconds(newEdge.getActiveTrip().getArrivalTime()),
+                    newEdge.getDeparture().getName(),newEdge.getArrival().getName(),"TRAM",newEdge.getActiveTrip().getLine()+""};
+            writer.writeNext(values);
+        }
+
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void deleteIfExists(String resultCSV) {
+        try{
+            File fileTemp = new File(resultCSV);
+            if (fileTemp.exists()){
+                fileTemp.delete();
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
 
     private static void measureTime(long startTime, String task) {
         double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 1000);
         log("Finished " + task + " in " + elapsedTime + " seconds");
+    }
+
+    public static String timeFromSeconds(int seconds) {
+        int minutes = (int) Math.ceil(seconds / 60);
+        int hours = (int) Math.floor(minutes / 60);
+        String remainingMinutes = String.format("%02d", (minutes - (hours * 60)));
+        return hours + ":" + remainingMinutes + " (" + seconds + ")";
     }
 
     private static void log(String message) {

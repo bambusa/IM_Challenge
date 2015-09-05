@@ -11,20 +11,26 @@ import java.util.Map;
  * Created by BSD on 11.07.2015.
  */
 public class Graph {
-    private Map<String, Vertex> vertexMap;
-    private Map<String, Edge> edgeMap;
-    private Map<String, Transfer> transferMap;
+    private HashMap<String, Vertex> vertexMap;
+    private HashMap<String, Edge> edgeMap;
+    private HashMap<String, Transfer> transferMap;
+    private ArrayList<List<Edge>> longWaitingTime;
+    private ArrayList<List<Edge>> unnecessaryTrips;
 
     public Graph() {
         vertexMap = new HashMap<>();
         edgeMap = new HashMap<>();
         transferMap = new HashMap<>();
+        longWaitingTime = new ArrayList<>();
+        unnecessaryTrips = new ArrayList<>();
     }
 
-    public Graph(Map<String, Vertex> vertexMap, Map<String, Edge> edgeMap, Map<String, Transfer> transferMap) {
+    public Graph(HashMap<String, Vertex> vertexMap, HashMap<String, Edge> edgeMap, HashMap<String, Transfer> transferMap) {
         this.vertexMap = vertexMap;
         this.edgeMap = edgeMap;
         this.transferMap = transferMap;
+        longWaitingTime = new ArrayList<>();
+        unnecessaryTrips = new ArrayList<>();
     }
 
     public Map<String, Vertex> getVertices() {
@@ -90,6 +96,15 @@ public class Graph {
 //            log("searchNextShortestEdgeWith | Found no remaining edges");
         }
 
+        if (shortestEdge != null) {
+//            log("searchNextShortestEdgeWith | Waiting Time: " + (shortestEdge.getActiveTrip().getDepartureTime() - lastEdge.getActiveTrip().getArrivalTime()));
+            if ((shortestEdge.getActiveTrip().getDepartureTime() - lastEdge.getActiveTrip().getArrivalTime()) >= 300) {
+                ArrayList<Edge> list = new ArrayList<>();
+                list.add(new Edge(lastEdge));
+                list.add(new Edge(shortestEdge));
+                longWaitingTime.add(list);
+            }
+        }
         return shortestEdge;
     }
 
@@ -113,8 +128,8 @@ public class Graph {
                 for (Trip trip : edge.getTrips(thisDeparture)) {
 //                    log("findNextShortestTrip | Checking " + trip.toString());
 
-                    /*** Same train, cancel furhter search ***/
-                    if (line == trip.getLine() && arrival == trip.getDepartureTime()) {
+                    /*** Same train, cancel further search, tolerate waiting time up to 10 minutes ***/
+                    if (line == trip.getLine() && trip.getDepartureTime() - arrival < 600) {
 //                        log("findNextShortestTrip | Same train is continuing on edge, cancel search");
                         return trip;
                     }
@@ -166,12 +181,29 @@ public class Graph {
         log("searchNextVertexWithUnvisited | From " + lastEdge.getArrival().getName() + ", " + potentialVerteces.size() + " remaining vertices with unvisited edges");
 
         Dijkstra dijkstra = new Dijkstra(this, lastEdge, potentialVerteces);
-        return  dijkstra.getShortestPath();
+        List<Edge> route = dijkstra.getShortestPath();
+        List<Edge> list = new ArrayList<>();
+        list.add(new Edge(lastEdge));
+        for (Edge edge : route) {
+            list.add(new Edge(edge));
+        }
+        unnecessaryTrips.add(list);
+        return route;
     }
 
     public Map<String, Transfer> getTransferMap() {
         return transferMap;
     }
+
+    public ArrayList<List<Edge>> getLongWaitingTime() {
+        return longWaitingTime;
+    }
+
+    public ArrayList<List<Edge>> getUnnecessaryTrips() {
+        return unnecessaryTrips;
+    }
+
+
 
     public String timeFromSeconds(int seconds) {
         int minutes = (int) Math.ceil(seconds / 60);
@@ -179,8 +211,6 @@ public class Graph {
         String remainingMinutes = String.format("%02d", (minutes - (hours * 60)));
         return hours + ":" + remainingMinutes + " (" + seconds + ")";
     }
-
-
 
     private void log(String message) {
         System.out.println("[Graph] " + message);
