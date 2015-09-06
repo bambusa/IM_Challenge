@@ -33,6 +33,19 @@ public class Graph {
         unnecessaryTrips = new ArrayList<>();
     }
 
+    public Graph(Graph graph) {
+        this.vertexMap = new HashMap<>(graph.getVertices());
+        this.edgeMap = new HashMap<>(graph.getEdges());
+        this.transferMap = new HashMap<>(graph.getTransferMap());
+        this.longWaitingTime = new ArrayList<>(graph.getLongWaitingTime());
+        this.unnecessaryTrips = new ArrayList<>(graph.getUnnecessaryTrips());
+    }
+
+    public void resetGraph() {
+        longWaitingTime = new ArrayList<>();
+        unnecessaryTrips = new ArrayList<>();
+    }
+
     public Map<String, Vertex> getVertices() {
         return vertexMap;
     }
@@ -79,7 +92,7 @@ public class Graph {
             for (Edge edge : unvisited) {
 //                log("searchNextShortestEdgeWith | Checking " + edge.toString());
                 Trip thisTrip = findNextShortestTrip(edge, lastTrip, -1);
-                if (shortestEdge == null || thisTrip.getDepartureTime() < shortestEdge.getActiveTrip().getDepartureTime()) {
+                if (thisTrip != null && (shortestEdge == null || thisTrip.getDepartureTime() < shortestEdge.getActiveTrip().getDepartureTime())) {
                     log("searchNextShortestEdgeWith | Found better trip at " + timeFromSeconds(thisTrip.getDepartureTime()) + " on line " + thisTrip.getLine() + " | " + edge.getDeparture().getName() + " -> " + edge.getArrival().getName());
                     edge.setActiveTrip(thisTrip);
                     shortestEdge = edge;
@@ -213,6 +226,6 @@ public class Graph {
     }
 
     private void log(String message) {
-        System.out.println("[Graph] " + message);
+//        System.out.println("[Graph] " + message);
     }
 }

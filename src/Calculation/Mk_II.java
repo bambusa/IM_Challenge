@@ -80,11 +80,25 @@ public class Mk_II {
                 log("No unvisited edge in " + lastEdge.getArrival().getName() + " remaining");
                 List<Edge> routeToVertex = graph.searchNextVertexWithUnvisited(lastEdge, unvisited);
 
-                for (Edge edge : routeToVertex) {
-                    lastEdge = edge;
-                    Edge addEdge = new Edge(lastEdge);
-                    route.add(addEdge);
-                    unvisited.removeAll(graph.getEdgesBetween(lastEdge.getDeparture(), lastEdge.getArrival()));
+                if (routeToVertex.size() > 0) {
+                    for (Edge edge : routeToVertex) {
+                        lastEdge = edge;
+                        Edge addEdge = new Edge(lastEdge);
+                        route.add(addEdge);
+                        unvisited.removeAll(graph.getEdgesBetween(lastEdge.getDeparture(), lastEdge.getArrival()));
+                    }
+                }
+                else {
+                    log("");
+                    log("<<< ___________________________________________________________________ >>>");
+                    log("<<< Failure! Complete route not possible, remaining vertices:");
+                    String unv = "";
+                    for (Edge edge : unvisited) {
+                        unv += edge.toString() + ", ";
+                    }
+                    log(unv);
+                    measureTime(algoTime, "Failed Mk II");
+                    return null;
                 }
             }
         }
@@ -119,7 +133,7 @@ public class Mk_II {
 
 
     private void log(String message) {
-        System.out.println("[Mk_II] " + message);
+//        System.out.println("[Mk_II] " + message);
     }
 
     private void measureTime(long startTime, String task) {

@@ -47,13 +47,45 @@ public class IM_Challenge {
     private static final String unnecessaryCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Unnecessary_Trips.csv";
 
     public static void main(String[] args) {
+        long overallTime = System.currentTimeMillis();
         Graph graph = mapGraph();
-        Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), 0, "13301", 8);
-        ArrayList<Edge> route = mk_ii.start();
-        check(graph, route);
-        writeCSV(route);
-        printWaitingTime(graph.getLongWaitingTime());
-        printRoutes(graph.getUnnecessaryTrips());
+
+        ArrayList<Edge> bestRoute = null;
+        Graph bestGraph = null;
+        int bestTime = 999999;
+        for (int time = 20340; time < 43200; time += 600) {
+            graph.resetGraph();
+            graph = new Graph(graph);
+            Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), time, "13301", 8);
+            ArrayList<Edge> newR = mk_ii.start();
+            if (newR != null) {
+                ArrayList<Edge> route = new ArrayList<>(newR);
+                if (route != null && route.size() > 0) {
+                    log("Found new route for Iteration " + timeFromSeconds(time) + " | From " +
+                            route.get(0).getDeparture().getName() + " " + timeFromSeconds(route.get(0).getActiveTrip().getDepartureTime()) +
+                            " to " + route.get(route.size() - 1).getArrival().getName() + " " + timeFromSeconds(route.get(route.size() - 1).getActiveTrip().getArrivalTime()));
+                    int thisTime = route.get(route.size() - 1).getActiveTrip().getArrivalTime() - route.get(0).getActiveTrip().getDepartureTime();
+                    if (thisTime < bestTime && check(graph, route)) {
+                        bestRoute = route;
+                        bestGraph = graph;
+                        bestTime = thisTime;
+                    }
+                }
+            }
+            else {
+                log("WARNING: Found no route for Iteration " + timeFromSeconds(time));
+            }
+        }
+
+        if (bestRoute != null && bestRoute.size() > 0) {
+            writeCSV(bestRoute);
+            printWaitingTime(bestGraph.getLongWaitingTime());
+            printRoutes(bestGraph.getUnnecessaryTrips());
+        }
+        else {
+            log("ERROR: Found no final route");
+        }
+        measureTime(overallTime, "Complete Calculation");
     }
 
     /**
@@ -396,8 +428,8 @@ public class IM_Challenge {
 
 
     private static void measureTime(long startTime, String task) {
-        double elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 1000);
-        log("Finished " + task + " in " + elapsedTime + " seconds");
+        int elapsedTime = Math.round((System.currentTimeMillis() - startTime) / 1000);
+        log("Finished " + task + " in " + timeFromSeconds(elapsedTime));
     }
 
     public static String timeFromSeconds(int seconds) {

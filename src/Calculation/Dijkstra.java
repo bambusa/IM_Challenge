@@ -136,7 +136,7 @@ public class Dijkstra {
 
 
     private void log(String message) {
-        System.out.println("[Dijkstra] " + message);
+//        System.out.println("[Dijkstra] " + message);
     }
 
     private void measureTime(long startTime, String task) {
