@@ -40,11 +40,11 @@ public class IM_Challenge {
     public static int NNAME = 5;
     public static int ZEIT = 6;
     // Files
-    private static final String tripCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Trips.csv";
-    private static final String transferCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Transfers.csv";
-    private static final String resultCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Result.csv";
-    private static final String waitingCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Long_Waiting_Time.csv";
-    private static final String unnecessaryCSV = "C://Users/beny-/IdeaProjects/IM_Challenge/PHP Database/IM_Unnecessary_Trips.csv";
+    private static final String tripCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Trips.csv";
+    private static final String transferCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Transfers.csv";
+    private static final String resultCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Result.csv";
+    private static final String waitingCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Long_Waiting_Time.csv";
+    private static final String unnecessaryCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Unnecessary_Trips.csv";
 
     public static void main(String[] args) {
         long overallTime = System.currentTimeMillis();
