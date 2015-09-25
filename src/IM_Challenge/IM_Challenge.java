@@ -1,10 +1,13 @@
 package IM_Challenge;
 
 import Calculation.Mk_II;
+import Draw.Setup;
+import Draw.Draw;
 import Models.*;
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
 
+import java.awt.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,7 +49,7 @@ public class IM_Challenge {
     private static final String waitingCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Long_Waiting_Time.csv";
     private static final String unnecessaryCSV = "C://Users/Tristan/IdeaProjects/IM_Challenge/PHP Database/IM_Unnecessary_Trips.csv";
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         long overallTime = System.currentTimeMillis();
         Graph graph = mapGraph();
 
@@ -86,6 +89,11 @@ public class IM_Challenge {
             log("ERROR: Found no final route");
         }
         measureTime(overallTime, "Complete Calculation");
+
+        Setup setup = new Setup();
+        setup.setGraph(graph.getVertices(), graph.getEdges());
+        Draw draw = new Draw(setup.getWidth(), setup.getHeight());
+
     }
 
     /**
@@ -209,12 +217,9 @@ public class IM_Challenge {
                 String vhsbnr = String.format("%05d", Integer.parseInt(row[VHSBNR]));
                 String nhsbnr = String.format("%05d", Integer.parseInt(row[NHSBNR]));
                 String tID = vhsbnr + nhsbnr;
-                if (!transferMap.containsKey(tID)) {
+                if (!transferMap.containsKey(tID) || transferMap.get(tID).getTime() < Integer.parseInt(row[ZEIT])) {
                     Transfer transfer = new Transfer(tID, vhsbnr, nhsbnr, Integer.parseInt(row[ZEIT]));
                     transferMap.put(tID, transfer);
-                }
-                else {
-//                    log("WARNING: Transfer already existing: " + tID);
                 }
             }
         } catch (IOException e) {
