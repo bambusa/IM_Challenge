@@ -15,6 +15,7 @@ public class Setup<T> {
     ArrayList<ArrayList<Integer>> coords = new ArrayList<>();
     ArrayList<ArrayList<Integer>> lines = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> bestLines = new ArrayList<>();
     int gWidth = 0;
     int gHeight = 0;
     int xMaxValue = 0;
@@ -24,11 +25,12 @@ public class Setup<T> {
 
     public Setup() {}
 
-    public void setGraph(Map<String, Vertex> vertices, Map<String, Edge> edges){
+    public void setGraph(Map<String, Vertex> vertices, Map<String, Edge> edges, ArrayList<Edge> bestRoute){
         calculateMinAndMax(vertices);
         setCoords(vertices);
         setLines(edges);
         setNames(vertices);
+        setBestLines(bestRoute);
     }
 
     public void calculateMinAndMax(Map<String, Vertex> vertices){
@@ -116,6 +118,36 @@ public class Setup<T> {
             i++;
         }
     }
+
+    public void setBestLines(ArrayList<Edge> bestRoute) {
+        List<Edge> bestLine = bestRoute;
+
+        int i = 0;
+
+        for(Edge edge : bestLine) {
+            ArrayList<Integer> inner = new ArrayList<>();
+            inner.add(0, null);
+            inner.add(1, null);
+            inner.add(2, null);
+            inner.add(3, null);
+            Double xCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
+            int xCoordIA = xCoordDA.intValue();
+            inner.set(0, xCoordIA);
+            Double yCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
+            int yCoordIA = yCoordDA.intValue();
+            inner.set(1, yCoordIA);
+            Double xCoordDB = ((Integer.parseInt(edge.getArrival().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
+            int xCoordIB = xCoordDB.intValue();
+            inner.set(2, xCoordIB);
+            Double yCoordDB = ((Integer.parseInt(edge.getArrival().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
+            int yCoordIB = yCoordDB.intValue();
+            inner.set(3, yCoordIB);
+            bestLines.add(i, inner);
+            i++;
+        }
+    }
+
+    public ArrayList<ArrayList<Integer>> getBestLines() { return bestLines; }
 
     public ArrayList<String> getNames() { return names; }
 

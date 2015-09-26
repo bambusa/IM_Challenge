@@ -91,8 +91,8 @@ public class IM_Challenge {
         measureTime(overallTime, "Complete Calculation");
 
         Setup setup = new Setup();
-        setup.setGraph(graph.getVertices(), graph.getEdges());
-        Draw draw = new Draw(setup.getWidth(), setup.getHeight(), setup.getCoords(), setup.getLines(), setup.getNames());
+        setup.setGraph(graph.getVertices(), graph.getEdges(), bestRoute);
+        Draw draw = new Draw(setup.getWidth(), setup.getHeight(), setup.getCoords(), setup.getLines(), setup.getNames(), setup.getBestLines());
 
     }
 
