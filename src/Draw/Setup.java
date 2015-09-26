@@ -2,6 +2,8 @@ package Draw;
 
 import Models.Edge;
 import Models.Vertex;
+
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -10,8 +12,9 @@ import java.util.*;
 
 public class Setup<T> {
 
-    ArrayList<Integer> inner = new ArrayList<>();
     ArrayList<ArrayList<Integer>> coords = new ArrayList<>();
+    ArrayList<ArrayList<Integer>> lines = new ArrayList<>();
+    ArrayList<String> names = new ArrayList<>();
     int gWidth = 0;
     int gHeight = 0;
     int xMaxValue = 0;
@@ -23,8 +26,8 @@ public class Setup<T> {
 
     public void setGraph(Map<String, Vertex> vertices, Map<String, Edge> edges){
         calculateMinAndMax(vertices);
-        System.out.println("Width: " + gWidth + " | Height: " + gHeight);
         setCoords(vertices);
+        setLines(edges);
     }
 
     public void calculateMinAndMax(Map<String, Vertex> vertices){
@@ -37,7 +40,7 @@ public class Setup<T> {
             if (xCheck < xMinValue) {
                 xMinValue = xCheck;
             }
-            System.out.println("xMax: " + xMaxValue + " | xMin: " + xMinValue);
+
             int yCheck = Integer.parseInt(vertex.getGeoY().replace(".", ""));
             if (yMaxValue < yCheck) {
                 yMaxValue = yCheck;
@@ -45,7 +48,7 @@ public class Setup<T> {
             if (yCheck < yMinValue) {
                 yMinValue = yCheck;
             }
-            System.out.println("yMax: " + yMaxValue + " | yMin: " + yMinValue);
+
             gWidth = xMaxValue - xMinValue;
             gHeight = yMaxValue - yMinValue;
         }
@@ -55,26 +58,72 @@ public class Setup<T> {
         List<Vertex> coordinates = new ArrayList<>(vertices.values());
 
         int i = 0;
-        inner.add(0, null);
-        inner.add(1, null);
 
         for(Vertex vertex : coordinates) {
+            ArrayList<Integer> inner = new ArrayList<>();
+            inner.add(0, null);
+            inner.add(1, null);
             int j = 0;
-            int xCoord = Integer.parseInt(vertex.getGeoX().replace(".", ""));
-            inner.set(j, xCoord);
+            Double xCoordD = ((Integer.parseInt(vertex.getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
+            int xCoordI = xCoordD.intValue();
+            inner.set(j, xCoordI);
             j++;
-            int yCoord = Integer.parseInt(vertex.getGeoY().replace(".", ""));
-            inner.set(j, yCoord);
+            Double yCoordD = ((Integer.parseInt(vertex.getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            int yCoordI = yCoordD.intValue();
+            inner.set(j, yCoordI);
             coords.add(i, inner);
             i++;
         }
+    }
 
-        for(int k = 0; k < coords.size(); k++) {
-            int l = 0;
-            System.out.println("x: " + coords.get(k).get(l));
-            l++;
-            System.out.println("y: " + coords.get(k).get(l));
+    public void setLines(Map<String, Edge> edges) {
+        List<Edge> coordinates = new ArrayList<>(edges.values());
+
+        int i = 0;
+
+        for(Edge edge : coordinates) {
+            ArrayList<Integer> inner = new ArrayList<>();
+            inner.add(0, null);
+            inner.add(1, null);
+            inner.add(2, null);
+            inner.add(3, null);
+            Double xCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
+            int xCoordIA = xCoordDA.intValue();
+            inner.set(0, xCoordIA);
+            Double yCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            int yCoordIA = yCoordDA.intValue();
+            inner.set(1, yCoordIA);
+            Double xCoordDB = ((Integer.parseInt(edge.getArrival().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
+            int xCoordIB = xCoordDB.intValue();
+            inner.set(2, xCoordIB);
+            Double yCoordDB = ((Integer.parseInt(edge.getArrival().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            int yCoordIB = yCoordDB.intValue();
+            inner.set(3, yCoordIB);
+            lines.add(i, inner);
+            i++;
         }
+    }
+
+    public void setNames(Map<String, Vertex> vertices) {
+        List<Vertex> name = new ArrayList<>(vertices.values());
+
+        int i = 0;
+
+        for(Vertex vertex : name) {
+            String nameX = vertex.getName();
+            names.add(i, nameX);
+            i++;
+        }
+    }
+
+    public ArrayList<String> getNames() { return names; }
+
+    public ArrayList<ArrayList<Integer>> getLines() {
+        return lines;
+    }
+
+    public ArrayList<ArrayList<Integer>> getCoords() {
+        return coords;
     }
 
     public int getWidth(){

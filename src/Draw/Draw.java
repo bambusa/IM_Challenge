@@ -1,7 +1,9 @@
 package Draw;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
 
 /**
  * Created by Tristan on 23.09.2015.
@@ -36,41 +38,37 @@ public class Draw extends JFrame {
 //        panel.add(start);
 //        add(panel);
     }*/
-/*
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2 = (Graphics2D)g;
-        g2.setBackground(Color.WHITE);
-        g2.clearRect(20, 40, wWidth.intValue(), wHeight.intValue());
-        g2.setColor(Color.ORANGE);
-        g2.fillRect(40, 40, 100, 60);
-        g2.setColor(Color.GREEN);
-        g2.fillRoundRect(170, 40, 100, 60, 45, 90);
-        g2.setColor(Color.BLUE);
-        g2.drawOval(40, 105, 100, 60);
-        g2.setColor(Color.RED);
-        g2.fillOval(170, 105, 100, 60);
-    }
-*/
 
-    public Draw(int width, int height) {
+    public Draw(int width, int height, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<String> names) {
         super();
 
         setSize(1920, 1080);
         setBackground(Color.WHITE);
-        setVisible(true);
+        setLayout(null);
 
-        wWidth = width/22.5+20;
-        wHeight = height/22.5+20;
+        wWidth = width/22.5+60;
+        wHeight = height/22.5+60;
 
-        Plan plan = new Plan(wWidth, wHeight);
+        Plan plan = new Plan(wWidth, wHeight, coords, lines);
+        //plan.setLayout(new GridLayout(10, 10));
+        //plan.setBounds(10, 10, wWidth.intValue(), wHeight.intValue());
+        //plan.setBorder(BorderFactory.createTitledBorder("Panel1"));
         add(plan);
+
         Button button = new Button();
+        button.setLocation(20, wHeight.intValue()+40);
+        //button.setLayout(new GridLayout(10, 10));
+        //button.setBounds(10, wHeight.intValue(), 100, 50);
+        //button.setBorder(BorderFactory.createTitledBorder("Panel2"));
         add(button);
+
         Time time = new Time();
-        add(time);
-        Legend legend = new Legend();
+
+        Legend legend = new Legend(names);
+        legend.setLocation(wWidth.intValue()+40, 20);
         add(legend);
+
+        setVisible(true);
         //pack();
         //addKeyListener(this);
         //repaint();
@@ -81,30 +79,3 @@ public class Draw extends JFrame {
         super.repaint();
     }*/
 }
-
-
-
-/*
-import java.applet.Applet;
-import java.awt.*;
-
-public class Draw<T> extends Applet{
-
-    int width;
-    int height;
-
-    public Draw() {}
-
-    public void startPainting(int width, int height) {
-        this.width = width;
-        this.height = height;
-    }
-
-    public void paint(Graphics graph) {
-
-        graph.drawRect(50, 50, width, height);
-
-    }
-
-}
-*/

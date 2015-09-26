@@ -92,7 +92,7 @@ public class IM_Challenge {
 
         Setup setup = new Setup();
         setup.setGraph(graph.getVertices(), graph.getEdges());
-        Draw draw = new Draw(setup.getWidth(), setup.getHeight());
+        Draw draw = new Draw(setup.getWidth(), setup.getHeight(), setup.getCoords(), setup.getLines(), setup.getNames());
 
     }
 
