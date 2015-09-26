@@ -7,5 +7,14 @@ import javax.swing.*;
  */
 public class Time extends JPanel {
 
-    public Time(){}
+    public Time(){
+        setSize(300, 950);
+        JTextArea clock = new JTextArea();
+        clock.setText("Startzeit: ");
+        clock.append("\nDauer: ");
+        clock.append("\nAktuelle Zeit: ");
+        clock.setEditable(false);
+        clock.setRows(3);
+        add(clock);
+    }
 }

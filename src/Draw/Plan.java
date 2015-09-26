@@ -32,14 +32,14 @@ public class Plan extends JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setBackground(Color.WHITE);
         g2.setColor(Color.BLACK);
-        g2.drawRect(20, 20, wWidth.intValue(), wHeight.intValue());
+        g2.drawRect(20, 20, wWidth.intValue()-10, wHeight.intValue()-10);
 
         for(int i = 0; i < coords.size(); i++) {
             String number = String.valueOf(i + 1);
             g2.setColor(Color.RED);
-            g2.drawString(number, coords.get(i).get(0), coords.get(i).get(1));
+            g2.drawString(number, coords.get(i).get(0)-3, coords.get(i).get(1)-3);
             g2.setColor(Color.BLACK);
-            g2.fillOval(coords.get(i).get(0), coords.get(i).get(1), 5, 5);
+            g2.fillOval(coords.get(i).get(0)-3, coords.get(i).get(1)-3, 6, 6);
         }
 
         for(int i = 0; i < lines.size(); i++) {

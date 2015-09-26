@@ -1,7 +1,6 @@
 package Draw;
 
 import javax.swing.*;
-import java.awt.*;
 import java.util.ArrayList;
 
 /**
@@ -13,23 +12,16 @@ public class Legend extends JPanel {
 
     public Legend(ArrayList<String> names){
         this.names = names;
-        setSize(1000, 1000);
-    }
-
-    @Override
-    public void update(Graphics g) {
-        paint(g);
-    }
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setBackground(Color.WHITE);
-        g2.setColor(Color.BLACK);
-
+        setSize(300, 950);
+        JTextArea nameList = new JTextArea();
+        nameList.setText("Legende");
         for(int i = 0; i < names.size(); i++) {
             String numberAndName = String.valueOf(i + 1) + " : " + names.get(i);
-            g2.drawString(numberAndName, 10, i*10+10);
+            nameList.append("\n" + numberAndName);
         }
+        nameList.setEditable(false);
+        nameList.setRows(56);
+        JScrollPane nameScroll = new JScrollPane(nameList);
+        add(nameScroll);
     }
 }

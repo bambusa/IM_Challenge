@@ -28,6 +28,7 @@ public class Setup<T> {
         calculateMinAndMax(vertices);
         setCoords(vertices);
         setLines(edges);
+        setNames(vertices);
     }
 
     public void calculateMinAndMax(Map<String, Vertex> vertices){
@@ -68,7 +69,7 @@ public class Setup<T> {
             int xCoordI = xCoordD.intValue();
             inner.set(j, xCoordI);
             j++;
-            Double yCoordD = ((Integer.parseInt(vertex.getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            Double yCoordD = ((Integer.parseInt(vertex.getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
             int yCoordI = yCoordD.intValue();
             inner.set(j, yCoordI);
             coords.add(i, inner);
@@ -90,13 +91,13 @@ public class Setup<T> {
             Double xCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
             int xCoordIA = xCoordDA.intValue();
             inner.set(0, xCoordIA);
-            Double yCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            Double yCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
             int yCoordIA = yCoordDA.intValue();
             inner.set(1, yCoordIA);
             Double xCoordDB = ((Integer.parseInt(edge.getArrival().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
             int xCoordIB = xCoordDB.intValue();
             inner.set(2, xCoordIB);
-            Double yCoordDB = ((Integer.parseInt(edge.getArrival().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 20);
+            Double yCoordDB = ((Integer.parseInt(edge.getArrival().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
             int yCoordIB = yCoordDB.intValue();
             inner.set(3, yCoordIB);
             lines.add(i, inner);
