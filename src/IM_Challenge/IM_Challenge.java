@@ -56,7 +56,7 @@ public class IM_Challenge {
         ArrayList<Edge> bestRoute = null;
         Graph bestGraph = null;
         int bestTime = 999999;
-        for (int time = 20340; time < 43200; time += 600) {
+        for (int time = 20340; time <= 20340; time += 600) {
             graph.resetGraph();
             graph = new Graph(graph);
             Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), time, "13301", 8);
@@ -83,7 +83,7 @@ public class IM_Challenge {
         if (bestRoute != null && bestRoute.size() > 0) {
             writeCSV(bestRoute);
             printWaitingTime(bestGraph.getLongWaitingTime());
-            printRoutes(bestGraph.getUnnecessaryTrips());
+            printUnnecessaryTrips(bestGraph.getUnnecessaryTrips());
         }
         else {
             log("ERROR: Found no final route");
@@ -342,7 +342,8 @@ public class IM_Challenge {
         }
     }
 
-    private static void printRoutes(ArrayList<List<Edge>> unnecessaryTrips) {
+    private static void printUnnecessaryTrips(ArrayList<List<Edge>> unnecessaryTrips) {
+        log("printRoutes");
         deleteIfExists(unnecessaryCSV);
 
         CSVWriter writer = null;
@@ -383,6 +384,7 @@ public class IM_Challenge {
     }
 
     private static void printWaitingTime(ArrayList<List<Edge>> longWaitingTime) {
+        log("printWaitingTime");
         deleteIfExists(waitingCSV);
 
         CSVWriter writer = null;
