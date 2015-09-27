@@ -15,7 +15,7 @@ public class Draw extends JFrame {
     Double wWidth;
     Double wHeight;
 
-    public Draw(int width, int height, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<String> names, ArrayList<ArrayList<Integer>> bestRoute) {
+    public Draw(int width, int height, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<String> names, ArrayList<ArrayList<Integer>> bestLines, ArrayList<String> color) {
         super();
 
         setSize(1700, 1000);
@@ -25,7 +25,7 @@ public class Draw extends JFrame {
         wWidth = width/22.5+60;
         wHeight = height/22.5+60;
 
-        Plan plan = new Plan(wWidth, wHeight, coords, lines, bestRoute);
+        Plan plan = new Plan(wWidth, wHeight, coords, lines, bestLines, color);
         add(plan);
 
         /*

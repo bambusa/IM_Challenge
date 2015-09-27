@@ -15,25 +15,31 @@ public class Plan extends JPanel {
     Double wHeight;
     ArrayList<ArrayList<Integer>> coords;
     ArrayList<ArrayList<Integer>> lines;
-    ArrayList<ArrayList<Integer>> bestRoute;
+    ArrayList<ArrayList<Integer>> bestLines;
+    ArrayList<String> color;
     boolean repaint = false;
     Timer timer = null;
     int bestAX;
     int bestAY;
     int bestBX;
     int bestBY;
+    int activeLine;
     int r = 0;
+    String activeColor = new String();
+    String[] colorSet;
+    ArrayList<Integer> activeColInt = new ArrayList<>();
 
-    public Plan(Double wWidth, Double wHeight, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<ArrayList<Integer>> bestRoute) {
+    public Plan(Double wWidth, Double wHeight, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<ArrayList<Integer>> bestLines, ArrayList<String> color) {
         this.wWidth = wWidth;
         this.wHeight = wHeight;
         this.coords = coords;
         this.lines = lines;
-        this.bestRoute = bestRoute;
+        this.bestLines = bestLines;
+        this.color = color;
 
         timer = new Timer(300, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < bestRoute.size(); i++) {
+                for (int i = 0; i < bestLines.size(); i++) {
                     repaint();
                 }
             }
@@ -93,22 +99,75 @@ public class Plan extends JPanel {
             g2.fillOval(coords.get(i).get(0) - 3, coords.get(i).get(1) - 3, 6, 6);
         }
 
+        for (int i = 0; i < lines.size(); i++) {
+            g2.drawLine(lines.get(i).get(0), lines.get(i).get(1), lines.get(i).get(2), lines.get(i).get(3));
+        }
+
+        /*
         if(!repaint) {
             for (int i = 0; i < lines.size(); i++) {
                 g2.drawLine(lines.get(i).get(0), lines.get(i).get(1), lines.get(i).get(2), lines.get(i).get(3));
             }
         }
+        */
 
         if(repaint) {
             //for (int i = 0; i < bestRoute.size(); i++) {
-                bestAX = bestRoute.get(r).get(0);
-                bestAY = bestRoute.get(r).get(1);
-                bestBX = bestRoute.get(r).get(2);
-                bestBY = bestRoute.get(r).get(3);
-                g2.setColor(Color.RED);
-                g2.setStroke(new BasicStroke(3));
-                g2.drawLine(bestAX, bestAY, bestBX, bestBY);
-                r++;
+            bestAX = bestLines.get(r).get(0);
+            bestAY = bestLines.get(r).get(1);
+            bestBX = bestLines.get(r).get(2);
+            bestBY = bestLines.get(r).get(3);
+            activeLine = bestLines.get(r).get(4);
+            switch (activeLine) {
+                case 1:
+                    activeColor = color.get(0);
+                    break;
+                case 2:
+                    activeColor = color.get(1);
+                    break;
+                case 3:
+                    activeColor = color.get(2);
+                    break;
+                case 4:
+                    activeColor = color.get(3);
+                    break;
+                case 5:
+                    activeColor = color.get(4);
+                    break;
+                case 6:
+                    activeColor = color.get(5);
+                    break;
+                case 7:
+                    activeColor = color.get(6);
+                    break;
+                case 8:
+                    activeColor = color.get(7);
+                    break;
+                case 9:
+                    activeColor = color.get(8);
+                    break;
+                case 10:
+                    activeColor = color.get(9);
+                    break;
+                case 11:
+                    activeColor = color.get(10);
+                    break;
+                case 12:
+                    activeColor = color.get(11);
+                    break;
+                case 13:
+                    activeColor = color.get(12);
+                    break;
+            }
+            colorSet = activeColor.split(",");
+            activeColInt.add(0, Integer.parseInt(colorSet[0]));
+            activeColInt.add(1, Integer.parseInt(colorSet[1]));
+            activeColInt.add(2, Integer.parseInt(colorSet[2]));
+            Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
+            g2.setColor(col);
+            g2.setStroke(new BasicStroke(3));
+            g2.drawLine(bestAX, bestAY, bestBX, bestBY);
+            r++;
             //}
         }
     }

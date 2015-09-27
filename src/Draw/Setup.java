@@ -16,6 +16,7 @@ public class Setup<T> {
     ArrayList<ArrayList<Integer>> lines = new ArrayList<>();
     ArrayList<String> names = new ArrayList<>();
     ArrayList<ArrayList<Integer>> bestLines = new ArrayList<>();
+    ArrayList<String> color = new ArrayList<>();
     int gWidth = 0;
     int gHeight = 0;
     int xMaxValue = 0;
@@ -31,6 +32,7 @@ public class Setup<T> {
         setLines(edges);
         setNames(vertices);
         setBestLines(bestRoute);
+        setColor();
     }
 
     public void calculateMinAndMax(Map<String, Vertex> vertices){
@@ -130,6 +132,7 @@ public class Setup<T> {
             inner.add(1, null);
             inner.add(2, null);
             inner.add(3, null);
+            inner.add(4, null);
             Double xCoordDA = ((Integer.parseInt(edge.getDeparture().getGeoX().replace(".", "")) - xMinValue) / 22.5 + 20 + 10);
             int xCoordIA = xCoordDA.intValue();
             inner.set(0, xCoordIA);
@@ -142,10 +145,32 @@ public class Setup<T> {
             Double yCoordDB = ((Integer.parseInt(edge.getArrival().getGeoY().replace(".", "")) - yMinValue) / 22.5 + 20 + 10) * -1 + (gHeight / 22.5 + 40 + 30);
             int yCoordIB = yCoordDB.intValue();
             inner.set(3, yCoordIB);
+            int col = edge.getActiveTrip().getLine();
+            inner.set(4, col);
             bestLines.add(i, inner);
             i++;
         }
     }
+
+    public void setColor() {
+        for(int i = 0; i <= 13; i++) {
+            color.add(i, "238,28,40");
+            color.add(i, "240,89,55");
+            color.add(i, "236,17,99");
+            color.add(i, "205,21,39");
+            color.add(i, "0,0,0");
+            color.add(i, "255,220,1");
+            color.add(i, "157,1,56");
+            color.add(i, "37,150,66");
+            color.add(i, "135,199,101");
+            color.add(i, "250,175,24");
+            color.add(i, "180,219,174");
+            color.add(i, "0,114,73");
+            color.add(i, "254,194,16");
+        }
+    }
+
+    public ArrayList<String> getColor() { return color; }
 
     public ArrayList<ArrayList<Integer>> getBestLines() { return bestLines; }
 
