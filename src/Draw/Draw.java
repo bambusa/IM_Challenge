@@ -28,6 +28,7 @@ public class Draw extends JFrame {
         Plan plan = new Plan(wWidth, wHeight, coords, lines, bestRoute);
         add(plan);
 
+        /*
         Button button = new Button(plan);
         button.setLocation(20, wHeight.intValue()+40);
         add(button);
@@ -35,6 +36,7 @@ public class Draw extends JFrame {
         Time time = new Time();
         time.setLocation(100, wHeight.intValue()+40);
         add(time);
+        */
 
         Legend legend = new Legend(names);
         legend.setLocation(wWidth.intValue() + 40, 20);

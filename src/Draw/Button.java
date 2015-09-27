@@ -10,17 +10,27 @@ import java.awt.event.ActionListener;
  */
 public class Button extends JPanel {
 
-    Graphics g;
+    private Timer timer = null;
 
     public Button(JPanel plan) {
+
+        JButton start = new JButton("Start");
+        start.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                plan.repaint();
+            }
+        });
+
         setSize(70, 40);
+        /*
         JButton start = new JButton("Start");
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                plan.update(g);
+                plan.repaint();
             }
         });
+        */
         add(start);
     }
 }
