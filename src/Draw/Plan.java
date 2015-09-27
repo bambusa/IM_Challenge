@@ -22,6 +22,7 @@ public class Plan extends JPanel {
     int bestAY;
     int bestBX;
     int bestBY;
+    int r = 0;
 
     public Plan(Double wWidth, Double wHeight, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<ArrayList<Integer>> bestRoute) {
         this.wWidth = wWidth;
@@ -30,13 +31,9 @@ public class Plan extends JPanel {
         this.lines = lines;
         this.bestRoute = bestRoute;
 
-        timer = new Timer(30, new ActionListener() {
+        timer = new Timer(300, new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 for (int i = 0; i < bestRoute.size(); i++) {
-                    bestAX = bestRoute.get(i).get(0);
-                    bestAY = bestRoute.get(i).get(1);
-                    bestBX = bestRoute.get(i).get(2);
-                    bestBY = bestRoute.get(i).get(3);
                     repaint();
                 }
             }
@@ -104,9 +101,14 @@ public class Plan extends JPanel {
 
         if(repaint) {
             //for (int i = 0; i < bestRoute.size(); i++) {
+                bestAX = bestRoute.get(r).get(0);
+                bestAY = bestRoute.get(r).get(1);
+                bestBX = bestRoute.get(r).get(2);
+                bestBY = bestRoute.get(r).get(3);
                 g2.setColor(Color.RED);
                 g2.setStroke(new BasicStroke(3));
                 g2.drawLine(bestAX, bestAY, bestBX, bestBY);
+                r++;
             //}
         }
     }
