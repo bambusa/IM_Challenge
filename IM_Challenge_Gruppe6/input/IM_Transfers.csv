@@ -1,0 +1,1231 @@
+VHSBNR;VNR;VNAME;NHSBNR;NNR;NNAME;ZEIT
+101;1;"Dresden Bahnhof Mitte";101;1;"Dresden Bahnhof Mitte";300
+101;1;"Dresden Bahnhof Mitte";105;1;"Dresden Bahnhof Mitte";300
+101;1;"Dresden Bahnhof Mitte";105;1;"Dresden Bahnhof Mitte";180
+101;1;"Dresden Bahnhof Mitte";107;1;"Dresden Bahnhof Mitte";180
+101;1;"Dresden Bahnhof Mitte";107;1;"Dresden Bahnhof Mitte";180
+102;1;"Dresden Bahnhof Mitte";103;1;"Dresden Bahnhof Mitte";120
+102;1;"Dresden Bahnhof Mitte";104;1;"Dresden Bahnhof Mitte";120
+102;1;"Dresden Bahnhof Mitte";105;1;"Dresden Bahnhof Mitte";180
+102;1;"Dresden Bahnhof Mitte";107;1;"Dresden Bahnhof Mitte";90
+102;1;"Dresden Bahnhof Mitte";102;1;"Dresden Bahnhof Mitte";120
+103;1;"Dresden Bahnhof Mitte";104;1;"Dresden Bahnhof Mitte";180
+103;1;"Dresden Bahnhof Mitte";105;1;"Dresden Bahnhof Mitte";240
+103;1;"Dresden Bahnhof Mitte";107;1;"Dresden Bahnhof Mitte";180
+103;1;"Dresden Bahnhof Mitte";102;1;"Dresden Bahnhof Mitte";120
+103;1;"Dresden Bahnhof Mitte";103;1;"Dresden Bahnhof Mitte";120
+104;1;"Dresden Bahnhof Mitte";104;1;"Dresden Bahnhof Mitte";120
+104;1;"Dresden Bahnhof Mitte";105;1;"Dresden Bahnhof Mitte";240
+104;1;"Dresden Bahnhof Mitte";107;1;"Dresden Bahnhof Mitte";300
+104;1;"Dresden Bahnhof Mitte";102;1;"Dresden Bahnhof Mitte";120
+104;1;"Dresden Bahnhof Mitte";103;1;"Dresden Bahnhof Mitte";180
+105;1;"Dresden Bahnhof Mitte";101;1;"Dresden Bahnhof Mitte";300
+105;1;"Dresden Bahnhof Mitte";101;1;"Dresden Bahnhof Mitte";180
+105;1;"Dresden Bahnhof Mitte";102;1;"Dresden Bahnhof Mitte";180
+105;1;"Dresden Bahnhof Mitte";103;1;"Dresden Bahnhof Mitte";240
+105;1;"Dresden Bahnhof Mitte";104;1;"Dresden Bahnhof Mitte";240
+107;1;"Dresden Bahnhof Mitte";101;1;"Dresden Bahnhof Mitte";180
+107;1;"Dresden Bahnhof Mitte";102;1;"Dresden Bahnhof Mitte";90
+107;1;"Dresden Bahnhof Mitte";103;1;"Dresden Bahnhof Mitte";180
+107;1;"Dresden Bahnhof Mitte";104;1;"Dresden Bahnhof Mitte";300
+107;1;"Dresden Bahnhof Mitte";101;1;"Dresden Bahnhof Mitte";180
+301;3;"Dresden Prager Straße";301;3;"Dresden Prager Straße";120
+301;3;"Dresden Prager Straße";302;3;"Dresden Prager Straße";120
+302;3;"Dresden Prager Straße";301;3;"Dresden Prager Straße";120
+302;3;"Dresden Prager Straße";302;3;"Dresden Prager Straße";120
+401;4;"Dresden Altmarkt";402;4;"Dresden Altmarkt";180
+401;4;"Dresden Altmarkt";401;4;"Dresden Altmarkt";120
+402;4;"Dresden Altmarkt";401;4;"Dresden Altmarkt";180
+402;4;"Dresden Altmarkt";402;4;"Dresden Altmarkt";120
+501;5;"Dresden Pirnaischer Platz";505;5;"Dresden Pirnaischer Platz";480
+501;5;"Dresden Pirnaischer Platz";502;5;"Dresden Pirnaischer Platz";180
+501;5;"Dresden Pirnaischer Platz";503;5;"Dresden Pirnaischer Platz";180
+501;5;"Dresden Pirnaischer Platz";504;5;"Dresden Pirnaischer Platz";180
+501;5;"Dresden Pirnaischer Platz";501;5;"Dresden Pirnaischer Platz";120
+502;5;"Dresden Pirnaischer Platz";502;5;"Dresden Pirnaischer Platz";120
+502;5;"Dresden Pirnaischer Platz";503;5;"Dresden Pirnaischer Platz";180
+502;5;"Dresden Pirnaischer Platz";504;5;"Dresden Pirnaischer Platz";240
+502;5;"Dresden Pirnaischer Platz";501;5;"Dresden Pirnaischer Platz";180
+502;5;"Dresden Pirnaischer Platz";505;5;"Dresden Pirnaischer Platz";420
+503;5;"Dresden Pirnaischer Platz";503;5;"Dresden Pirnaischer Platz";120
+503;5;"Dresden Pirnaischer Platz";504;5;"Dresden Pirnaischer Platz";180
+503;5;"Dresden Pirnaischer Platz";501;5;"Dresden Pirnaischer Platz";180
+503;5;"Dresden Pirnaischer Platz";505;5;"Dresden Pirnaischer Platz";420
+503;5;"Dresden Pirnaischer Platz";502;5;"Dresden Pirnaischer Platz";180
+504;5;"Dresden Pirnaischer Platz";503;5;"Dresden Pirnaischer Platz";180
+504;5;"Dresden Pirnaischer Platz";504;5;"Dresden Pirnaischer Platz";120
+504;5;"Dresden Pirnaischer Platz";501;5;"Dresden Pirnaischer Platz";180
+504;5;"Dresden Pirnaischer Platz";505;5;"Dresden Pirnaischer Platz";480
+504;5;"Dresden Pirnaischer Platz";502;5;"Dresden Pirnaischer Platz";240
+505;5;"Dresden Pirnaischer Platz";504;5;"Dresden Pirnaischer Platz";480
+505;5;"Dresden Pirnaischer Platz";501;5;"Dresden Pirnaischer Platz";480
+505;5;"Dresden Pirnaischer Platz";505;5;"Dresden Pirnaischer Platz";120
+505;5;"Dresden Pirnaischer Platz";502;5;"Dresden Pirnaischer Platz";420
+505;5;"Dresden Pirnaischer Platz";503;5;"Dresden Pirnaischer Platz";420
+601;6;"DD Deutsches Hygiene-Museum";602;6;"DD Deutsches Hygiene-Museum";600
+601;6;"DD Deutsches Hygiene-Museum";601;6;"DD Deutsches Hygiene-Museum";120
+602;6;"DD Deutsches Hygiene-Museum";602;6;"DD Deutsches Hygiene-Museum";120
+602;6;"DD Deutsches Hygiene-Museum";601;6;"DD Deutsches Hygiene-Museum";600
+701;7;"Dresden Straßburger Platz";706;7;"Dresden Straßburger Platz";120
+701;7;"Dresden Straßburger Platz";703;7;"Dresden Straßburger Platz";420
+701;7;"Dresden Straßburger Platz";704;7;"Dresden Straßburger Platz";120
+701;7;"Dresden Straßburger Platz";705;7;"Dresden Straßburger Platz";120
+701;7;"Dresden Straßburger Platz";701;7;"Dresden Straßburger Platz";120
+703;7;"Dresden Straßburger Platz";706;7;"Dresden Straßburger Platz";480
+703;7;"Dresden Straßburger Platz";703;7;"Dresden Straßburger Platz";120
+703;7;"Dresden Straßburger Platz";704;7;"Dresden Straßburger Platz";300
+703;7;"Dresden Straßburger Platz";705;7;"Dresden Straßburger Platz";300
+703;7;"Dresden Straßburger Platz";701;7;"Dresden Straßburger Platz";420
+704;7;"Dresden Straßburger Platz";704;7;"Dresden Straßburger Platz";120
+704;7;"Dresden Straßburger Platz";705;7;"Dresden Straßburger Platz";120
+704;7;"Dresden Straßburger Platz";701;7;"Dresden Straßburger Platz";120
+704;7;"Dresden Straßburger Platz";706;7;"Dresden Straßburger Platz";120
+704;7;"Dresden Straßburger Platz";703;7;"Dresden Straßburger Platz";300
+705;7;"Dresden Straßburger Platz";704;7;"Dresden Straßburger Platz";120
+705;7;"Dresden Straßburger Platz";705;7;"Dresden Straßburger Platz";120
+705;7;"Dresden Straßburger Platz";701;7;"Dresden Straßburger Platz";120
+705;7;"Dresden Straßburger Platz";706;7;"Dresden Straßburger Platz";120
+705;7;"Dresden Straßburger Platz";703;7;"Dresden Straßburger Platz";300
+706;7;"Dresden Straßburger Platz";704;7;"Dresden Straßburger Platz";120
+706;7;"Dresden Straßburger Platz";705;7;"Dresden Straßburger Platz";120
+706;7;"Dresden Straßburger Platz";701;7;"Dresden Straßburger Platz";120
+706;7;"Dresden Straßburger Platz";706;7;"Dresden Straßburger Platz";120
+706;7;"Dresden Straßburger Platz";703;7;"Dresden Straßburger Platz";480
+801;8;"Dresden Großer Garten";801;8;"Dresden Großer Garten";120
+801;8;"Dresden Großer Garten";802;8;"Dresden Großer Garten";120
+802;8;"Dresden Großer Garten";801;8;"Dresden Großer Garten";120
+802;8;"Dresden Großer Garten";802;8;"Dresden Großer Garten";120
+901;9;"Dresden Dürerstraße";901;9;"Dresden Dürerstraße";60
+1001;10;"Dresden Sachsenallee";1001;10;"Dresden Sachsenallee";120
+1101;11;"Dresden Rosa-Luxemburg-Platz";1101;11;"Dresden Rosa-Luxemburg-Platz";120
+1201;12;"DD Bautzner/Rothenburger Str.";1201;12;"DD Bautzner/Rothenburger Str.";120
+1201;12;"DD Bautzner/Rothenburger Str.";1203;12;"DD Bautzner/Rothenburger Str.";180
+1201;12;"DD Bautzner/Rothenburger Str.";1202;12;"DD Bautzner/Rothenburger Str.";120
+1202;12;"DD Bautzner/Rothenburger Str.";1201;12;"DD Bautzner/Rothenburger Str.";120
+1202;12;"DD Bautzner/Rothenburger Str.";1203;12;"DD Bautzner/Rothenburger Str.";120
+1202;12;"DD Bautzner/Rothenburger Str.";1202;12;"DD Bautzner/Rothenburger Str.";120
+1203;12;"DD Bautzner/Rothenburger Str.";1201;12;"DD Bautzner/Rothenburger Str.";180
+1203;12;"DD Bautzner/Rothenburger Str.";1203;12;"DD Bautzner/Rothenburger Str.";120
+1203;12;"DD Bautzner/Rothenburger Str.";1202;12;"DD Bautzner/Rothenburger Str.";120
+1301;13;"Dresden Albertplatz";1301;13;"Dresden Albertplatz";120
+1301;13;"Dresden Albertplatz";1304;13;"Dresden Albertplatz";240
+1301;13;"Dresden Albertplatz";1302;13;"Dresden Albertplatz";180
+1301;13;"Dresden Albertplatz";1303;13;"Dresden Albertplatz";240
+1302;13;"Dresden Albertplatz";1304;13;"Dresden Albertplatz";240
+1302;13;"Dresden Albertplatz";1302;13;"Dresden Albertplatz";120
+1302;13;"Dresden Albertplatz";1303;13;"Dresden Albertplatz";360
+1302;13;"Dresden Albertplatz";1301;13;"Dresden Albertplatz";180
+1303;13;"Dresden Albertplatz";1304;13;"Dresden Albertplatz";420
+1303;13;"Dresden Albertplatz";1302;13;"Dresden Albertplatz";360
+1303;13;"Dresden Albertplatz";1303;13;"Dresden Albertplatz";120
+1303;13;"Dresden Albertplatz";1301;13;"Dresden Albertplatz";240
+1304;13;"Dresden Albertplatz";1302;13;"Dresden Albertplatz";240
+1304;13;"Dresden Albertplatz";1303;13;"Dresden Albertplatz";420
+1304;13;"Dresden Albertplatz";1301;13;"Dresden Albertplatz";240
+1304;13;"Dresden Albertplatz";1304;13;"Dresden Albertplatz";120
+1401;14;"Dresden Carolaplatz";1402;14;"Dresden Carolaplatz";120
+1401;14;"Dresden Carolaplatz";1401;14;"Dresden Carolaplatz";120
+1402;14;"Dresden Carolaplatz";1402;14;"Dresden Carolaplatz";120
+1402;14;"Dresden Carolaplatz";1401;14;"Dresden Carolaplatz";120
+1501;15;"Dresden Synagoge";1501;15;"Dresden Synagoge";120
+1601;16;"Dresden Bahnhof Neustadt";1607;16;"Dresden Bahnhof Neustadt";180
+1601;16;"Dresden Bahnhof Neustadt";1603;16;"Dresden Bahnhof Neustadt";180
+1601;16;"Dresden Bahnhof Neustadt";1601;16;"Dresden Bahnhof Neustadt";180
+1602;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";60
+1602;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";180
+1602;16;"Dresden Bahnhof Neustadt";1607;16;"Dresden Bahnhof Neustadt";120
+1602;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";120
+1602;16;"Dresden Bahnhof Neustadt";1603;16;"Dresden Bahnhof Neustadt";180
+1602;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";240
+1603;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";180
+1603;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";180
+1603;16;"Dresden Bahnhof Neustadt";1601;16;"Dresden Bahnhof Neustadt";180
+1603;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";300
+1603;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";180
+1604;16;"Dresden Bahnhof Neustadt";1607;16;"Dresden Bahnhof Neustadt";240
+1604;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";240
+1604;16;"Dresden Bahnhof Neustadt";1603;16;"Dresden Bahnhof Neustadt";300
+1604;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";120
+1604;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";240
+1604;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";180
+1605;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";60
+1605;16;"Dresden Bahnhof Neustadt";1603;16;"Dresden Bahnhof Neustadt";180
+1605;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";240
+1605;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";120
+1605;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";180
+1605;16;"Dresden Bahnhof Neustadt";1607;16;"Dresden Bahnhof Neustadt";120
+1606;16;"Dresden Bahnhof Neustadt";1603;16;"Dresden Bahnhof Neustadt";180
+1606;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";180
+1606;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";180
+1606;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";120
+1606;16;"Dresden Bahnhof Neustadt";1607;16;"Dresden Bahnhof Neustadt";120
+1606;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";180
+1607;16;"Dresden Bahnhof Neustadt";1604;16;"Dresden Bahnhof Neustadt";240
+1607;16;"Dresden Bahnhof Neustadt";1605;16;"Dresden Bahnhof Neustadt";120
+1607;16;"Dresden Bahnhof Neustadt";1606;16;"Dresden Bahnhof Neustadt";120
+1607;16;"Dresden Bahnhof Neustadt";1601;16;"Dresden Bahnhof Neustadt";180
+1607;16;"Dresden Bahnhof Neustadt";1602;16;"Dresden Bahnhof Neustadt";120
+1701;17;"Dresden Anton-/Leipziger Str.";1703;17;"Dresden Anton-/Leipziger Str.";180
+1701;17;"Dresden Anton-/Leipziger Str.";1704;17;"Dresden Anton-/Leipziger Str.";180
+1701;17;"Dresden Anton-/Leipziger Str.";1701;17;"Dresden Anton-/Leipziger Str.";120
+1701;17;"Dresden Anton-/Leipziger Str.";1705;17;"Dresden Anton-/Leipziger Str.";180
+1701;17;"Dresden Anton-/Leipziger Str.";1702;17;"Dresden Anton-/Leipziger Str.";300
+1702;17;"Dresden Anton-/Leipziger Str.";1703;17;"Dresden Anton-/Leipziger Str.";300
+1702;17;"Dresden Anton-/Leipziger Str.";1704;17;"Dresden Anton-/Leipziger Str.";120
+1702;17;"Dresden Anton-/Leipziger Str.";1701;17;"Dresden Anton-/Leipziger Str.";300
+1702;17;"Dresden Anton-/Leipziger Str.";1705;17;"Dresden Anton-/Leipziger Str.";180
+1702;17;"Dresden Anton-/Leipziger Str.";1702;17;"Dresden Anton-/Leipziger Str.";120
+1703;17;"Dresden Anton-/Leipziger Str.";1704;17;"Dresden Anton-/Leipziger Str.";120
+1703;17;"Dresden Anton-/Leipziger Str.";1701;17;"Dresden Anton-/Leipziger Str.";180
+1703;17;"Dresden Anton-/Leipziger Str.";1705;17;"Dresden Anton-/Leipziger Str.";180
+1703;17;"Dresden Anton-/Leipziger Str.";1702;17;"Dresden Anton-/Leipziger Str.";300
+1703;17;"Dresden Anton-/Leipziger Str.";1703;17;"Dresden Anton-/Leipziger Str.";120
+1704;17;"Dresden Anton-/Leipziger Str.";1704;17;"Dresden Anton-/Leipziger Str.";120
+1704;17;"Dresden Anton-/Leipziger Str.";1701;17;"Dresden Anton-/Leipziger Str.";180
+1704;17;"Dresden Anton-/Leipziger Str.";1705;17;"Dresden Anton-/Leipziger Str.";180
+1704;17;"Dresden Anton-/Leipziger Str.";1702;17;"Dresden Anton-/Leipziger Str.";120
+1704;17;"Dresden Anton-/Leipziger Str.";1703;17;"Dresden Anton-/Leipziger Str.";120
+1705;17;"Dresden Anton-/Leipziger Str.";1701;17;"Dresden Anton-/Leipziger Str.";180
+1705;17;"Dresden Anton-/Leipziger Str.";1705;17;"Dresden Anton-/Leipziger Str.";120
+1705;17;"Dresden Anton-/Leipziger Str.";1702;17;"Dresden Anton-/Leipziger Str.";180
+1705;17;"Dresden Anton-/Leipziger Str.";1703;17;"Dresden Anton-/Leipziger Str.";180
+1705;17;"Dresden Anton-/Leipziger Str.";1704;17;"Dresden Anton-/Leipziger Str.";180
+1801;18;"Dresden Palaisplatz";1801;18;"Dresden Palaisplatz";120
+1801;18;"Dresden Palaisplatz";1802;18;"Dresden Palaisplatz";120
+1802;18;"Dresden Palaisplatz";1801;18;"Dresden Palaisplatz";120
+1802;18;"Dresden Palaisplatz";1802;18;"Dresden Palaisplatz";120
+1901;19;"Dresden Neustädter Markt";1902;19;"Dresden Neustädter Markt";180
+1901;19;"Dresden Neustädter Markt";1901;19;"Dresden Neustädter Markt";120
+1902;19;"Dresden Neustädter Markt";1902;19;"Dresden Neustädter Markt";120
+1902;19;"Dresden Neustädter Markt";1901;19;"Dresden Neustädter Markt";180
+2001;20;"Dresden Theaterplatz";2001;20;"Dresden Theaterplatz";120
+2001;20;"Dresden Theaterplatz";2002;20;"Dresden Theaterplatz";180
+2002;20;"Dresden Theaterplatz";2001;20;"Dresden Theaterplatz";180
+2002;20;"Dresden Theaterplatz";2002;20;"Dresden Theaterplatz";120
+2101;21;"DD Kongresszentrum/H d Presse";2101;21;"DD Kongresszentrum/H d Presse";120
+2101;21;"DD Kongresszentrum/H d Presse";2102;21;"DD Kongresszentrum/H d Presse";180
+2102;21;"DD Kongresszentrum/H d Presse";2102;21;"DD Kongresszentrum/H d Presse";120
+2102;21;"DD Kongresszentrum/H d Presse";2101;21;"DD Kongresszentrum/H d Presse";180
+2301;23;"Dresden Schweriner Straße";2301;23;"Dresden Schweriner Straße";120
+2501;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";180
+2501;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";180
+2501;25;"Dresden Hp Freiberger Straße";2505;25;"Dresden Hp Freiberger Straße";360
+2501;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";120
+2501;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";120
+2501;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";180
+2502;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";90
+2502;25;"Dresden Hp Freiberger Straße";2505;25;"Dresden Hp Freiberger Straße";360
+2502;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";120
+2502;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";120
+2502;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";180
+2502;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";180
+2503;25;"Dresden Hp Freiberger Straße";2503;25;"Dresden Hp Freiberger Straße";180
+2503;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";120
+2503;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";180
+2503;25;"Dresden Hp Freiberger Straße";2505;25;"Dresden Hp Freiberger Straße";180
+2504;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";180
+2504;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";90
+2504;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";180
+2504;25;"Dresden Hp Freiberger Straße";2503;25;"Dresden Hp Freiberger Straße";120
+2504;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";180
+2504;25;"Dresden Hp Freiberger Straße";2503;25;"Dresden Hp Freiberger Straße";180
+2505;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";360
+2505;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";360
+2505;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";180
+2505;25;"Dresden Hp Freiberger Straße";2503;25;"Dresden Hp Freiberger Straße";180
+2505;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";300
+2506;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";180
+2506;25;"Dresden Hp Freiberger Straße";2505;25;"Dresden Hp Freiberger Straße";180
+2506;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";180
+2506;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";120
+2506;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";180
+2506;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";180
+2507;25;"Dresden Hp Freiberger Straße";2501;25;"Dresden Hp Freiberger Straße";180
+2507;25;"Dresden Hp Freiberger Straße";2505;25;"Dresden Hp Freiberger Straße";300
+2507;25;"Dresden Hp Freiberger Straße";2502;25;"Dresden Hp Freiberger Straße";180
+2507;25;"Dresden Hp Freiberger Straße";2506;25;"Dresden Hp Freiberger Straße";180
+2507;25;"Dresden Hp Freiberger Straße";2507;25;"Dresden Hp Freiberger Straße";180
+2507;25;"Dresden Hp Freiberger Straße";2504;25;"Dresden Hp Freiberger Straße";180
+2601;26;"Dresden Alfred-Althus-Straße";2601;26;"Dresden Alfred-Althus-Straße";120
+2701;27;"Dresden Budapester Straße";2702;27;"Dresden Budapester Straße";180
+2701;27;"Dresden Budapester Straße";2701;27;"Dresden Budapester Straße";120
+2702;27;"Dresden Budapester Straße";2701;27;"Dresden Budapester Straße";180
+2702;27;"Dresden Budapester Straße";2702;27;"Dresden Budapester Straße";120
+2801;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2801;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2801;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";300
+2801;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2801;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";300
+2801;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";180
+2801;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";120
+2801;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";180
+2801;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2802;28;"Dresden Hauptbahnhof";2804;28;"Dresden Hauptbahnhof";180
+2802;28;"Dresden Hauptbahnhof";2802;28;"Dresden Hauptbahnhof";120
+2802;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";120
+2802;28;"Dresden Hauptbahnhof";2803;28;"Dresden Hauptbahnhof";180
+2803;28;"Dresden Hauptbahnhof";2802;28;"Dresden Hauptbahnhof";180
+2803;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";180
+2803;28;"Dresden Hauptbahnhof";2803;28;"Dresden Hauptbahnhof";120
+2803;28;"Dresden Hauptbahnhof";2804;28;"Dresden Hauptbahnhof";300
+2804;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";120
+2804;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";180
+2804;28;"Dresden Hauptbahnhof";2803;28;"Dresden Hauptbahnhof";300
+2804;28;"Dresden Hauptbahnhof";2804;28;"Dresden Hauptbahnhof";120
+2804;28;"Dresden Hauptbahnhof";2802;28;"Dresden Hauptbahnhof";180
+2805;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";180
+2805;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";180
+2805;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";420
+2805;28;"Dresden Hauptbahnhof";2804;28;"Dresden Hauptbahnhof";180
+2805;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";180
+2805;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";360
+2805;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";180
+2806;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";180
+2806;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";120
+2806;28;"Dresden Hauptbahnhof";2803;28;"Dresden Hauptbahnhof";180
+2806;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";180
+2806;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";120
+2806;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";420
+2806;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";240
+2807;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";180
+2807;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";180
+2807;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";300
+2807;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";180
+2807;28;"Dresden Hauptbahnhof";2804;28;"Dresden Hauptbahnhof";120
+2807;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2807;28;"Dresden Hauptbahnhof";2802;28;"Dresden Hauptbahnhof";120
+2807;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";180
+2808;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";180
+2808;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";360
+2808;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";120
+2808;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";420
+2808;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";180
+2808;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";180
+2808;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2808;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";180
+2808;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";180
+2809;28;"Dresden Hauptbahnhof";2809;28;"Dresden Hauptbahnhof";300
+2809;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2809;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";300
+2809;28;"Dresden Hauptbahnhof";2808;28;"Dresden Hauptbahnhof";300
+2809;28;"Dresden Hauptbahnhof";2801;28;"Dresden Hauptbahnhof";300
+2809;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";180
+2809;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";420
+2809;28;"Dresden Hauptbahnhof";2807;28;"Dresden Hauptbahnhof";180
+2809;28;"Dresden Hauptbahnhof";2805;28;"Dresden Hauptbahnhof";180
+2809;28;"Dresden Hauptbahnhof";2806;28;"Dresden Hauptbahnhof";240
+2901;29;"Dresden Walpurgisstraße";2902;29;"Dresden Walpurgisstraße";120
+2901;29;"Dresden Walpurgisstraße";2901;29;"Dresden Walpurgisstraße";120
+2902;29;"Dresden Walpurgisstraße";2901;29;"Dresden Walpurgisstraße";120
+2902;29;"Dresden Walpurgisstraße";2902;29;"Dresden Walpurgisstraße";120
+3001;30;"Dresden Gret-Palucca-Straße";3001;30;"Dresden Gret-Palucca-Straße";120
+3001;30;"Dresden Gret-Palucca-Straße";3003;30;"Dresden Gret-Palucca-Straße";180
+3001;30;"Dresden Gret-Palucca-Straße";3002;30;"Dresden Gret-Palucca-Straße";180
+3002;30;"Dresden Gret-Palucca-Straße";3001;30;"Dresden Gret-Palucca-Straße";180
+3002;30;"Dresden Gret-Palucca-Straße";3003;30;"Dresden Gret-Palucca-Straße";300
+3002;30;"Dresden Gret-Palucca-Straße";3002;30;"Dresden Gret-Palucca-Straße";120
+3003;30;"Dresden Gret-Palucca-Straße";3003;30;"Dresden Gret-Palucca-Straße";120
+3003;30;"Dresden Gret-Palucca-Straße";3002;30;"Dresden Gret-Palucca-Straße";300
+3003;30;"Dresden Gret-Palucca-Straße";3001;30;"Dresden Gret-Palucca-Straße";180
+3201;32;"Dresden Hauptbahnhof Nord";3202;32;"Dresden Hauptbahnhof Nord";120
+3201;32;"Dresden Hauptbahnhof Nord";3201;32;"Dresden Hauptbahnhof Nord";120
+3202;32;"Dresden Hauptbahnhof Nord";3202;32;"Dresden Hauptbahnhof Nord";120
+3202;32;"Dresden Hauptbahnhof Nord";3201;32;"Dresden Hauptbahnhof Nord";120
+3501;35;"Dresden Am Zwingerteich";3502;35;"Dresden Am Zwingerteich";120
+3501;35;"Dresden Am Zwingerteich";3501;35;"Dresden Am Zwingerteich";120
+3502;35;"Dresden Am Zwingerteich";3502;35;"Dresden Am Zwingerteich";120
+3502;35;"Dresden Am Zwingerteich";3501;35;"Dresden Am Zwingerteich";120
+3701;37;"Dresden Postplatz";3704;37;"Dresden Postplatz";300
+3701;37;"Dresden Postplatz";3702;37;"Dresden Postplatz";120
+3701;37;"Dresden Postplatz";3703;37;"Dresden Postplatz";240
+3701;37;"Dresden Postplatz";3701;37;"Dresden Postplatz";120
+3702;37;"Dresden Postplatz";3702;37;"Dresden Postplatz";120
+3702;37;"Dresden Postplatz";3703;37;"Dresden Postplatz";240
+3702;37;"Dresden Postplatz";3701;37;"Dresden Postplatz";120
+3702;37;"Dresden Postplatz";3704;37;"Dresden Postplatz";180
+3703;37;"Dresden Postplatz";3703;37;"Dresden Postplatz";120
+3703;37;"Dresden Postplatz";3701;37;"Dresden Postplatz";240
+3703;37;"Dresden Postplatz";3704;37;"Dresden Postplatz";300
+3703;37;"Dresden Postplatz";3702;37;"Dresden Postplatz";240
+3704;37;"Dresden Postplatz";3703;37;"Dresden Postplatz";300
+3704;37;"Dresden Postplatz";3701;37;"Dresden Postplatz";300
+3704;37;"Dresden Postplatz";3704;37;"Dresden Postplatz";120
+3704;37;"Dresden Postplatz";3702;37;"Dresden Postplatz";180
+4201;42;"Dresden Trinitatisplatz";4201;42;"Dresden Trinitatisplatz";120
+4301;43;"DD Blasewitzer/Fetscherstraße";4301;43;"DD Blasewitzer/Fetscherstraße";120
+4401;44;"Dresden Gabelsbergerstraße";4401;44;"Dresden Gabelsbergerstraße";120
+4801;48;"Dresden Augsburger Straße";4802;48;"Dresden Augsburger Straße";120
+4801;48;"Dresden Augsburger Straße";4801;48;"Dresden Augsburger Straße";120
+4802;48;"Dresden Augsburger Straße";4802;48;"Dresden Augsburger Straße";120
+4802;48;"Dresden Augsburger Straße";4801;48;"Dresden Augsburger Straße";120
+4901;49;"Dresden Königsheimplatz";4901;49;"Dresden Königsheimplatz";120
+5001;50;"Dresden Lene-Glatzer-Straße";5001;50;"Dresden Lene-Glatzer-Straße";120
+5101;51;"Dresden Prellerstraße";5101;51;"Dresden Prellerstraße";120
+5201;52;"Dresden Schillerplatz";5204;52;"Dresden Schillerplatz";240
+5201;52;"Dresden Schillerplatz";5201;52;"Dresden Schillerplatz";120
+5201;52;"Dresden Schillerplatz";5205;52;"Dresden Schillerplatz";300
+5201;52;"Dresden Schillerplatz";5203;52;"Dresden Schillerplatz";240
+5203;52;"Dresden Schillerplatz";5201;52;"Dresden Schillerplatz";240
+5203;52;"Dresden Schillerplatz";5205;52;"Dresden Schillerplatz";300
+5203;52;"Dresden Schillerplatz";5203;52;"Dresden Schillerplatz";120
+5203;52;"Dresden Schillerplatz";5204;52;"Dresden Schillerplatz";300
+5204;52;"Dresden Schillerplatz";5205;52;"Dresden Schillerplatz";420
+5204;52;"Dresden Schillerplatz";5203;52;"Dresden Schillerplatz";300
+5204;52;"Dresden Schillerplatz";5204;52;"Dresden Schillerplatz";120
+5204;52;"Dresden Schillerplatz";5201;52;"Dresden Schillerplatz";240
+5205;52;"Dresden Schillerplatz";5205;52;"Dresden Schillerplatz";120
+5205;52;"Dresden Schillerplatz";5203;52;"Dresden Schillerplatz";300
+5205;52;"Dresden Schillerplatz";5204;52;"Dresden Schillerplatz";420
+5205;52;"Dresden Schillerplatz";5201;52;"Dresden Schillerplatz";300
+5401;54;"Dresden Heinrich-Schütz-Straße";5401;54;"Dresden Heinrich-Schütz-Straße";120
+5501;55;"Dresden Gustav-Freytag-Straße";5501;55;"Dresden Gustav-Freytag-Straße";120
+5601;56;"Dresden Jüngststraße";5602;56;"Dresden Jüngststraße";120
+5601;56;"Dresden Jüngststraße";5601;56;"Dresden Jüngststraße";120
+5602;56;"Dresden Jüngststraße";5602;56;"Dresden Jüngststraße";120
+5602;56;"Dresden Jüngststraße";5601;56;"Dresden Jüngststraße";120
+6101;61;"Dresden Krhs. St. Joseph-Stift";6101;61;"Dresden Krhs. St. Joseph-Stift";120
+6201;62;"Dresden Fetscherplatz";6205;62;"Dresden Fetscherplatz";240
+6201;62;"Dresden Fetscherplatz";6202;62;"Dresden Fetscherplatz";120
+6201;62;"Dresden Fetscherplatz";6203;62;"Dresden Fetscherplatz";180
+6201;62;"Dresden Fetscherplatz";6204;62;"Dresden Fetscherplatz";240
+6201;62;"Dresden Fetscherplatz";6201;62;"Dresden Fetscherplatz";90
+6202;62;"Dresden Fetscherplatz";6202;62;"Dresden Fetscherplatz";120
+6202;62;"Dresden Fetscherplatz";6203;62;"Dresden Fetscherplatz";120
+6202;62;"Dresden Fetscherplatz";6204;62;"Dresden Fetscherplatz";240
+6202;62;"Dresden Fetscherplatz";6201;62;"Dresden Fetscherplatz";120
+6202;62;"Dresden Fetscherplatz";6205;62;"Dresden Fetscherplatz";300
+6203;62;"Dresden Fetscherplatz";6203;62;"Dresden Fetscherplatz";120
+6203;62;"Dresden Fetscherplatz";6204;62;"Dresden Fetscherplatz";300
+6203;62;"Dresden Fetscherplatz";6201;62;"Dresden Fetscherplatz";180
+6203;62;"Dresden Fetscherplatz";6205;62;"Dresden Fetscherplatz";360
+6203;62;"Dresden Fetscherplatz";6202;62;"Dresden Fetscherplatz";120
+6204;62;"Dresden Fetscherplatz";6203;62;"Dresden Fetscherplatz";300
+6204;62;"Dresden Fetscherplatz";6204;62;"Dresden Fetscherplatz";120
+6204;62;"Dresden Fetscherplatz";6201;62;"Dresden Fetscherplatz";240
+6204;62;"Dresden Fetscherplatz";6205;62;"Dresden Fetscherplatz";240
+6204;62;"Dresden Fetscherplatz";6202;62;"Dresden Fetscherplatz";240
+6205;62;"Dresden Fetscherplatz";6204;62;"Dresden Fetscherplatz";240
+6205;62;"Dresden Fetscherplatz";6201;62;"Dresden Fetscherplatz";240
+6205;62;"Dresden Fetscherplatz";6205;62;"Dresden Fetscherplatz";120
+6205;62;"Dresden Fetscherplatz";6202;62;"Dresden Fetscherplatz";300
+6205;62;"Dresden Fetscherplatz";6203;62;"Dresden Fetscherplatz";360
+6301;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";240
+6301;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";240
+6301;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";240
+6301;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";360
+6301;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";300
+6301;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";120
+6302;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";120
+6302;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";480
+6302;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";480
+6302;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";420
+6302;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";420
+6302;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";240
+6303;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";120
+6303;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";180
+6303;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";540
+6303;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";480
+6303;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";240
+6303;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";480
+6304;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";120
+6304;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";420
+6304;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";420
+6304;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";240
+6304;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";480
+6304;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";180
+6305;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";120
+6305;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";300
+6305;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";360
+6305;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";420
+6305;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";540
+6305;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";420
+6306;63;"Dresden Mosenstraße";6306;63;"Dresden Mosenstraße";120
+6306;63;"Dresden Mosenstraße";6301;63;"Dresden Mosenstraße";300
+6306;63;"Dresden Mosenstraße";6302;63;"Dresden Mosenstraße";420
+6306;63;"Dresden Mosenstraße";6303;63;"Dresden Mosenstraße";480
+6306;63;"Dresden Mosenstraße";6304;63;"Dresden Mosenstraße";420
+6306;63;"Dresden Mosenstraße";6305;63;"Dresden Mosenstraße";300
+6401;64;"Dresden Bergmannstraße";6401;64;"Dresden Bergmannstraße";120
+6401;64;"Dresden Bergmannstraße";6403;64;"Dresden Bergmannstraße";180
+6401;64;"Dresden Bergmannstraße";6402;64;"Dresden Bergmannstraße";300
+6402;64;"Dresden Bergmannstraße";6401;64;"Dresden Bergmannstraße";300
+6402;64;"Dresden Bergmannstraße";6403;64;"Dresden Bergmannstraße";360
+6402;64;"Dresden Bergmannstraße";6402;64;"Dresden Bergmannstraße";120
+6403;64;"Dresden Bergmannstraße";6401;64;"Dresden Bergmannstraße";180
+6403;64;"Dresden Bergmannstraße";6403;64;"Dresden Bergmannstraße";120
+6403;64;"Dresden Bergmannstraße";6402;64;"Dresden Bergmannstraße";360
+6501;65;"Dresden Pohlandplatz";6502;65;"Dresden Pohlandplatz";120
+6501;65;"Dresden Pohlandplatz";6501;65;"Dresden Pohlandplatz";120
+6501;65;"Dresden Pohlandplatz";6503;65;"Dresden Pohlandplatz";120
+6502;65;"Dresden Pohlandplatz";6502;65;"Dresden Pohlandplatz";120
+6502;65;"Dresden Pohlandplatz";6501;65;"Dresden Pohlandplatz";120
+6502;65;"Dresden Pohlandplatz";6503;65;"Dresden Pohlandplatz";120
+6503;65;"Dresden Pohlandplatz";6502;65;"Dresden Pohlandplatz";120
+6503;65;"Dresden Pohlandplatz";6501;65;"Dresden Pohlandplatz";120
+6503;65;"Dresden Pohlandplatz";6503;65;"Dresden Pohlandplatz";120
+6504;65;"Dresden Pohlandplatz";6504;65;"Dresden Pohlandplatz";120
+6601;66;"Dresden Gottleubaer Straße";6601;66;"Dresden Gottleubaer Straße";120
+6701;67;"Dresden Altenberger Straße";6702;67;"Dresden Altenberger Straße";120
+6701;67;"Dresden Altenberger Straße";6701;67;"Dresden Altenberger Straße";120
+6702;67;"Dresden Altenberger Straße";6702;67;"Dresden Altenberger Straße";120
+6702;67;"Dresden Altenberger Straße";6701;67;"Dresden Altenberger Straße";120
+6801;68;"Dresden Ludwig-Hartmann-Straße";6801;68;"Dresden Ludwig-Hartmann-Straße";120
+6801;68;"Dresden Ludwig-Hartmann-Straße";6802;68;"Dresden Ludwig-Hartmann-Straße";120
+6802;68;"Dresden Ludwig-Hartmann-Straße";6802;68;"Dresden Ludwig-Hartmann-Straße";120
+6802;68;"Dresden Ludwig-Hartmann-Straße";6801;68;"Dresden Ludwig-Hartmann-Straße";120
+6901;69;"Dresden Johannisfriedhof";6901;69;"Dresden Johannisfriedhof";120
+7001;70;"Dresden Tolkewitz Urnenhain";7001;70;"Dresden Tolkewitz Urnenhain";120
+7101;71;"Dresden Wasserwerk Tolkewitz";7101;71;"Dresden Wasserwerk Tolkewitz";120
+7201;72;"Dresden Alttolkewitz";7201;72;"Dresden Alttolkewitz";120
+7301;73;"Dresden Hermann-Seidel-Straße";7301;73;"Dresden Hermann-Seidel-Straße";120
+7302;73;"Dresden Hermann-Seidel-Straße";7302;73;"Dresden Hermann-Seidel-Straße";120
+7401;74;"Dresden Leubener Straße";7402;74;"Dresden Leubener Straße";120
+7401;74;"Dresden Leubener Straße";7401;74;"Dresden Leubener Straße";120
+7402;74;"Dresden Leubener Straße";7401;74;"Dresden Leubener Straße";120
+7402;74;"Dresden Leubener Straße";7402;74;"Dresden Leubener Straße";120
+7501;75;"Dresden Kronstädter Platz";7501;75;"Dresden Kronstädter Platz";180
+7601;76;"Dresden Laibacher Straße";7601;76;"Dresden Laibacher Straße";120
+7701;77;"Dresden Großglocknerstraße";7701;77;"Dresden Großglocknerstraße";180
+7801;78;"Dresden Friedhof Leuben";7801;78;"Dresden Friedhof Leuben";120
+8001;80;"Dresden St.-Benno-Gymnasium";8001;80;"Dresden St.-Benno-Gymnasium";120
+8101;81;"Dresden Comeniusplatz";8101;81;"Dresden Comeniusplatz";120
+8101;81;"Dresden Comeniusplatz";8103;81;"Dresden Comeniusplatz";180
+8101;81;"Dresden Comeniusplatz";8102;81;"Dresden Comeniusplatz";180
+8102;81;"Dresden Comeniusplatz";8101;81;"Dresden Comeniusplatz";180
+8102;81;"Dresden Comeniusplatz";8103;81;"Dresden Comeniusplatz";240
+8102;81;"Dresden Comeniusplatz";8102;81;"Dresden Comeniusplatz";120
+8103;81;"Dresden Comeniusplatz";8103;81;"Dresden Comeniusplatz";120
+8103;81;"Dresden Comeniusplatz";8102;81;"Dresden Comeniusplatz";240
+8103;81;"Dresden Comeniusplatz";8101;81;"Dresden Comeniusplatz";180
+8201;82;"Dresden Lipsiusstraße";8202;82;"Dresden Lipsiusstraße";240
+8201;82;"Dresden Lipsiusstraße";8201;82;"Dresden Lipsiusstraße";120
+8201;82;"Dresden Lipsiusstraße";8203;82;"Dresden Lipsiusstraße";540
+8202;82;"Dresden Lipsiusstraße";8201;82;"Dresden Lipsiusstraße";240
+8202;82;"Dresden Lipsiusstraße";8203;82;"Dresden Lipsiusstraße";420
+8202;82;"Dresden Lipsiusstraße";8202;82;"Dresden Lipsiusstraße";120
+8203;82;"Dresden Lipsiusstraße";8201;82;"Dresden Lipsiusstraße";540
+8203;82;"Dresden Lipsiusstraße";8203;82;"Dresden Lipsiusstraße";120
+8203;82;"Dresden Lipsiusstraße";8202;82;"Dresden Lipsiusstraße";420
+8301;83;"Dresden Karcherallee";8301;83;"Dresden Karcherallee";120
+8301;83;"Dresden Karcherallee";8302;83;"Dresden Karcherallee";120
+8302;83;"Dresden Karcherallee";8302;83;"Dresden Karcherallee";120
+8302;83;"Dresden Karcherallee";8301;83;"Dresden Karcherallee";120
+8401;84;"Dresden Zwinglistraße";8403;84;"Dresden Zwinglistraße";300
+8401;84;"Dresden Zwinglistraße";8401;84;"Dresden Zwinglistraße";120
+8401;84;"Dresden Zwinglistraße";8404;84;"Dresden Zwinglistraße";300
+8401;84;"Dresden Zwinglistraße";8402;84;"Dresden Zwinglistraße";300
+8402;84;"Dresden Zwinglistraße";8403;84;"Dresden Zwinglistraße";600
+8402;84;"Dresden Zwinglistraße";8401;84;"Dresden Zwinglistraße";300
+8402;84;"Dresden Zwinglistraße";8404;84;"Dresden Zwinglistraße";600
+8402;84;"Dresden Zwinglistraße";8402;84;"Dresden Zwinglistraße";120
+8403;84;"Dresden Zwinglistraße";8401;84;"Dresden Zwinglistraße";300
+8403;84;"Dresden Zwinglistraße";8404;84;"Dresden Zwinglistraße";300
+8403;84;"Dresden Zwinglistraße";8402;84;"Dresden Zwinglistraße";600
+8403;84;"Dresden Zwinglistraße";8403;84;"Dresden Zwinglistraße";120
+8404;84;"Dresden Zwinglistraße";8404;84;"Dresden Zwinglistraße";120
+8404;84;"Dresden Zwinglistraße";8402;84;"Dresden Zwinglistraße";600
+8404;84;"Dresden Zwinglistraße";8403;84;"Dresden Zwinglistraße";300
+8404;84;"Dresden Zwinglistraße";8401;84;"Dresden Zwinglistraße";300
+8501;85;"Dresden Liebstädter Straße";8502;85;"Dresden Liebstädter Straße";180
+8501;85;"Dresden Liebstädter Straße";8501;85;"Dresden Liebstädter Straße";120
+8502;85;"Dresden Liebstädter Straße";8502;85;"Dresden Liebstädter Straße";120
+8502;85;"Dresden Liebstädter Straße";8501;85;"Dresden Liebstädter Straße";180
+8601;86;"Dresden Rauensteinstraße";8602;86;"Dresden Rauensteinstraße";120
+8601;86;"Dresden Rauensteinstraße";8601;86;"Dresden Rauensteinstraße";120
+8602;86;"Dresden Rauensteinstraße";8602;86;"Dresden Rauensteinstraße";120
+8602;86;"Dresden Rauensteinstraße";8601;86;"Dresden Rauensteinstraße";120
+8701;87;"Dresden Rennplatzstraße";8704;87;"Dresden Rennplatzstraße";120
+8701;87;"Dresden Rennplatzstraße";8702;87;"Dresden Rennplatzstraße";120
+8701;87;"Dresden Rennplatzstraße";8703;87;"Dresden Rennplatzstraße";120
+8701;87;"Dresden Rennplatzstraße";8701;87;"Dresden Rennplatzstraße";120
+8702;87;"Dresden Rennplatzstraße";8703;87;"Dresden Rennplatzstraße";120
+8702;87;"Dresden Rennplatzstraße";8701;87;"Dresden Rennplatzstraße";120
+8702;87;"Dresden Rennplatzstraße";8704;87;"Dresden Rennplatzstraße";120
+8702;87;"Dresden Rennplatzstraße";8702;87;"Dresden Rennplatzstraße";120
+8703;87;"Dresden Rennplatzstraße";8703;87;"Dresden Rennplatzstraße";120
+8703;87;"Dresden Rennplatzstraße";8701;87;"Dresden Rennplatzstraße";120
+8703;87;"Dresden Rennplatzstraße";8704;87;"Dresden Rennplatzstraße";120
+8703;87;"Dresden Rennplatzstraße";8702;87;"Dresden Rennplatzstraße";120
+8704;87;"Dresden Rennplatzstraße";8703;87;"Dresden Rennplatzstraße";120
+8704;87;"Dresden Rennplatzstraße";8701;87;"Dresden Rennplatzstraße";120
+8704;87;"Dresden Rennplatzstraße";8704;87;"Dresden Rennplatzstraße";120
+8704;87;"Dresden Rennplatzstraße";8702;87;"Dresden Rennplatzstraße";120
+8801;88;"Dresden Marienberger Straße";8803;88;"Dresden Marienberger Straße";120
+8801;88;"Dresden Marienberger Straße";8802;88;"Dresden Marienberger Straße";120
+8801;88;"Dresden Marienberger Straße";8801;88;"Dresden Marienberger Straße";120
+8802;88;"Dresden Marienberger Straße";8802;88;"Dresden Marienberger Straße";120
+8802;88;"Dresden Marienberger Straße";8801;88;"Dresden Marienberger Straße";120
+8802;88;"Dresden Marienberger Straße";8803;88;"Dresden Marienberger Straße";120
+8803;88;"Dresden Marienberger Straße";8802;88;"Dresden Marienberger Straße";120
+8803;88;"Dresden Marienberger Straße";8801;88;"Dresden Marienberger Straße";120
+8803;88;"Dresden Marienberger Straße";8803;88;"Dresden Marienberger Straße";120
+8901;89;"Dresden Prof.-Ricker-Straße";8902;89;"Dresden Prof.-Ricker-Straße";120
+8901;89;"Dresden Prof.-Ricker-Straße";8901;89;"Dresden Prof.-Ricker-Straße";120
+8902;89;"Dresden Prof.-Ricker-Straße";8902;89;"Dresden Prof.-Ricker-Straße";120
+8902;89;"Dresden Prof.-Ricker-Straße";8901;89;"Dresden Prof.-Ricker-Straße";120
+9001;90;"Dresden Lassallestraße";9004;90;"Dresden Lassallestraße";120
+9001;90;"Dresden Lassallestraße";9002;90;"Dresden Lassallestraße";180
+9001;90;"Dresden Lassallestraße";9003;90;"Dresden Lassallestraße";120
+9001;90;"Dresden Lassallestraße";9001;90;"Dresden Lassallestraße";120
+9002;90;"Dresden Lassallestraße";9002;90;"Dresden Lassallestraße";120
+9002;90;"Dresden Lassallestraße";9003;90;"Dresden Lassallestraße";120
+9002;90;"Dresden Lassallestraße";9001;90;"Dresden Lassallestraße";180
+9002;90;"Dresden Lassallestraße";9004;90;"Dresden Lassallestraße";120
+9003;90;"Dresden Lassallestraße";9003;90;"Dresden Lassallestraße";120
+9003;90;"Dresden Lassallestraße";9001;90;"Dresden Lassallestraße";120
+9003;90;"Dresden Lassallestraße";9004;90;"Dresden Lassallestraße";120
+9003;90;"Dresden Lassallestraße";9002;90;"Dresden Lassallestraße";120
+9004;90;"Dresden Lassallestraße";9003;90;"Dresden Lassallestraße";120
+9004;90;"Dresden Lassallestraße";9001;90;"Dresden Lassallestraße";120
+9004;90;"Dresden Lassallestraße";9004;90;"Dresden Lassallestraße";120
+9004;90;"Dresden Lassallestraße";9002;90;"Dresden Lassallestraße";120
+9101;91;"Dresden Abzweig nach Reick";9102;91;"Dresden Abzweig nach Reick";120
+9101;91;"Dresden Abzweig nach Reick";9101;91;"Dresden Abzweig nach Reick";120
+9102;91;"Dresden Abzweig nach Reick";9101;91;"Dresden Abzweig nach Reick";120
+9102;91;"Dresden Abzweig nach Reick";9102;91;"Dresden Abzweig nach Reick";120
+9201;92;"Dresden Rottwerndorfer Straße";9202;92;"Dresden Rottwerndorfer Straße";120
+9201;92;"Dresden Rottwerndorfer Straße";9201;92;"Dresden Rottwerndorfer Straße";120
+9202;92;"Dresden Rottwerndorfer Straße";9202;92;"Dresden Rottwerndorfer Straße";120
+9202;92;"Dresden Rottwerndorfer Straße";9201;92;"Dresden Rottwerndorfer Straße";120
+9301;93;"Dresden Altleuben";9301;93;"Dresden Altleuben";120
+9401;94;"Dresden Berthold-Haupt-Straße";9402;94;"Dresden Berthold-Haupt-Straße";120
+9401;94;"Dresden Berthold-Haupt-Straße";9401;94;"Dresden Berthold-Haupt-Straße";120
+9402;94;"Dresden Berthold-Haupt-Straße";9401;94;"Dresden Berthold-Haupt-Straße";120
+9402;94;"Dresden Berthold-Haupt-Straße";9402;94;"Dresden Berthold-Haupt-Straße";120
+9601;96;"Dresden Guerickestraße";9601;96;"Dresden Guerickestraße";120
+9701;97;"Dresden Straße des 17. Juni";9701;97;"Dresden Straße des 17. Juni";120
+9801;98;"Dresden Bf Niedersedlitz";9804;98;"Dresden Bf Niedersedlitz";120
+9801;98;"Dresden Bf Niedersedlitz";9804;98;"Dresden Bf Niedersedlitz";120
+9801;98;"Dresden Bf Niedersedlitz";9801;98;"Dresden Bf Niedersedlitz";300
+9802;98;"Dresden Bf Niedersedlitz";9804;98;"Dresden Bf Niedersedlitz";60
+9802;98;"Dresden Bf Niedersedlitz";9802;98;"Dresden Bf Niedersedlitz";120
+9802;98;"Dresden Bf Niedersedlitz";9803;98;"Dresden Bf Niedersedlitz";180
+9803;98;"Dresden Bf Niedersedlitz";9804;98;"Dresden Bf Niedersedlitz";60
+9803;98;"Dresden Bf Niedersedlitz";9802;98;"Dresden Bf Niedersedlitz";180
+9803;98;"Dresden Bf Niedersedlitz";9803;98;"Dresden Bf Niedersedlitz";120
+9804;98;"Dresden Bf Niedersedlitz";9804;98;"Dresden Bf Niedersedlitz";0
+9804;98;"Dresden Bf Niedersedlitz";9802;98;"Dresden Bf Niedersedlitz";60
+9804;98;"Dresden Bf Niedersedlitz";9801;98;"Dresden Bf Niedersedlitz";120
+9804;98;"Dresden Bf Niedersedlitz";9801;98;"Dresden Bf Niedersedlitz";120
+9804;98;"Dresden Bf Niedersedlitz";9803;98;"Dresden Bf Niedersedlitz";60
+9901;99;"Dresden Heckenweg";9901;99;"Dresden Heckenweg";120
+10001;100;"Dresden Meußlitzer Straße";10002;100;"Dresden Meußlitzer Straße";120
+10001;100;"Dresden Meußlitzer Straße";10001;100;"Dresden Meußlitzer Straße";120
+10001;100;"Dresden Meußlitzer Straße";10003;100;"Dresden Meußlitzer Straße";120
+10002;100;"Dresden Meußlitzer Straße";10002;100;"Dresden Meußlitzer Straße";120
+10002;100;"Dresden Meußlitzer Straße";10001;100;"Dresden Meußlitzer Straße";120
+10002;100;"Dresden Meußlitzer Straße";10003;100;"Dresden Meußlitzer Straße";120
+10003;100;"Dresden Meußlitzer Straße";10002;100;"Dresden Meußlitzer Straße";120
+10003;100;"Dresden Meußlitzer Straße";10001;100;"Dresden Meußlitzer Straße";120
+10003;100;"Dresden Meußlitzer Straße";10003;100;"Dresden Meußlitzer Straße";120
+10101;101;"Dresden Freystraße";10101;101;"Dresden Freystraße";120
+10101;101;"Dresden Freystraße";10102;101;"Dresden Freystraße";120
+10102;101;"Dresden Freystraße";10101;101;"Dresden Freystraße";120
+10102;101;"Dresden Freystraße";10102;101;"Dresden Freystraße";120
+10301;103;"Dresden Försterlingstraße";10301;103;"Dresden Försterlingstraße";120
+11101;111;"Dresden Lennéplatz";11102;111;"Dresden Lennéplatz";180
+11101;111;"Dresden Lennéplatz";11101;111;"Dresden Lennéplatz";120
+11102;111;"Dresden Lennéplatz";11102;111;"Dresden Lennéplatz";120
+11102;111;"Dresden Lennéplatz";11101;111;"Dresden Lennéplatz";180
+11201;112;"Dresden Zoo";11202;112;"Dresden Zoo";360
+11201;112;"Dresden Zoo";11201;112;"Dresden Zoo";120
+11202;112;"Dresden Zoo";11201;112;"Dresden Zoo";360
+11202;112;"Dresden Zoo";11202;112;"Dresden Zoo";420
+11301;113;"Dresden Querallee";11302;113;"Dresden Querallee";120
+11301;113;"Dresden Querallee";11301;113;"Dresden Querallee";120
+11302;113;"Dresden Querallee";11302;113;"Dresden Querallee";120
+11302;113;"Dresden Querallee";11301;113;"Dresden Querallee";120
+11401;114;"Dresden Julius-Otto-Straße";11401;114;"Dresden Julius-Otto-Straße";120
+11501;115;"Dresden Wasaplatz";11502;115;"Dresden Wasaplatz";180
+11501;115;"Dresden Wasaplatz";11501;115;"Dresden Wasaplatz";120
+11502;115;"Dresden Wasaplatz";11502;115;"Dresden Wasaplatz";120
+11502;115;"Dresden Wasaplatz";11501;115;"Dresden Wasaplatz";180
+11601;116;"Dresden Mockritzer Straße";11601;116;"Dresden Mockritzer Straße";120
+11701;117;"Dresden Hugo-Bürkner-Straße";11702;117;"Dresden Hugo-Bürkner-Straße";120
+11701;117;"Dresden Hugo-Bürkner-Straße";11701;117;"Dresden Hugo-Bürkner-Straße";120
+11702;117;"Dresden Hugo-Bürkner-Straße";11701;117;"Dresden Hugo-Bürkner-Straße";120
+11702;117;"Dresden Hugo-Bürkner-Straße";11702;117;"Dresden Hugo-Bürkner-Straße";120
+11801;118;"Dresden Cäcilienstraße";11801;118;"Dresden Cäcilienstraße";120
+11901;119;"Dresden Eugen-Bracht-Straße";11901;119;"Dresden Eugen-Bracht-Straße";120
+12001;120;"Dresden Otto-Dix-Ring";12001;120;"Dresden Otto-Dix-Ring";120
+12101;121;"Dresden Wieckestraße";12101;121;"Dresden Wieckestraße";120
+12201;122;"Dresden Lohrmannstraße";12201;122;"Dresden Lohrmannstraße";120
+12201;122;"Dresden Lohrmannstraße";12203;122;"Dresden Lohrmannstraße";120
+12201;122;"Dresden Lohrmannstraße";12202;122;"Dresden Lohrmannstraße";180
+12202;122;"Dresden Lohrmannstraße";12201;122;"Dresden Lohrmannstraße";180
+12202;122;"Dresden Lohrmannstraße";12203;122;"Dresden Lohrmannstraße";120
+12202;122;"Dresden Lohrmannstraße";12202;122;"Dresden Lohrmannstraße";120
+12203;122;"Dresden Lohrmannstraße";12203;122;"Dresden Lohrmannstraße";120
+12203;122;"Dresden Lohrmannstraße";12202;122;"Dresden Lohrmannstraße";120
+12203;122;"Dresden Lohrmannstraße";12201;122;"Dresden Lohrmannstraße";120
+12301;123;"Dresden Hülßestraße";12301;123;"Dresden Hülßestraße";120
+12401;124;"Dresden Altreick";12401;124;"Dresden Altreick";120
+12501;125;"Dresden Mügelner Straße";12502;125;"Dresden Mügelner Straße";120
+12501;125;"Dresden Mügelner Straße";12501;125;"Dresden Mügelner Straße";120
+12502;125;"Dresden Mügelner Straße";12502;125;"Dresden Mügelner Straße";120
+12502;125;"Dresden Mügelner Straße";12501;125;"Dresden Mügelner Straße";120
+12601;126;"Dresden Breitscheidstraße";12602;126;"Dresden Breitscheidstraße";120
+12601;126;"Dresden Breitscheidstraße";12601;126;"Dresden Breitscheidstraße";120
+12602;126;"Dresden Breitscheidstraße";12602;126;"Dresden Breitscheidstraße";120
+12602;126;"Dresden Breitscheidstraße";12601;126;"Dresden Breitscheidstraße";120
+12701;127;"Dresden Trattendorfer Straße";12701;127;"Dresden Trattendorfer Straße";120
+13101;131;"Dresden Reichenbachstraße";13102;131;"Dresden Reichenbachstraße";180
+13101;131;"Dresden Reichenbachstraße";13101;131;"Dresden Reichenbachstraße";120
+13101;131;"Dresden Reichenbachstraße";13103;131;"Dresden Reichenbachstraße";360
+13102;131;"Dresden Reichenbachstraße";13102;131;"Dresden Reichenbachstraße";120
+13102;131;"Dresden Reichenbachstraße";13101;131;"Dresden Reichenbachstraße";180
+13102;131;"Dresden Reichenbachstraße";13103;131;"Dresden Reichenbachstraße";360
+13103;131;"Dresden Reichenbachstraße";13102;131;"Dresden Reichenbachstraße";360
+13103;131;"Dresden Reichenbachstraße";13101;131;"Dresden Reichenbachstraße";360
+13103;131;"Dresden Reichenbachstraße";13103;131;"Dresden Reichenbachstraße";120
+13201;132;"Dresden Nürnberger Platz";13202;132;"Dresden Nürnberger Platz";120
+13201;132;"Dresden Nürnberger Platz";13201;132;"Dresden Nürnberger Platz";120
+13202;132;"Dresden Nürnberger Platz";13201;132;"Dresden Nürnberger Platz";120
+13202;132;"Dresden Nürnberger Platz";13202;132;"Dresden Nürnberger Platz";120
+13301;133;"Dresden Südvorstadt";13301;133;"Dresden Südvorstadt";120
+13401;134;"Dresden Münchner Platz";13402;134;"Dresden Münchner Platz";120
+13401;134;"Dresden Münchner Platz";13401;134;"Dresden Münchner Platz";120
+13402;134;"Dresden Münchner Platz";13402;134;"Dresden Münchner Platz";120
+13402;134;"Dresden Münchner Platz";13401;134;"Dresden Münchner Platz";120
+13501;135;"Dresden Plauen Nöthnitzer Str.";13501;135;"Dresden Plauen Nöthnitzer Str.";120
+13501;135;"Dresden Plauen Nöthnitzer Str.";13503;135;"Dresden Plauen Nöthnitzer Str.";120
+13501;135;"Dresden Plauen Nöthnitzer Str.";13502;135;"Dresden Plauen Nöthnitzer Str.";120
+13502;135;"Dresden Plauen Nöthnitzer Str.";13501;135;"Dresden Plauen Nöthnitzer Str.";120
+13502;135;"Dresden Plauen Nöthnitzer Str.";13503;135;"Dresden Plauen Nöthnitzer Str.";120
+13502;135;"Dresden Plauen Nöthnitzer Str.";13502;135;"Dresden Plauen Nöthnitzer Str.";120
+13503;135;"Dresden Plauen Nöthnitzer Str.";13501;135;"Dresden Plauen Nöthnitzer Str.";120
+13503;135;"Dresden Plauen Nöthnitzer Str.";13503;135;"Dresden Plauen Nöthnitzer Str.";120
+13503;135;"Dresden Plauen Nöthnitzer Str.";13502;135;"Dresden Plauen Nöthnitzer Str.";120
+13504;135;"Dresden Plauen Nöthnitzer Str.";13504;135;"Dresden Plauen Nöthnitzer Str.";120
+14101;141;"Dresden Rosenstraße";14101;141;"Dresden Rosenstraße";120
+14201;142;"Dresden Oederaner Straße";14201;142;"Dresden Oederaner Straße";120
+14301;143;"Dresden Saxoniastraße";14301;143;"Dresden Saxoniastraße";120
+14401;144;"Dresden Tharandter Straße";14402;144;"Dresden Tharandter Straße";180
+14401;144;"Dresden Tharandter Straße";14401;144;"Dresden Tharandter Straße";120
+14402;144;"Dresden Tharandter Straße";14401;144;"Dresden Tharandter Straße";180
+14402;144;"Dresden Tharandter Straße";14402;144;"Dresden Tharandter Straße";120
+14501;145;"Dresden Bünaustraße";14501;145;"Dresden Bünaustraße";120
+14601;146;"Dresden Malterstraße";14601;146;"Dresden Malterstraße";120
+14701;147;"Dresden Koblenzer Straße";14701;147;"Dresden Koblenzer Straße";120
+14801;148;"Dresden Wölfnitz";14801;148;"Dresden Wölfnitz";120
+14901;149;"Dresden Weißeritzstraße";14902;149;"Dresden Weißeritzstraße";120
+14901;149;"Dresden Weißeritzstraße";14901;149;"Dresden Weißeritzstraße";120
+14901;149;"Dresden Weißeritzstraße";14903;149;"Dresden Weißeritzstraße";120
+14902;149;"Dresden Weißeritzstraße";14902;149;"Dresden Weißeritzstraße";120
+14902;149;"Dresden Weißeritzstraße";14901;149;"Dresden Weißeritzstraße";120
+14902;149;"Dresden Weißeritzstraße";14903;149;"Dresden Weißeritzstraße";120
+14903;149;"Dresden Weißeritzstraße";14901;149;"Dresden Weißeritzstraße";120
+14903;149;"Dresden Weißeritzstraße";14903;149;"Dresden Weißeritzstraße";120
+14903;149;"Dresden Weißeritzstraße";14902;149;"Dresden Weißeritzstraße";120
+15301;153;"Dresden Cottaer Straße";15301;153;"Dresden Cottaer Straße";120
+15401;154;"Dresden Wernerstraße";15401;154;"Dresden Wernerstraße";120
+16101;161;"Dresden Cämmerswalder Straße";16101;161;"Dresden Cämmerswalder Straße";120
+16201;162;"Dresden Kotteweg";16201;162;"Dresden Kotteweg";120
+16301;163;"Dresden Saarstraße";16301;163;"Dresden Saarstraße";120
+16401;164;"Dresden Achtbeeteweg";16401;164;"Dresden Achtbeeteweg";120
+16501;165;"Dresden Coschütz";16501;165;"Dresden Coschütz";120
+17101;171;"Dresden Semmelweisstraße";17102;171;"Dresden Semmelweisstraße";240
+17101;171;"Dresden Semmelweisstraße";17101;171;"Dresden Semmelweisstraße";120
+17102;171;"Dresden Semmelweisstraße";17102;171;"Dresden Semmelweisstraße";120
+17102;171;"Dresden Semmelweisstraße";17101;171;"Dresden Semmelweisstraße";240
+17103;171;"Dresden Semmelweisstraße";17103;171;"Dresden Semmelweisstraße";120
+17201;172;"Dresden Burgkstraße";17201;172;"Dresden Burgkstraße";120
+17201;172;"Dresden Burgkstraße";17203;172;"Dresden Burgkstraße";180
+17202;172;"Dresden Burgkstraße";17203;172;"Dresden Burgkstraße";360
+17202;172;"Dresden Burgkstraße";17202;172;"Dresden Burgkstraße";120
+17203;172;"Dresden Burgkstraße";17201;172;"Dresden Burgkstraße";180
+17203;172;"Dresden Burgkstraße";17203;172;"Dresden Burgkstraße";120
+17203;172;"Dresden Burgkstraße";17202;172;"Dresden Burgkstraße";360
+17301;173;"Dresden Pennricher Straße";17301;173;"Dresden Pennricher Straße";120
+17301;173;"Dresden Pennricher Straße";17303;173;"Dresden Pennricher Straße";300
+17301;173;"Dresden Pennricher Straße";17302;173;"Dresden Pennricher Straße";300
+17302;173;"Dresden Pennricher Straße";17301;173;"Dresden Pennricher Straße";300
+17302;173;"Dresden Pennricher Straße";17303;173;"Dresden Pennricher Straße";480
+17302;173;"Dresden Pennricher Straße";17302;173;"Dresden Pennricher Straße";120
+17303;173;"Dresden Pennricher Straße";17303;173;"Dresden Pennricher Straße";120
+17303;173;"Dresden Pennricher Straße";17302;173;"Dresden Pennricher Straße";480
+17303;173;"Dresden Pennricher Straße";17301;173;"Dresden Pennricher Straße";300
+17401;174;"Dresden Conertplatz";17401;174;"Dresden Conertplatz";120
+17501;175;"Dresden Birkenhainer Straße";17501;175;"Dresden Birkenhainer Straße";120
+17601;176;"Dresden Altcotta";17602;176;"Dresden Altcotta";120
+17601;176;"Dresden Altcotta";17601;176;"Dresden Altcotta";120
+17602;176;"Dresden Altcotta";17602;176;"Dresden Altcotta";120
+17602;176;"Dresden Altcotta";17601;176;"Dresden Altcotta";120
+17701;177;"Dresden Ockerwitzer Straße";17701;177;"Dresden Ockerwitzer Straße";120
+17701;177;"Dresden Ockerwitzer Straße";17703;177;"Dresden Ockerwitzer Straße";420
+17701;177;"Dresden Ockerwitzer Straße";17702;177;"Dresden Ockerwitzer Straße";180
+17702;177;"Dresden Ockerwitzer Straße";17701;177;"Dresden Ockerwitzer Straße";180
+17702;177;"Dresden Ockerwitzer Straße";17703;177;"Dresden Ockerwitzer Straße";420
+17702;177;"Dresden Ockerwitzer Straße";17702;177;"Dresden Ockerwitzer Straße";120
+17703;177;"Dresden Ockerwitzer Straße";17701;177;"Dresden Ockerwitzer Straße";420
+17703;177;"Dresden Ockerwitzer Straße";17703;177;"Dresden Ockerwitzer Straße";120
+17703;177;"Dresden Ockerwitzer Straße";17702;177;"Dresden Ockerwitzer Straße";420
+17704;177;"Dresden Ockerwitzer Straße";17704;177;"Dresden Ockerwitzer Straße";120
+17801;178;"Dresden Chamissostraße";17802;178;"Dresden Chamissostraße";120
+17801;178;"Dresden Chamissostraße";17801;178;"Dresden Chamissostraße";120
+17802;178;"Dresden Chamissostraße";17802;178;"Dresden Chamissostraße";120
+17802;178;"Dresden Chamissostraße";17801;178;"Dresden Chamissostraße";120
+17901;179;"Dresden Hebbelplatz";17901;179;"Dresden Hebbelplatz";120
+18101;181;"DD Krankenhaus Friedrichstadt";18101;181;"DD Krankenhaus Friedrichstadt";120
+18201;182;"Dresden Vorwerkstraße";18201;182;"Dresden Vorwerkstraße";120
+18201;182;"Dresden Vorwerkstraße";18202;182;"Dresden Vorwerkstraße";120
+18202;182;"Dresden Vorwerkstraße";18201;182;"Dresden Vorwerkstraße";120
+18202;182;"Dresden Vorwerkstraße";18202;182;"Dresden Vorwerkstraße";120
+18401;184;"Dresden Manitiusstraße";18401;184;"Dresden Manitiusstraße";120
+18501;185;"Dresden Waltherstraße";18502;185;"Dresden Waltherstraße";120
+18501;185;"Dresden Waltherstraße";18501;185;"Dresden Waltherstraße";120
+18501;185;"Dresden Waltherstraße";18503;185;"Dresden Waltherstraße";120
+18502;185;"Dresden Waltherstraße";18502;185;"Dresden Waltherstraße";120
+18502;185;"Dresden Waltherstraße";18501;185;"Dresden Waltherstraße";120
+18502;185;"Dresden Waltherstraße";18503;185;"Dresden Waltherstraße";120
+18503;185;"Dresden Waltherstraße";18502;185;"Dresden Waltherstraße";120
+18503;185;"Dresden Waltherstraße";18501;185;"Dresden Waltherstraße";120
+18503;185;"Dresden Waltherstraße";18503;185;"Dresden Waltherstraße";120
+18601;186;"Dresden Hamburger Straße";18601;186;"Dresden Hamburger Straße";120
+18701;187;"Dresden Bremer Straße";18701;187;"Dresden Bremer Straße";120
+18801;188;"Dresden Flügelweg";18801;188;"Dresden Flügelweg";180
+18901;189;"DD Cossebauder Str (Hp Cotta)";18901;189;"DD Cossebauder Str (Hp Cotta)";120
+19001;190;"Dresden Gottfried-Keller-Str.";19002;190;"Dresden Gottfried-Keller-Str.";120
+19001;190;"Dresden Gottfried-Keller-Str.";19001;190;"Dresden Gottfried-Keller-Str.";120
+19002;190;"Dresden Gottfried-Keller-Str.";19002;190;"Dresden Gottfried-Keller-Str.";120
+19002;190;"Dresden Gottfried-Keller-Str.";19001;190;"Dresden Gottfried-Keller-Str.";120
+19101;191;"Dresden Leutewitz";19101;191;"Dresden Leutewitz";120
+19701;197;"Dresden Schäferstraße";19701;197;"Dresden Schäferstraße";120
+19701;197;"Dresden Schäferstraße";19703;197;"Dresden Schäferstraße";180
+19701;197;"Dresden Schäferstraße";19702;197;"Dresden Schäferstraße";180
+19702;197;"Dresden Schäferstraße";19701;197;"Dresden Schäferstraße";180
+19702;197;"Dresden Schäferstraße";19703;197;"Dresden Schäferstraße";180
+19702;197;"Dresden Schäferstraße";19702;197;"Dresden Schäferstraße";120
+19703;197;"Dresden Schäferstraße";19703;197;"Dresden Schäferstraße";120
+19703;197;"Dresden Schäferstraße";19702;197;"Dresden Schäferstraße";180
+19703;197;"Dresden Schäferstraße";19701;197;"Dresden Schäferstraße";180
+19801;198;"Dresden Bf Neustadt (Hansastr)";19801;198;"Dresden Bf Neustadt (Hansastr)";120
+20001;200;"Dresden Altpieschen";20001;200;"Dresden Altpieschen";60
+20001;200;"Dresden Altpieschen";20002;200;"Dresden Altpieschen";60
+20002;200;"Dresden Altpieschen";20001;200;"Dresden Altpieschen";60
+20002;200;"Dresden Altpieschen";20002;200;"Dresden Altpieschen";60
+20101;201;"Dresden Alter Schlachthof";20101;201;"Dresden Alter Schlachthof";120
+20101;201;"Dresden Alter Schlachthof";20102;201;"Dresden Alter Schlachthof";120
+20102;201;"Dresden Alter Schlachthof";20102;201;"Dresden Alter Schlachthof";120
+20102;201;"Dresden Alter Schlachthof";20101;201;"Dresden Alter Schlachthof";120
+20201;202;"Dresden Alexander-Puschkin-Pl";20201;202;"Dresden Alexander-Puschkin-Pl";120
+20301;203;"Dresden Oschatzer Straße";20301;203;"Dresden Oschatzer Straße";120
+20501;205;"Dresden Mickten";20503;205;"Dresden Mickten";240
+20501;205;"Dresden Mickten";20504;205;"Dresden Mickten";120
+20501;205;"Dresden Mickten";20501;205;"Dresden Mickten";120
+20501;205;"Dresden Mickten";20505;205;"Dresden Mickten";120
+20501;205;"Dresden Mickten";20502;205;"Dresden Mickten";120
+20502;205;"Dresden Mickten";20503;205;"Dresden Mickten";120
+20502;205;"Dresden Mickten";20504;205;"Dresden Mickten";120
+20502;205;"Dresden Mickten";20501;205;"Dresden Mickten";120
+20502;205;"Dresden Mickten";20505;205;"Dresden Mickten";120
+20502;205;"Dresden Mickten";20502;205;"Dresden Mickten";120
+20503;205;"Dresden Mickten";20504;205;"Dresden Mickten";240
+20503;205;"Dresden Mickten";20501;205;"Dresden Mickten";240
+20503;205;"Dresden Mickten";20505;205;"Dresden Mickten";300
+20503;205;"Dresden Mickten";20502;205;"Dresden Mickten";120
+20503;205;"Dresden Mickten";20503;205;"Dresden Mickten";120
+20504;205;"Dresden Mickten";20504;205;"Dresden Mickten";120
+20504;205;"Dresden Mickten";20501;205;"Dresden Mickten";120
+20504;205;"Dresden Mickten";20505;205;"Dresden Mickten";120
+20504;205;"Dresden Mickten";20502;205;"Dresden Mickten";120
+20504;205;"Dresden Mickten";20503;205;"Dresden Mickten";240
+20505;205;"Dresden Mickten";20501;205;"Dresden Mickten";120
+20505;205;"Dresden Mickten";20505;205;"Dresden Mickten";120
+20505;205;"Dresden Mickten";20502;205;"Dresden Mickten";120
+20505;205;"Dresden Mickten";20503;205;"Dresden Mickten";300
+20505;205;"Dresden Mickten";20504;205;"Dresden Mickten";120
+20601;206;"Dresden Trachauer Straße";20601;206;"Dresden Trachauer Straße";120
+20901;209;"Dresden Alttrachau";20901;209;"Dresden Alttrachau";120
+21001;210;"Dresden Rankestraße";21001;210;"Dresden Rankestraße";120
+21101;211;"Dresden Am Trachauer Bahnhof";21102;211;"Dresden Am Trachauer Bahnhof";120
+21101;211;"Dresden Am Trachauer Bahnhof";21101;211;"Dresden Am Trachauer Bahnhof";120
+21102;211;"Dresden Am Trachauer Bahnhof";21102;211;"Dresden Am Trachauer Bahnhof";0
+21102;211;"Dresden Am Trachauer Bahnhof";21101;211;"Dresden Am Trachauer Bahnhof";120
+21201;212;"Dresden Geblerstraße";21202;212;"Dresden Geblerstraße";0
+21201;212;"Dresden Geblerstraße";21201;212;"Dresden Geblerstraße";120
+21202;212;"Dresden Geblerstraße";21202;212;"Dresden Geblerstraße";60
+21202;212;"Dresden Geblerstraße";21201;212;"Dresden Geblerstraße";0
+21301;213;"Dresden Kleestraße";21301;213;"Dresden Kleestraße";120
+21701;217;"Dresden An der Flutrinne";21703;217;"Dresden An der Flutrinne";180
+21701;217;"Dresden An der Flutrinne";21702;217;"Dresden An der Flutrinne";120
+21701;217;"Dresden An der Flutrinne";21701;217;"Dresden An der Flutrinne";120
+21702;217;"Dresden An der Flutrinne";21702;217;"Dresden An der Flutrinne";120
+21702;217;"Dresden An der Flutrinne";21701;217;"Dresden An der Flutrinne";120
+21702;217;"Dresden An der Flutrinne";21703;217;"Dresden An der Flutrinne";180
+21703;217;"Dresden An der Flutrinne";21702;217;"Dresden An der Flutrinne";180
+21703;217;"Dresden An der Flutrinne";21701;217;"Dresden An der Flutrinne";180
+21703;217;"Dresden An der Flutrinne";21703;217;"Dresden An der Flutrinne";120
+21801;218;"Dresden Sörnewitzer Straße";21802;218;"Dresden Sörnewitzer Straße";198
+21801;218;"Dresden Sörnewitzer Straße";21801;218;"Dresden Sörnewitzer Straße";120
+21802;218;"Dresden Sörnewitzer Straße";21802;218;"Dresden Sörnewitzer Straße";120
+21802;218;"Dresden Sörnewitzer Straße";21801;218;"Dresden Sörnewitzer Straße";198
+22001;220;"Dresden Washingtonstraße";22001;220;"Dresden Washingtonstraße";120
+24101;241;"Dresden Lößnitzstraße";24101;241;"Dresden Lößnitzstraße";120
+24201;242;"Dresden Großenhainer Platz";24201;242;"Dresden Großenhainer Platz";120
+24301;243;"Dresden Liststraße";24304;243;"Dresden Liststraße";180
+24301;243;"Dresden Liststraße";24301;243;"Dresden Liststraße";120
+24301;243;"Dresden Liststraße";24305;243;"Dresden Liststraße";120
+24301;243;"Dresden Liststraße";24302;243;"Dresden Liststraße";120
+24301;243;"Dresden Liststraße";24303;243;"Dresden Liststraße";120
+24302;243;"Dresden Liststraße";24301;243;"Dresden Liststraße";120
+24302;243;"Dresden Liststraße";24305;243;"Dresden Liststraße";120
+24302;243;"Dresden Liststraße";24302;243;"Dresden Liststraße";120
+24302;243;"Dresden Liststraße";24303;243;"Dresden Liststraße";180
+24302;243;"Dresden Liststraße";24304;243;"Dresden Liststraße";180
+24303;243;"Dresden Liststraße";24305;243;"Dresden Liststraße";120
+24303;243;"Dresden Liststraße";24302;243;"Dresden Liststraße";180
+24303;243;"Dresden Liststraße";24303;243;"Dresden Liststraße";120
+24303;243;"Dresden Liststraße";24304;243;"Dresden Liststraße";180
+24303;243;"Dresden Liststraße";24301;243;"Dresden Liststraße";120
+24304;243;"Dresden Liststraße";24302;243;"Dresden Liststraße";180
+24304;243;"Dresden Liststraße";24303;243;"Dresden Liststraße";180
+24304;243;"Dresden Liststraße";24304;243;"Dresden Liststraße";120
+24304;243;"Dresden Liststraße";24301;243;"Dresden Liststraße";180
+24304;243;"Dresden Liststraße";24305;243;"Dresden Liststraße";180
+24305;243;"Dresden Liststraße";24303;243;"Dresden Liststraße";120
+24305;243;"Dresden Liststraße";24304;243;"Dresden Liststraße";180
+24305;243;"Dresden Liststraße";24301;243;"Dresden Liststraße";120
+24305;243;"Dresden Liststraße";24305;243;"Dresden Liststraße";120
+24305;243;"Dresden Liststraße";24302;243;"Dresden Liststraße";120
+24401;244;"Dresden Bürgerstraße";24401;244;"Dresden Bürgerstraße";120
+24501;245;"Dresden Rathaus Pieschen";24501;245;"Dresden Rathaus Pieschen";120
+24701;247;"Dresden Bischofsplatz";24701;247;"Dresden Bischofsplatz";120
+24801;248;"Dresden Zeithainer Straße";24801;248;"Dresden Zeithainer Straße";120
+24901;249;"Dresden Trachenberger Platz";24902;249;"Dresden Trachenberger Platz";120
+24901;249;"Dresden Trachenberger Platz";24903;249;"Dresden Trachenberger Platz";120
+24901;249;"Dresden Trachenberger Platz";24901;249;"Dresden Trachenberger Platz";120
+24901;249;"Dresden Trachenberger Platz";24904;249;"Dresden Trachenberger Platz";120
+24902;249;"Dresden Trachenberger Platz";24903;249;"Dresden Trachenberger Platz";120
+24902;249;"Dresden Trachenberger Platz";24901;249;"Dresden Trachenberger Platz";120
+24902;249;"Dresden Trachenberger Platz";24904;249;"Dresden Trachenberger Platz";120
+24902;249;"Dresden Trachenberger Platz";24902;249;"Dresden Trachenberger Platz";120
+24903;249;"Dresden Trachenberger Platz";24903;249;"Dresden Trachenberger Platz";120
+24903;249;"Dresden Trachenberger Platz";24901;249;"Dresden Trachenberger Platz";120
+24903;249;"Dresden Trachenberger Platz";24904;249;"Dresden Trachenberger Platz";120
+24903;249;"Dresden Trachenberger Platz";24902;249;"Dresden Trachenberger Platz";120
+24904;249;"Dresden Trachenberger Platz";24903;249;"Dresden Trachenberger Platz";120
+24904;249;"Dresden Trachenberger Platz";24901;249;"Dresden Trachenberger Platz";120
+24904;249;"Dresden Trachenberger Platz";24904;249;"Dresden Trachenberger Platz";120
+24904;249;"Dresden Trachenberger Platz";24902;249;"Dresden Trachenberger Platz";120
+25101;251;"Dresden Hubertusplatz";25101;251;"Dresden Hubertusplatz";120
+25201;252;"Dresden Dorothea-Erxleben-Str";25201;252;"Dresden Dorothea-Erxleben-Str";120
+25301;253;"Dresden Wilder Mann";25301;253;"Dresden Wilder Mann";120
+25301;253;"Dresden Wilder Mann";25302;253;"Dresden Wilder Mann";120
+25302;253;"Dresden Wilder Mann";25302;253;"Dresden Wilder Mann";120
+25302;253;"Dresden Wilder Mann";25301;253;"Dresden Wilder Mann";120
+25901;259;"Dresden Tannenstraße";25901;259;"Dresden Tannenstraße";120
+26201;262;"Dresden Bischofsweg";26201;262;"Dresden Bischofsweg";120
+26301;263;"Dresden Alaunplatz";26301;263;"Dresden Alaunplatz";120
+26501;265;"Dresden Stauffenbergallee";26501;265;"Dresden Stauffenbergallee";120
+26501;265;"Dresden Stauffenbergallee";26502;265;"Dresden Stauffenbergallee";120
+26502;265;"Dresden Stauffenbergallee";26502;265;"Dresden Stauffenbergallee";120
+26502;265;"Dresden Stauffenbergallee";26501;265;"Dresden Stauffenbergallee";120
+26601;266;"Dresden Heeresbäckerei";26601;266;"Dresden Heeresbäckerei";120
+26701;267;"Dresden Industriegelände";26704;267;"Dresden Industriegelände";120
+26701;267;"Dresden Industriegelände";26701;267;"Dresden Industriegelände";120
+26702;267;"Dresden Industriegelände";26703;267;"Dresden Industriegelände";120
+26702;267;"Dresden Industriegelände";26702;267;"Dresden Industriegelände";120
+26702;267;"Dresden Industriegelände";26704;267;"Dresden Industriegelände";180
+26703;267;"Dresden Industriegelände";26702;267;"Dresden Industriegelände";120
+26703;267;"Dresden Industriegelände";26704;267;"Dresden Industriegelände";180
+26703;267;"Dresden Industriegelände";26703;267;"Dresden Industriegelände";120
+26704;267;"Dresden Industriegelände";26702;267;"Dresden Industriegelände";180
+26704;267;"Dresden Industriegelände";26701;267;"Dresden Industriegelände";120
+26704;267;"Dresden Industriegelände";26703;267;"Dresden Industriegelände";180
+26801;268;"Dresden Hellersiedlung";26801;268;"Dresden Hellersiedlung";120
+26901;269;"Dresden Moritzburger Weg";26902;269;"Dresden Moritzburger Weg";120
+26901;269;"Dresden Moritzburger Weg";26901;269;"Dresden Moritzburger Weg";0
+26902;269;"Dresden Moritzburger Weg";26902;269;"Dresden Moritzburger Weg";120
+26902;269;"Dresden Moritzburger Weg";26901;269;"Dresden Moritzburger Weg";120
+27001;270;"Dresden Infineon Süd";27001;270;"Dresden Infineon Süd";120
+27001;270;"Dresden Infineon Süd";27002;270;"Dresden Infineon Süd";120
+27002;270;"Dresden Infineon Süd";27001;270;"Dresden Infineon Süd";120
+27002;270;"Dresden Infineon Süd";27002;270;"Dresden Infineon Süd";120
+27003;270;"Dresden Infineon Süd";27003;270;"Dresden Infineon Süd";120
+27101;271;"Dresden Am Hellerrand";27101;271;"Dresden Am Hellerrand";120
+27201;272;"Dresden Heinrich-Tessenow-Weg";27201;272;"Dresden Heinrich-Tessenow-Weg";120
+27201;272;"Dresden Heinrich-Tessenow-Weg";27203;272;"Dresden Heinrich-Tessenow-Weg";120
+27201;272;"Dresden Heinrich-Tessenow-Weg";27202;272;"Dresden Heinrich-Tessenow-Weg";120
+27202;272;"Dresden Heinrich-Tessenow-Weg";27201;272;"Dresden Heinrich-Tessenow-Weg";120
+27202;272;"Dresden Heinrich-Tessenow-Weg";27203;272;"Dresden Heinrich-Tessenow-Weg";120
+27202;272;"Dresden Heinrich-Tessenow-Weg";27202;272;"Dresden Heinrich-Tessenow-Weg";120
+27203;272;"Dresden Heinrich-Tessenow-Weg";27203;272;"Dresden Heinrich-Tessenow-Weg";120
+27203;272;"Dresden Heinrich-Tessenow-Weg";27202;272;"Dresden Heinrich-Tessenow-Weg";120
+27203;272;"Dresden Heinrich-Tessenow-Weg";27201;272;"Dresden Heinrich-Tessenow-Weg";120
+27301;273;"Dresden Festspielhaus Hellerau";27301;273;"Dresden Festspielhaus Hellerau";120
+27401;274;"Dresden Brunnenweg";27401;274;"Dresden Brunnenweg";120
+27501;275;"Dresden Hellerau Kiefernweg";27501;275;"Dresden Hellerau Kiefernweg";120
+27601;276;"Dresden Infineon Nord";27601;276;"Dresden Infineon Nord";120
+27701;277;"Dresden Karl-Marx-Straße";27701;277;"Dresden Karl-Marx-Straße";120
+27801;278;"Dresden Zur Neuen Brücke";27801;278;"Dresden Zur Neuen Brücke";120
+27801;278;"Dresden Zur Neuen Brücke";27802;278;"Dresden Zur Neuen Brücke";120
+27802;278;"Dresden Zur Neuen Brücke";27802;278;"Dresden Zur Neuen Brücke";120
+27802;278;"Dresden Zur Neuen Brücke";27801;278;"Dresden Zur Neuen Brücke";120
+27901;279;"Dresden Käthe-Kollwitz-Platz";27901;279;"Dresden Käthe-Kollwitz-Platz";120
+27901;279;"Dresden Käthe-Kollwitz-Platz";27903;279;"Dresden Käthe-Kollwitz-Platz";120
+27901;279;"Dresden Käthe-Kollwitz-Platz";27902;279;"Dresden Käthe-Kollwitz-Platz";120
+27902;279;"Dresden Käthe-Kollwitz-Platz";27901;279;"Dresden Käthe-Kollwitz-Platz";120
+27902;279;"Dresden Käthe-Kollwitz-Platz";27903;279;"Dresden Käthe-Kollwitz-Platz";120
+27902;279;"Dresden Käthe-Kollwitz-Platz";27902;279;"Dresden Käthe-Kollwitz-Platz";120
+27903;279;"Dresden Käthe-Kollwitz-Platz";27901;279;"Dresden Käthe-Kollwitz-Platz";120
+27903;279;"Dresden Käthe-Kollwitz-Platz";27903;279;"Dresden Käthe-Kollwitz-Platz";120
+27903;279;"Dresden Käthe-Kollwitz-Platz";27902;279;"Dresden Käthe-Kollwitz-Platz";120
+28001;280;"Dresden Arkonastraße";28001;280;"Dresden Arkonastraße";120
+28101;281;"DD Industriepark Klotzsche";28101;281;"DD Industriepark Klotzsche";120
+28101;281;"DD Industriepark Klotzsche";28102;281;"DD Industriepark Klotzsche";120
+28102;281;"DD Industriepark Klotzsche";28102;281;"DD Industriepark Klotzsche";120
+28102;281;"DD Industriepark Klotzsche";28101;281;"DD Industriepark Klotzsche";120
+29001;290;"Dresden Pulsnitzer Straße";29001;290;"Dresden Pulsnitzer Straße";120
+29101;291;"Dresden Diakonissenkrankenhaus";29101;291;"Dresden Diakonissenkrankenhaus";120
+29201;292;"Dresden Nordstraße";29202;292;"Dresden Nordstraße";180
+29201;292;"Dresden Nordstraße";29201;292;"Dresden Nordstraße";120
+29202;292;"Dresden Nordstraße";29202;292;"Dresden Nordstraße";120
+29202;292;"Dresden Nordstraße";29201;292;"Dresden Nordstraße";180
+29301;293;"Dresden Waldschlößchen";29302;293;"Dresden Waldschlößchen";240
+29301;293;"Dresden Waldschlößchen";29301;293;"Dresden Waldschlößchen";120
+29301;293;"Dresden Waldschlößchen";29303;293;"Dresden Waldschlößchen";120
+29302;293;"Dresden Waldschlößchen";29302;293;"Dresden Waldschlößchen";120
+29302;293;"Dresden Waldschlößchen";29301;293;"Dresden Waldschlößchen";240
+29302;293;"Dresden Waldschlößchen";29303;293;"Dresden Waldschlößchen";300
+29303;293;"Dresden Waldschlößchen";29302;293;"Dresden Waldschlößchen";300
+29303;293;"Dresden Waldschlößchen";29301;293;"Dresden Waldschlößchen";120
+29303;293;"Dresden Waldschlößchen";29303;293;"Dresden Waldschlößchen";120
+29401;294;"Dresden Angelikastraße";29401;294;"Dresden Angelikastraße";120
+29501;295;"Dresden Wilhelminenstraße";29501;295;"Dresden Wilhelminenstraße";120
+29601;296;"Dresden Elbschlösser";29601;296;"Dresden Elbschlösser";120
+29701;297;"Dresden Mordgrundbrücke";29701;297;"Dresden Mordgrundbrücke";120
+29801;298;"Dresden Plattleite";29801;298;"Dresden Plattleite";120
+29901;299;"Dresden Am Weißen Adler";29901;299;"Dresden Am Weißen Adler";120
+30002;300;"Dresden Neubühlauer Straße";30002;300;"Dresden Neubühlauer Straße";120
+30101;301;"Dresden Grundstraße";30101;301;"Dresden Grundstraße";120
+30201;302;"Dresden Bühlau Ullersdorfer Pl";30201;302;"Dresden Bühlau Ullersdorfer Pl";120
+30201;302;"Dresden Bühlau Ullersdorfer Pl";30203;302;"Dresden Bühlau Ullersdorfer Pl";180
+30201;302;"Dresden Bühlau Ullersdorfer Pl";30202;302;"Dresden Bühlau Ullersdorfer Pl";120
+30202;302;"Dresden Bühlau Ullersdorfer Pl";30201;302;"Dresden Bühlau Ullersdorfer Pl";120
+30202;302;"Dresden Bühlau Ullersdorfer Pl";30203;302;"Dresden Bühlau Ullersdorfer Pl";180
+30202;302;"Dresden Bühlau Ullersdorfer Pl";30202;302;"Dresden Bühlau Ullersdorfer Pl";120
+30203;302;"Dresden Bühlau Ullersdorfer Pl";30203;302;"Dresden Bühlau Ullersdorfer Pl";120
+30203;302;"Dresden Bühlau Ullersdorfer Pl";30202;302;"Dresden Bühlau Ullersdorfer Pl";180
+30203;302;"Dresden Bühlau Ullersdorfer Pl";30201;302;"Dresden Bühlau Ullersdorfer Pl";180
+30501;305;"Dresden Hegereiterstraße";30501;305;"Dresden Hegereiterstraße";120
+31101;311;"Dresden Strehlener Platz";31101;311;"Dresden Strehlener Platz";120
+31101;311;"Dresden Strehlener Platz";31102;311;"Dresden Strehlener Platz";120
+31102;311;"Dresden Strehlener Platz";31101;311;"Dresden Strehlener Platz";120
+31102;311;"Dresden Strehlener Platz";31102;311;"Dresden Strehlener Platz";120
+31201;312;"Dresden Zellescher Weg";31202;312;"Dresden Zellescher Weg";120
+31201;312;"Dresden Zellescher Weg";31201;312;"Dresden Zellescher Weg";120
+31202;312;"Dresden Zellescher Weg";31202;312;"Dresden Zellescher Weg";120
+31202;312;"Dresden Zellescher Weg";31201;312;"Dresden Zellescher Weg";120
+31301;313;"Dresden Räcknitzhöhe";31301;313;"Dresden Räcknitzhöhe";120
+31401;314;"Dresden Münzmeisterstraße";31402;314;"Dresden Münzmeisterstraße";120
+31401;314;"Dresden Münzmeisterstraße";31401;314;"Dresden Münzmeisterstraße";120
+31402;314;"Dresden Münzmeisterstraße";31402;314;"Dresden Münzmeisterstraße";120
+31402;314;"Dresden Münzmeisterstraße";31401;314;"Dresden Münzmeisterstraße";120
+32101;321;"Dresden Albert-Wolf-Platz";32102;321;"Dresden Albert-Wolf-Platz";240
+32101;321;"Dresden Albert-Wolf-Platz";32101;321;"Dresden Albert-Wolf-Platz";120
+32102;321;"Dresden Albert-Wolf-Platz";32102;321;"Dresden Albert-Wolf-Platz";120
+32102;321;"Dresden Albert-Wolf-Platz";32101;321;"Dresden Albert-Wolf-Platz";240
+32201;322;"Dresden Jacob-Winter-Platz";32201;322;"Dresden Jacob-Winter-Platz";120
+32201;322;"Dresden Jacob-Winter-Platz";32202;322;"Dresden Jacob-Winter-Platz";120
+32202;322;"Dresden Jacob-Winter-Platz";32202;322;"Dresden Jacob-Winter-Platz";120
+32202;322;"Dresden Jacob-Winter-Platz";32201;322;"Dresden Jacob-Winter-Platz";120
+32301;323;"Dresden Georg-Palitzsch-Straße";32302;323;"Dresden Georg-Palitzsch-Straße";120
+32301;323;"Dresden Georg-Palitzsch-Straße";32301;323;"Dresden Georg-Palitzsch-Straße";120
+32302;323;"Dresden Georg-Palitzsch-Straße";32302;323;"Dresden Georg-Palitzsch-Straße";120
+32302;323;"Dresden Georg-Palitzsch-Straße";32301;323;"Dresden Georg-Palitzsch-Straße";120
+33101;331;"Dresden Julius-Vahlteich-Str.";33102;331;"Dresden Julius-Vahlteich-Str.";120
+33101;331;"Dresden Julius-Vahlteich-Str.";33101;331;"Dresden Julius-Vahlteich-Str.";120
+33102;331;"Dresden Julius-Vahlteich-Str.";33102;331;"Dresden Julius-Vahlteich-Str.";120
+33102;331;"Dresden Julius-Vahlteich-Str.";33101;331;"Dresden Julius-Vahlteich-Str.";120
+33201;332;"Dresden Dahlienweg";33202;332;"Dresden Dahlienweg";120
+33201;332;"Dresden Dahlienweg";33201;332;"Dresden Dahlienweg";120
+33202;332;"Dresden Dahlienweg";33202;332;"Dresden Dahlienweg";120
+33202;332;"Dresden Dahlienweg";33201;332;"Dresden Dahlienweg";120
+33301;333;"Dresden Coventrystraße";33301;333;"Dresden Coventrystraße";120
+33301;333;"Dresden Coventrystraße";33302;333;"Dresden Coventrystraße";180
+33302;333;"Dresden Coventrystraße";33301;333;"Dresden Coventrystraße";180
+33302;333;"Dresden Coventrystraße";33302;333;"Dresden Coventrystraße";120
+33401;334;"Dresden Amalie-Dietrich-Platz";33401;334;"Dresden Amalie-Dietrich-Platz";120
+33501;335;"Dresden Merianplatz";33501;335;"Dresden Merianplatz";120
+33601;336;"Dresden Kirschenstraße";33601;336;"Dresden Kirschenstraße";120
+33701;337;"Dresden Schlehenstraße";33701;337;"Dresden Schlehenstraße";120
+33801;338;"Dresden Betriebshof Gorbitz";33804;338;"Dresden Betriebshof Gorbitz";120
+33801;338;"Dresden Betriebshof Gorbitz";33801;338;"Dresden Betriebshof Gorbitz";120
+33804;338;"Dresden Betriebshof Gorbitz";33804;338;"Dresden Betriebshof Gorbitz";120
+33804;338;"Dresden Betriebshof Gorbitz";33801;338;"Dresden Betriebshof Gorbitz";120
+34001;340;"Dresden Altnossener Straße";34001;340;"Dresden Altnossener Straße";120
+34001;340;"Dresden Altnossener Straße";34002;340;"Dresden Altnossener Straße";120
+34002;340;"Dresden Altnossener Straße";34002;340;"Dresden Altnossener Straße";120
+34002;340;"Dresden Altnossener Straße";34001;340;"Dresden Altnossener Straße";120
+34101;341;"Gompitz Rudolf-Walther-Straße";34102;341;"Gompitz Rudolf-Walther-Straße";120
+34101;341;"Gompitz Rudolf-Walther-Straße";34101;341;"Gompitz Rudolf-Walther-Straße";120
+34102;341;"Gompitz Rudolf-Walther-Straße";34102;341;"Gompitz Rudolf-Walther-Straße";120
+34102;341;"Gompitz Rudolf-Walther-Straße";34101;341;"Gompitz Rudolf-Walther-Straße";120
+34201;342;"Gompitz Gompitzer Höhe";34201;342;"Gompitz Gompitzer Höhe";120
+34401;344;"Pennrich Gleisschleife";34403;344;"Pennrich Gleisschleife";120
+34401;344;"Pennrich Gleisschleife";34402;344;"Pennrich Gleisschleife";180
+34401;344;"Pennrich Gleisschleife";34401;344;"Pennrich Gleisschleife";120
+34402;344;"Pennrich Gleisschleife";34402;344;"Pennrich Gleisschleife";120
+34402;344;"Pennrich Gleisschleife";34401;344;"Pennrich Gleisschleife";180
+34402;344;"Pennrich Gleisschleife";34403;344;"Pennrich Gleisschleife";240
+34403;344;"Pennrich Gleisschleife";34402;344;"Pennrich Gleisschleife";240
+34403;344;"Pennrich Gleisschleife";34401;344;"Pennrich Gleisschleife";120
+34403;344;"Pennrich Gleisschleife";34403;344;"Pennrich Gleisschleife";120
+52001;520;"Dresden Alberthafen";52001;520;"Dresden Alberthafen";120
+52201;522;"Dresden Messe Dresden";52201;522;"Dresden Messe Dresden";120
+52601;526;"Dresden Messering (Halle 1)";52601;526;"Dresden Messering (Halle 1)";120
+58501;585;"Dresden Riegelplatz";58502;585;"Dresden Riegelplatz";120
+58501;585;"Dresden Riegelplatz";58501;585;"Dresden Riegelplatz";120
+58502;585;"Dresden Riegelplatz";58502;585;"Dresden Riegelplatz";120
+58502;585;"Dresden Riegelplatz";58501;585;"Dresden Riegelplatz";120
+58801;588;"Dresden ElbePark";58801;588;"Dresden ElbePark";120
+79101;791;"Dresden Prohlis Gleisschleife";79101;791;"Dresden Prohlis Gleisschleife";120
+79102;791;"Dresden Prohlis Gleisschleife";79102;791;"Dresden Prohlis Gleisschleife";120
+82401;824;"Dresden Spenerstraße";82401;824;"Dresden Spenerstraße";120
+91901;919;"Dresden Hp Dobritz";91904;919;"Dresden Hp Dobritz";60
+91901;919;"Dresden Hp Dobritz";91906;919;"Dresden Hp Dobritz";120
+91901;919;"Dresden Hp Dobritz";91901;919;"Dresden Hp Dobritz";120
+91901;919;"Dresden Hp Dobritz";91905;919;"Dresden Hp Dobritz";60
+91901;919;"Dresden Hp Dobritz";91905;919;"Dresden Hp Dobritz";60
+91902;919;"Dresden Hp Dobritz";91903;919;"Dresden Hp Dobritz";120
+91902;919;"Dresden Hp Dobritz";91904;919;"Dresden Hp Dobritz";120
+91902;919;"Dresden Hp Dobritz";91906;919;"Dresden Hp Dobritz";60
+91902;919;"Dresden Hp Dobritz";91905;919;"Dresden Hp Dobritz";120
+91902;919;"Dresden Hp Dobritz";91902;919;"Dresden Hp Dobritz";120
+91903;919;"Dresden Hp Dobritz";91904;919;"Dresden Hp Dobritz";120
+91903;919;"Dresden Hp Dobritz";91906;919;"Dresden Hp Dobritz";180
+91903;919;"Dresden Hp Dobritz";91905;919;"Dresden Hp Dobritz";180
+91903;919;"Dresden Hp Dobritz";91902;919;"Dresden Hp Dobritz";120
+91903;919;"Dresden Hp Dobritz";91903;919;"Dresden Hp Dobritz";120
+91904;919;"Dresden Hp Dobritz";91901;919;"Dresden Hp Dobritz";60
+91904;919;"Dresden Hp Dobritz";91902;919;"Dresden Hp Dobritz";120
+91904;919;"Dresden Hp Dobritz";91903;919;"Dresden Hp Dobritz";120
+91905;919;"Dresden Hp Dobritz";91901;919;"Dresden Hp Dobritz";60
+91905;919;"Dresden Hp Dobritz";91902;919;"Dresden Hp Dobritz";120
+91905;919;"Dresden Hp Dobritz";91903;919;"Dresden Hp Dobritz";180
+91905;919;"Dresden Hp Dobritz";91901;919;"Dresden Hp Dobritz";60
+91906;919;"Dresden Hp Dobritz";91902;919;"Dresden Hp Dobritz";60
+91906;919;"Dresden Hp Dobritz";91903;919;"Dresden Hp Dobritz";180
+91906;919;"Dresden Hp Dobritz";91901;919;"Dresden Hp Dobritz";120
+414401;4144;"Weinböhla (Rathausstraße)";414401;4144;"Weinböhla (Rathausstraße)";120
+414401;4144;"Weinböhla (Rathausstraße)";414402;4144;"Weinböhla (Rathausstraße)";180
+414402;4144;"Weinböhla (Rathausstraße)";414401;4144;"Weinböhla (Rathausstraße)";180
+414402;4144;"Weinböhla (Rathausstraße)";414402;4144;"Weinböhla (Rathausstraße)";120
+414701;4147;"Weinböhla Köhlerstraße";414702;4147;"Weinböhla Köhlerstraße";180
+414701;4147;"Weinböhla Köhlerstraße";414701;4147;"Weinböhla Köhlerstraße";120
+414701;4147;"Weinböhla Köhlerstraße";414703;4147;"Weinböhla Köhlerstraße";180
+414702;4147;"Weinböhla Köhlerstraße";414701;4147;"Weinböhla Köhlerstraße";180
+414702;4147;"Weinböhla Köhlerstraße";414703;4147;"Weinböhla Köhlerstraße";180
+414702;4147;"Weinböhla Köhlerstraße";414702;4147;"Weinböhla Köhlerstraße";120
+414703;4147;"Weinböhla Köhlerstraße";414701;4147;"Weinböhla Köhlerstraße";180
+414703;4147;"Weinböhla Köhlerstraße";414703;4147;"Weinböhla Köhlerstraße";120
+414703;4147;"Weinböhla Köhlerstraße";414702;4147;"Weinböhla Köhlerstraße";180
+415601;4156;"Coswig Salzstraße (Strab)";415601;4156;"Coswig Salzstraße (Strab)";120
+415601;4156;"Coswig Salzstraße (Strab)";415602;4156;"Coswig Salzstraße (Strab)";360
+415602;4156;"Coswig Salzstraße (Strab)";415601;4156;"Coswig Salzstraße (Strab)";360
+415602;4156;"Coswig Salzstraße (Strab)";415602;4156;"Coswig Salzstraße (Strab)";120
+415701;4157;"Coswig Auerstraße";415702;4157;"Coswig Auerstraße";120
+415701;4157;"Coswig Auerstraße";415701;4157;"Coswig Auerstraße";120
+415702;4157;"Coswig Auerstraße";415702;4157;"Coswig Auerstraße";120
+415702;4157;"Coswig Auerstraße";415701;4157;"Coswig Auerstraße";120
+415801;4158;"Coswig Steinbacher Weg";415801;4158;"Coswig Steinbacher Weg";120
+415801;4158;"Coswig Steinbacher Weg";415802;4158;"Coswig Steinbacher Weg";120
+415802;4158;"Coswig Steinbacher Weg";415802;4158;"Coswig Steinbacher Weg";120
+415802;4158;"Coswig Steinbacher Weg";415801;4158;"Coswig Steinbacher Weg";120
+416001;4160;"Coswig Zentrum/ Börse";416002;4160;"Coswig Zentrum/ Börse";120
+416001;4160;"Coswig Zentrum/ Börse";416001;4160;"Coswig Zentrum/ Börse";120
+416002;4160;"Coswig Zentrum/ Börse";416002;4160;"Coswig Zentrum/ Börse";120
+416002;4160;"Coswig Zentrum/ Börse";416001;4160;"Coswig Zentrum/ Börse";120
+416801;4168;"Coswig Radebeuler Straße";416802;4168;"Coswig Radebeuler Straße";360
+416801;4168;"Coswig Radebeuler Straße";416801;4168;"Coswig Radebeuler Straße";120
+416802;4168;"Coswig Radebeuler Straße";416802;4168;"Coswig Radebeuler Straße";120
+416802;4168;"Coswig Radebeuler Straße";416801;4168;"Coswig Radebeuler Straße";360
+418501;4185;"Coswig Rathaus";418501;4185;"Coswig Rathaus";120
+421401;4214;"Radebeul Forststraße";421401;4214;"Radebeul Forststraße";120
+421501;4215;"Radebeul Ost (Schillerstraße)";421501;4215;"Radebeul Ost (Schillerstraße)";120
+421601;4216;"Radebeul Zinzendorfstraße";421601;4216;"Radebeul Zinzendorfstraße";120
+421701;4217;"Radebeul Hauptstraße";421701;4217;"Radebeul Hauptstraße";120
+421801;4218;"Radebeul Schildenstraße";421802;4218;"Radebeul Schildenstraße";120
+421801;4218;"Radebeul Schildenstraße";421801;4218;"Radebeul Schildenstraße";60
+421802;4218;"Radebeul Schildenstraße";421802;4218;"Radebeul Schildenstraße";60
+421802;4218;"Radebeul Schildenstraße";421801;4218;"Radebeul Schildenstraße";120
+421901;4219;"Radebeul Wasastraße";421901;4219;"Radebeul Wasastraße";120
+422101;4221;"Radebeul Landesbühnen Sachsen";422101;4221;"Radebeul Landesbühnen Sachsen";120
+422101;4221;"Radebeul Landesbühnen Sachsen";422103;4221;"Radebeul Landesbühnen Sachsen";180
+422101;4221;"Radebeul Landesbühnen Sachsen";422102;4221;"Radebeul Landesbühnen Sachsen";180
+422102;4221;"Radebeul Landesbühnen Sachsen";422103;4221;"Radebeul Landesbühnen Sachsen";300
+422102;4221;"Radebeul Landesbühnen Sachsen";422102;4221;"Radebeul Landesbühnen Sachsen";120
+422102;4221;"Radebeul Landesbühnen Sachsen";422101;4221;"Radebeul Landesbühnen Sachsen";180
+422103;4221;"Radebeul Landesbühnen Sachsen";422102;4221;"Radebeul Landesbühnen Sachsen";300
+422103;4221;"Radebeul Landesbühnen Sachsen";422101;4221;"Radebeul Landesbühnen Sachsen";180
+422103;4221;"Radebeul Landesbühnen Sachsen";422103;4221;"Radebeul Landesbühnen Sachsen";120
+422201;4222;"Radebeul Zillerstraße";422202;4222;"Radebeul Zillerstraße";300
+422201;4222;"Radebeul Zillerstraße";422201;4222;"Radebeul Zillerstraße";120
+422201;4222;"Radebeul Zillerstraße";422203;4222;"Radebeul Zillerstraße";180
+422202;4222;"Radebeul Zillerstraße";422202;4222;"Radebeul Zillerstraße";120
+422202;4222;"Radebeul Zillerstraße";422201;4222;"Radebeul Zillerstraße";300
+422202;4222;"Radebeul Zillerstraße";422203;4222;"Radebeul Zillerstraße";420
+422203;4222;"Radebeul Zillerstraße";422202;4222;"Radebeul Zillerstraße";420
+422203;4222;"Radebeul Zillerstraße";422201;4222;"Radebeul Zillerstraße";180
+422203;4222;"Radebeul Zillerstraße";422203;4222;"Radebeul Zillerstraße";120
+422301;4223;"Radebeul Dr.-Külz-Straße";422302;4223;"Radebeul Dr.-Külz-Straße";240
+422301;4223;"Radebeul Dr.-Külz-Straße";422301;4223;"Radebeul Dr.-Külz-Straße";120
+422302;4223;"Radebeul Dr.-Külz-Straße";422302;4223;"Radebeul Dr.-Külz-Straße";120
+422302;4223;"Radebeul Dr.-Külz-Straße";422301;4223;"Radebeul Dr.-Külz-Straße";240
+422401;4224;"Radebeul Borstraße";422401;4224;"Radebeul Borstraße";120
+422501;4225;"Radebeul Moritzburger Straße";422502;4225;"Radebeul Moritzburger Straße";180
+422501;4225;"Radebeul Moritzburger Straße";422501;4225;"Radebeul Moritzburger Straße";120
+422501;4225;"Radebeul Moritzburger Straße";422503;4225;"Radebeul Moritzburger Straße";120
+422502;4225;"Radebeul Moritzburger Straße";422501;4225;"Radebeul Moritzburger Straße";180
+422502;4225;"Radebeul Moritzburger Straße";422503;4225;"Radebeul Moritzburger Straße";180
+422502;4225;"Radebeul Moritzburger Straße";422502;4225;"Radebeul Moritzburger Straße";120
+422503;4225;"Radebeul Moritzburger Straße";422501;4225;"Radebeul Moritzburger Straße";120
+422503;4225;"Radebeul Moritzburger Straße";422503;4225;"Radebeul Moritzburger Straße";0
+422503;4225;"Radebeul Moritzburger Straße";422502;4225;"Radebeul Moritzburger Straße";180
+422601;4226;"Radebeul West (Flemmingstraße)";422601;4226;"Radebeul West (Flemmingstraße)";60
+422601;4226;"Radebeul West (Flemmingstraße)";422603;4226;"Radebeul West (Flemmingstraße)";120
+422603;4226;"Radebeul West (Flemmingstraße)";422601;4226;"Radebeul West (Flemmingstraße)";120
+422603;4226;"Radebeul West (Flemmingstraße)";422603;4226;"Radebeul West (Flemmingstraße)";60
+422701;4227;"Radebeul Schloss Wackerbarth";422702;4227;"Radebeul Schloss Wackerbarth";120
+422701;4227;"Radebeul Schloss Wackerbarth";422701;4227;"Radebeul Schloss Wackerbarth";60
+422702;4227;"Radebeul Schloss Wackerbarth";422702;4227;"Radebeul Schloss Wackerbarth";60
+422702;4227;"Radebeul Schloss Wackerbarth";422701;4227;"Radebeul Schloss Wackerbarth";120
+422801;4228;"Radebeul Johannisbergstraße";422801;4228;"Radebeul Johannisbergstraße";180
+422801;4228;"Radebeul Johannisbergstraße";422802;4228;"Radebeul Johannisbergstraße";180
+422802;4228;"Radebeul Johannisbergstraße";422801;4228;"Radebeul Johannisbergstraße";180
+422802;4228;"Radebeul Johannisbergstraße";422802;4228;"Radebeul Johannisbergstraße";180
+422901;4229;"Radebeul Gerhart-Hauptmann-Str";422902;4229;"Radebeul Gerhart-Hauptmann-Str";300
+422901;4229;"Radebeul Gerhart-Hauptmann-Str";422901;4229;"Radebeul Gerhart-Hauptmann-Str";120
+422902;4229;"Radebeul Gerhart-Hauptmann-Str";422902;4229;"Radebeul Gerhart-Hauptmann-Str";60
+422902;4229;"Radebeul Gerhart-Hauptmann-Str";422901;4229;"Radebeul Gerhart-Hauptmann-Str";300
+423001;4230;"Radebeul Eisenbahnbrücke";423001;4230;"Radebeul Eisenbahnbrücke";0
+423001;4230;"Radebeul Eisenbahnbrücke";423002;4230;"Radebeul Eisenbahnbrücke";180
+423002;4230;"Radebeul Eisenbahnbrücke";423002;4230;"Radebeul Eisenbahnbrücke";120
+423002;4230;"Radebeul Eisenbahnbrücke";423001;4230;"Radebeul Eisenbahnbrücke";180
+423301;4233;"Radebeul Gradsteg";423302;4233;"Radebeul Gradsteg";360
+423301;4233;"Radebeul Gradsteg";423301;4233;"Radebeul Gradsteg";120
+423301;4233;"Radebeul Gradsteg";423303;4233;"Radebeul Gradsteg";360
+423302;4233;"Radebeul Gradsteg";423302;4233;"Radebeul Gradsteg";120
+423302;4233;"Radebeul Gradsteg";423301;4233;"Radebeul Gradsteg";360
+423302;4233;"Radebeul Gradsteg";423303;4233;"Radebeul Gradsteg";720
+423303;4233;"Radebeul Gradsteg";423302;4233;"Radebeul Gradsteg";720
+423303;4233;"Radebeul Gradsteg";423301;4233;"Radebeul Gradsteg";360
+423303;4233;"Radebeul Gradsteg";423303;4233;"Radebeul Gradsteg";120
+658301;6583;"Weixdorf Fuchsberg";658301;6583;"Weixdorf Fuchsberg";120
+658401;6584;"Weixdorf Haltepunkt Bad";658401;6584;"Weixdorf Haltepunkt Bad";300
+658401;6584;"Weixdorf Haltepunkt Bad";658402;6584;"Weixdorf Haltepunkt Bad";120
+658402;6584;"Weixdorf Haltepunkt Bad";658401;6584;"Weixdorf Haltepunkt Bad";120
+658402;6584;"Weixdorf Haltepunkt Bad";658403;6584;"Weixdorf Haltepunkt Bad";180
+658403;6584;"Weixdorf Haltepunkt Bad";658403;6584;"Weixdorf Haltepunkt Bad";120
+658403;6584;"Weixdorf Haltepunkt Bad";658402;6584;"Weixdorf Haltepunkt Bad";180
+658404;6584;"Weixdorf Haltepunkt Bad";658404;6584;"Weixdorf Haltepunkt Bad";120
+658801;6588;"Weixdorf (Rathenaustraße)";658802;6588;"Weixdorf (Rathenaustraße)";300
+658801;6588;"Weixdorf (Rathenaustraße)";658801;6588;"Weixdorf (Rathenaustraße)";120
+658802;6588;"Weixdorf (Rathenaustraße)";658802;6588;"Weixdorf (Rathenaustraße)";120
+658802;6588;"Weixdorf (Rathenaustraße)";658801;6588;"Weixdorf (Rathenaustraße)";300
