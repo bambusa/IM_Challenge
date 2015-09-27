@@ -1,7 +1,5 @@
 package Draw;
 
-import Models.Edge;
-
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -28,30 +26,11 @@ public class Draw extends JFrame {
         Plan plan = new Plan(wWidth, wHeight, coords, lines, bestLines, color);
         add(plan);
 
-        /*
-        Button button = new Button(plan);
-        button.setLocation(20, wHeight.intValue()+40);
-        add(button);
-
-        Time time = new Time();
-        time.setLocation(100, wHeight.intValue()+40);
-        add(time);
-        */
-
         Legend legend = new Legend(names);
         legend.setLocation(wWidth.intValue() + 40, 20);
         add(legend);
 
         setVisible(true);
         setBackground(Color.WHITE);
-        //pack();
-
-        //addKeyListener(this);
-        //repaint();
     }
-/*
-    @Override
-    public void repaint() {
-        super.repaint();
-    }*/
 }

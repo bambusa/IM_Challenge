@@ -2,8 +2,6 @@ package Draw;
 
 import Models.Edge;
 import Models.Vertex;
-
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -154,19 +152,19 @@ public class Setup<T> {
 
     public void setColor() {
         for(int i = 0; i <= 13; i++) {
-            color.add(i, "238,28,40");
-            color.add(i, "240,89,55");
-            color.add(i, "236,17,99");
-            color.add(i, "205,21,39");
-            color.add(i, "0,0,0");
-            color.add(i, "255,220,1");
-            color.add(i, "157,1,56");
-            color.add(i, "37,150,66");
-            color.add(i, "135,199,101");
-            color.add(i, "250,175,24");
-            color.add(i, "180,219,174");
-            color.add(i, "0,114,73");
-            color.add(i, "254,194,16");
+            color.add("238,28,40");
+            color.add("240,89,55");
+            color.add("236,17,99");
+            color.add("205,21,39");
+            color.add("0,0,0");
+            color.add("255,220,1");
+            color.add("157,1,56");
+            color.add("37,150,66");
+            color.add("135,199,101");
+            color.add("250,175,24");
+            color.add("180,219,174");
+            color.add("0,114,73");
+            color.add("254,194,16");
         }
     }
 
