@@ -60,27 +60,6 @@ public class Plan extends JPanel {
         });
         panel.add(start);
 
-        /*
-        JButton reset = new JButton("Reset");
-        reset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                setRepaint(false);
-                repaint();
-                timer.restart();
-            }
-        });
-        panel.add(reset);
-
-
-        JTextArea clock = new JTextArea();
-        clock.setText("Startzeit: ");
-        clock.append("\nDauer: ");
-        clock.append("\nAktuelle Zeit: ");
-        clock.setEditable(false);
-        clock.setRows(3);
-        panel.add(clock);
-        */
-
         setLayout(new BorderLayout());
         add(panel, BorderLayout.PAGE_END);
     }
@@ -109,40 +88,6 @@ public class Plan extends JPanel {
         }
 
         if(repaint) {
-            /*
-            Iterator it = redraw.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
-                System.out.println(pair.getKey() + " = " + pair.getValue());
-                Object redrawArray;
-                redrawArray = pair.getValue();
-                System.out.println(redrawArray);
-                String string = redrawArray.toString();
-                System.out.println(string);
-                String[] stringZwei = string.split(", ");
-                System.out.println(stringZwei[0] + stringZwei[1] + stringZwei[2] + stringZwei[3]);
-                stringZwei[0] = stringZwei[0].replace("[", "");
-                stringZwei[3] = stringZwei[3].replace("]", "");
-
-                bestAX = Integer.parseInt(stringZwei[0]);
-                bestAY = Integer.parseInt(stringZwei[1]);
-                bestBX = Integer.parseInt(stringZwei[2]);
-                bestBY = Integer.parseInt(stringZwei[3]);
-                activeLine = bestLines.get(r).get(4);
-                activeColor = color.get(activeLine - 1);
-                colorSet = activeColor.split(",");
-                activeColInt.add(0, Integer.parseInt(colorSet[0]));
-                activeColInt.add(1, Integer.parseInt(colorSet[1]));
-                activeColInt.add(2, Integer.parseInt(colorSet[2]));
-                System.out.println(activeColInt.get(0) + "," + activeColInt.get(1) + "," + activeColInt.get(2));
-                Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
-                g2.setColor(col);
-                g2.setStroke(new BasicStroke(3));
-                g2.drawLine(bestAX, bestAY, bestBX, bestBY);
-
-                it.remove(); // avoids a ConcurrentModificationException
-            }
-            */
 
             for(ArrayList<Integer> thisArray : redraw.values()) {
                 bestAX = thisArray.get(0);
@@ -178,10 +123,9 @@ public class Plan extends JPanel {
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(bestAX, bestAY, bestBX, bestBY);
 
-            if(redraw.containsKey(bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3))){
+            if(redraw.containsKey("" + bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3)) || redraw.containsKey("" + bestLines.get(r).get(2) + bestLines.get(r).get(0) + bestLines.get(r).get(3) + bestLines.get(r).get(1))) {
                 g2.setColor(Color.BLACK);
                 g2.drawLine(bestLines.get(r).get(0), bestLines.get(r).get(1), bestLines.get(r).get(2), bestLines.get(r).get(3));
-                System.out.println(redraw.get(bestAX + bestBX + bestAY + bestBY).get(0));
             }
 
             if(!redraw.containsKey(bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3))){
