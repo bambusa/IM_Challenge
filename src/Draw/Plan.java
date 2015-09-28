@@ -60,6 +60,7 @@ public class Plan extends JPanel {
         });
         panel.add(start);
 
+        /*
         JButton reset = new JButton("Reset");
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -70,6 +71,7 @@ public class Plan extends JPanel {
         });
         panel.add(reset);
 
+
         JTextArea clock = new JTextArea();
         clock.setText("Startzeit: ");
         clock.append("\nDauer: ");
@@ -77,6 +79,7 @@ public class Plan extends JPanel {
         clock.setEditable(false);
         clock.setRows(3);
         panel.add(clock);
+        */
 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.PAGE_END);
