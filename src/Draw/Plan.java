@@ -109,6 +109,7 @@ public class Plan extends JPanel {
         }
 
         if(repaint) {
+            /*
             Iterator it = redraw.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
@@ -140,6 +141,26 @@ public class Plan extends JPanel {
                 g2.drawLine(bestAX, bestAY, bestBX, bestBY);
 
                 it.remove(); // avoids a ConcurrentModificationException
+            }
+            */
+
+            for(ArrayList<Integer> thisArray : redraw.values()) {
+                bestAX = thisArray.get(0);
+                bestAY = thisArray.get(1);
+                bestBX = thisArray.get(2);
+                bestBY = thisArray.get(3);
+                activeLine = bestLines.get(r).get(4);
+                activeColor = color.get(activeLine - 1);
+                colorSet = activeColor.split(",");
+                activeColInt.add(0, Integer.parseInt(colorSet[0]));
+                activeColInt.add(1, Integer.parseInt(colorSet[1]));
+                activeColInt.add(2, Integer.parseInt(colorSet[2]));
+                System.out.println(activeColInt.get(0) + "," + activeColInt.get(1) + "," + activeColInt.get(2));
+                Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
+                g2.setColor(col);
+                g2.setStroke(new BasicStroke(3));
+                g2.drawLine(bestAX, bestAY, bestBX, bestBY);
+
             }
 
             bestAX = bestLines.get(r).get(0);
