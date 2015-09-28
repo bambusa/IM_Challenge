@@ -94,13 +94,10 @@ public class Plan extends JPanel {
                 bestAY = thisArray.get(1);
                 bestBX = thisArray.get(2);
                 bestBY = thisArray.get(3);
-                activeLine = bestLines.get(r).get(4);
-                activeColor = color.get(activeLine - 1);
-                colorSet = activeColor.split(",");
-                activeColInt.add(0, Integer.parseInt(colorSet[0]));
-                activeColInt.add(1, Integer.parseInt(colorSet[1]));
-                activeColInt.add(2, Integer.parseInt(colorSet[2]));
-                Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
+                int colorR = thisArray.get(4);
+                int colorG = thisArray.get(5);
+                int colorB = thisArray.get(6);
+                Color col = new Color(colorR, colorG, colorB);
                 g2.setColor(col);
                 g2.setStroke(new BasicStroke(3));
                 g2.drawLine(bestAX, bestAY, bestBX, bestBY);
@@ -134,6 +131,9 @@ public class Plan extends JPanel {
                 redrawArray.add(1, bestAY);
                 redrawArray.add(2, bestBX);
                 redrawArray.add(3, bestBY);
+                redrawArray.add(4, activeColInt.get(0));
+                redrawArray.add(5, activeColInt.get(1));
+                redrawArray.add(6, activeColInt.get(2));
                 redraw.put("" + bestAX + bestBX + bestAY + bestBY, redrawArray);
             }
             r++;
