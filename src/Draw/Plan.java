@@ -1,10 +1,11 @@
 package Draw;
 
 import javax.swing.*;
+import javax.swing.Timer;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Created by Tristan on 25.09.2015.
@@ -28,6 +29,7 @@ public class Plan extends JPanel {
     String activeColor = new String();
     String[] colorSet;
     ArrayList<Integer> activeColInt = new ArrayList<>();
+    HashMap<Integer, ArrayList<Integer>> redraw = new HashMap<>();
 
     public Plan(Double wWidth, Double wHeight, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<ArrayList<Integer>> bestLines, ArrayList<String> color) {
         this.wWidth = wWidth;
@@ -104,12 +106,21 @@ public class Plan extends JPanel {
         }
 
         if(repaint) {
+            /*Iterator it = redraw.entrySet().iterator();
+            while (it.hasNext()) {
+                Map.Entry pair = (Map.Entry)it.next();
+                System.out.println(pair.getKey() + " = " + pair.getValue());
+                ArrayList<Integer> redrawArray = new ArrayList<>();
+                redrawArray = pair.getValue();
+                it.remove(); // avoids a ConcurrentModificationException
+            }*/
+
             bestAX = bestLines.get(r).get(0);
             bestAY = bestLines.get(r).get(1);
             bestBX = bestLines.get(r).get(2);
             bestBY = bestLines.get(r).get(3);
             activeLine = bestLines.get(r).get(4);
-            activeColor = color.get(activeLine-1);
+            activeColor = color.get(activeLine - 1);
             colorSet = activeColor.split(",");
             activeColInt.add(0, Integer.parseInt(colorSet[0]));
             activeColInt.add(1, Integer.parseInt(colorSet[1]));
@@ -120,6 +131,21 @@ public class Plan extends JPanel {
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(bestAX, bestAY, bestBX, bestBY);
             r++;
+
+            if(redraw.containsKey(bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3))){
+                g2.setColor(Color.BLACK);
+                g2.drawLine(bestLines.get(r).get(0), bestLines.get(r).get(1), bestLines.get(r).get(2), bestLines.get(r).get(3));
+                System.out.println(redraw.get(bestAX + bestBX + bestAY + bestBY).get(0));
+            }
+
+            if(!redraw.containsKey(bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3))){
+                ArrayList<Integer> redrawArray = new ArrayList<>();
+                redrawArray.add(0, bestAX);
+                redrawArray.add(1, bestAY);
+                redrawArray.add(2, bestBX);
+                redrawArray.add(3, bestBY);
+                redraw.put(bestAX + bestBX + bestAY + bestBY, redrawArray);
+            }
         }
     }
 
