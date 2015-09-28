@@ -106,14 +106,38 @@ public class Plan extends JPanel {
         }
 
         if(repaint) {
-            /*Iterator it = redraw.entrySet().iterator();
+            Iterator it = redraw.entrySet().iterator();
             while (it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
                 System.out.println(pair.getKey() + " = " + pair.getValue());
-                ArrayList<Integer> redrawArray = new ArrayList<>();
+                Object redrawArray;
                 redrawArray = pair.getValue();
+                System.out.println(redrawArray);
+                String string = redrawArray.toString();
+                System.out.println(string);
+                String[] stringZwei = string.split(", ");
+                System.out.println(stringZwei[0] + stringZwei[1] + stringZwei[2] + stringZwei[3]);
+                stringZwei[0] = stringZwei[0].replace("[", "");
+                stringZwei[3] = stringZwei[3].replace("]", "");
+
+                bestAX = Integer.parseInt(stringZwei[0]);
+                bestAY = Integer.parseInt(stringZwei[1]);
+                bestBX = Integer.parseInt(stringZwei[2]);
+                bestBY = Integer.parseInt(stringZwei[3]);
+                activeLine = bestLines.get(r).get(4);
+                activeColor = color.get(activeLine - 1);
+                colorSet = activeColor.split(",");
+                activeColInt.add(0, Integer.parseInt(colorSet[0]));
+                activeColInt.add(1, Integer.parseInt(colorSet[1]));
+                activeColInt.add(2, Integer.parseInt(colorSet[2]));
+                System.out.println(activeColInt.get(0) + "," + activeColInt.get(1) + "," + activeColInt.get(2));
+                Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
+                g2.setColor(col);
+                g2.setStroke(new BasicStroke(3));
+                g2.drawLine(bestAX, bestAY, bestBX, bestBY);
+
                 it.remove(); // avoids a ConcurrentModificationException
-            }*/
+            }
 
             bestAX = bestLines.get(r).get(0);
             bestAY = bestLines.get(r).get(1);
@@ -130,7 +154,6 @@ public class Plan extends JPanel {
             g2.setColor(col);
             g2.setStroke(new BasicStroke(3));
             g2.drawLine(bestAX, bestAY, bestBX, bestBY);
-            r++;
 
             if(redraw.containsKey(bestLines.get(r).get(0) + bestLines.get(r).get(2) + bestLines.get(r).get(1) + bestLines.get(r).get(3))){
                 g2.setColor(Color.BLACK);
@@ -146,6 +169,7 @@ public class Plan extends JPanel {
                 redrawArray.add(3, bestBY);
                 redraw.put(bestAX + bestBX + bestAY + bestBY, redrawArray);
             }
+            r++;
         }
     }
 
