@@ -155,7 +155,6 @@ public class Plan extends JPanel {
                 activeColInt.add(0, Integer.parseInt(colorSet[0]));
                 activeColInt.add(1, Integer.parseInt(colorSet[1]));
                 activeColInt.add(2, Integer.parseInt(colorSet[2]));
-                System.out.println(activeColInt.get(0) + "," + activeColInt.get(1) + "," + activeColInt.get(2));
                 Color col = new Color(activeColInt.get(0), activeColInt.get(1), activeColInt.get(2));
                 g2.setColor(col);
                 g2.setStroke(new BasicStroke(3));
