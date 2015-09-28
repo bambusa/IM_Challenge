@@ -29,7 +29,7 @@ public class Plan extends JPanel {
     String activeColor = new String();
     String[] colorSet;
     ArrayList<Integer> activeColInt = new ArrayList<>();
-    HashMap<Integer, ArrayList<Integer>> redraw = new HashMap<>();
+    HashMap<String, ArrayList<Integer>> redraw = new HashMap<>();
 
     public Plan(Double wWidth, Double wHeight, ArrayList<ArrayList<Integer>> coords, ArrayList<ArrayList<Integer>> lines, ArrayList<ArrayList<Integer>> bestLines, ArrayList<String> color) {
         this.wWidth = wWidth;
@@ -191,7 +191,7 @@ public class Plan extends JPanel {
                 redrawArray.add(1, bestAY);
                 redrawArray.add(2, bestBX);
                 redrawArray.add(3, bestBY);
-                redraw.put(bestAX + bestBX + bestAY + bestBY, redrawArray);
+                redraw.put("" + bestAX + bestBX + bestAY + bestBY, redrawArray);
             }
             r++;
         }
