@@ -20,6 +20,7 @@ public class Plan extends JPanel {
     ArrayList<String> color;
     boolean repaint = false;
     Timer timer = null;
+    Timer doubleTime = null;
     int bestAX;
     int bestAY;
     int bestBX;
@@ -59,6 +60,22 @@ public class Plan extends JPanel {
             }
         });
         panel.add(start);
+
+        JButton slower = new JButton("Langsamer");
+        slower.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                timer.setDelay(timer.getDelay()+50);
+            }
+        });
+        panel.add(slower);
+
+        JButton faster = new JButton("Schneller");
+        faster.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                timer.setDelay(timer.getDelay()-50);
+            }
+        });
+        panel.add(faster);
 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.PAGE_END);
