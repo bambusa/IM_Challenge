@@ -56,7 +56,7 @@ public class IM_Challenge {
         ArrayList<Edge> bestRoute = null;
         Graph bestGraph = null;
         int bestTime = 999999;
-        for (int time = 20340; time <= 20340; time += 600) {
+        for (int time = 20340; time <= 43200; time += 600) {
             graph.resetGraph();
             graph = new Graph(graph);
             Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), time, "13301", 8);
@@ -322,17 +322,17 @@ public class IM_Challenge {
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE"}; Lehrstuhl
-        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE","AB_X","AB_Y","AN_X","AN_Y"};
+        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE"};
+//        String[] values = {"AB_ZEIT","AN_ZEIT","AB_HST_NAME","AN_HST_NAME","AB_HSTBEREICH_NR","AN_HSTBEREICH_NR","TRANSPORTMITTEL","LINIE","AB_X","AB_Y","AN_X","AN_Y"};
         writer.writeNext(values);
 
         for (Edge edge : route) {
 //            log("writeCSV | Writing " + edge.toString() + " , " + edge.getActiveTrip().toString());
-            /*values = new String[]{edge.getActiveTrip().getDepartureTime()/60+"", edge.getActiveTrip().getArrivalTime()/60+"", edge.getDeparture().getName(), edge.getArrival().getName(),
-                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+""};*/
-            values = new String[]{timeFromSeconds(edge.getActiveTrip().getDepartureTime()), timeFromSeconds(edge.getActiveTrip().getArrivalTime()), edge.getDeparture().getName(), edge.getArrival().getName(),
-                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+"",
-                                    edge.getDeparture().getGeoX(), edge.getDeparture().getGeoY(), edge.getArrival().getGeoX(), edge.getArrival().getGeoY()};
+            values = new String[]{edge.getActiveTrip().getDepartureTime()/60+"", edge.getActiveTrip().getArrivalTime()/60+"", edge.getDeparture().getName(), edge.getArrival().getName(),
+                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+""};
+//            values = new String[]{timeFromSeconds(edge.getActiveTrip().getDepartureTime()), timeFromSeconds(edge.getActiveTrip().getArrivalTime()), edge.getDeparture().getName(), edge.getArrival().getName(),
+//                                    edge.getActiveTrip().getDepartureHSB(), edge.getActiveTrip().getArrivalHSB(), "TRAM", edge.getActiveTrip().getLine()+"",
+//                                    edge.getDeparture().getGeoX(), edge.getDeparture().getGeoY(), edge.getArrival().getGeoX(), edge.getArrival().getGeoY()};
             writer.writeNext(values);
         }
 
