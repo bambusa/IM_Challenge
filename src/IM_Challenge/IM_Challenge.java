@@ -1,8 +1,7 @@
 package IM_Challenge;
 
 import Calculation.Mk_II;
-import Draw.Setup;
-import Draw.Draw;
+import Draw.*;
 import Models.*;
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
@@ -50,6 +49,7 @@ public class IM_Challenge {
     private static final String unnecessaryCSV = ".\\output\\IM_Unnecessary_Trips.csv";
 
     public static void main(String[] args) {
+        Wait wait = new Wait();
         long overallTime = System.currentTimeMillis();
         Graph graph = mapGraph();
 
@@ -90,6 +90,7 @@ public class IM_Challenge {
         }
         measureTime(overallTime, "Complete Calculation");
 
+        wait.close();
         Setup setup = new Setup();
         setup.setGraph(graph.getVertices(), graph.getEdges(), bestRoute);
         Draw draw = new Draw(setup.getWidth(), setup.getHeight(), setup.getCoords(), setup.getLines(), setup.getNames(), setup.getBestLines(), setup.getColor());
