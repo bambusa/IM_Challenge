@@ -56,7 +56,7 @@ public class IM_Challenge {
         ArrayList<Edge> bestRoute = null;
         Graph bestGraph = null;
         int bestTime = 999999;
-        for (int time = 20340; time <= 43200; time += 600) {
+        for (int time = 20340; time <= 43200; time += 600) { // 43200
             graph.resetGraph();
             graph = new Graph(graph);
             Mk_II mk_ii = new Mk_II(graph, graph.getVertices().get("133"), time, "13301", 8);
@@ -70,8 +70,9 @@ public class IM_Challenge {
                     int thisTime = route.get(route.size() - 1).getActiveTrip().getArrivalTime() - route.get(0).getActiveTrip().getDepartureTime();
                     if (thisTime < bestTime && check(graph, route)) {
                         bestRoute = route;
-                        bestGraph = graph;
+                        bestGraph = new Graph(graph);
                         bestTime = thisTime;
+                        log("WaitingTime "+bestGraph.getLongWaitingTime().size()+" UnnecessaryTrips "+bestGraph.getUnnecessaryTrips().size());
                     }
                 }
             }
@@ -81,6 +82,7 @@ public class IM_Challenge {
         }
 
         if (bestRoute != null && bestRoute.size() > 0) {
+            log("WaitingTime "+bestGraph.getLongWaitingTime().size()+" UnnecessaryTrips "+bestGraph.getUnnecessaryTrips().size());
             writeCSV(bestRoute);
             printWaitingTime(bestGraph.getLongWaitingTime());
             printUnnecessaryTrips(bestGraph.getUnnecessaryTrips());
@@ -235,7 +237,70 @@ public class IM_Challenge {
         log("Mapped transfers with " + transferMap.size() + " transfers from " + rows + " lines");
 
         measureTime(startTime, "mapping graph");
-        return new Graph(vertexMap, edgeMap, transferMap);
+
+        /*
+        Terminal Stops
+         */
+        /*HashMap<String, ArrayList<Integer>> terminalStops = new HashMap<>();
+        ArrayList<Integer> lines = new ArrayList();
+        lines.add(4);
+        terminalStops.put("4144", lines); // Weinböhla
+
+        lines = new ArrayList<>();
+        lines.add(3);
+        terminalStops.put("253", lines); // Wilder Mann
+
+        lines = new ArrayList<>();
+        lines.add(9);
+        lines.add(13);
+        terminalStops.put("585", lines); // Riegelplatz
+
+        lines = new ArrayList<>();
+        lines.add(8);
+        terminalStops.put("275", lines); // Kiefernweg
+
+        lines = new ArrayList<>();
+        lines.add(7);
+        terminalStops.put("6588", lines); // Weixdorf
+
+        lines = new ArrayList<>();
+        lines.add(11);
+        terminalStops.put("302", lines); // Bühlau
+
+        lines = new ArrayList<>();
+        lines.add(7);
+        terminalStops.put("344", lines); // Pennrich Gleisschleife
+
+        lines = new ArrayList<>();
+        lines.add(6);
+        lines.add(2);
+        terminalStops.put("338", lines); // Gorbitz*/
+
+        ArrayList<String> terminalStops = new ArrayList<>();
+        terminalStops.add("4144"); // Weinböhla
+        terminalStops.add("4226"); // Radebeul West
+        terminalStops.add("253"); // Wilder Mann
+        terminalStops.add("585"); // Riegelplatz
+        terminalStops.add("205"); // Mickten
+        terminalStops.add("275"); // Kiefernweg
+        terminalStops.add("270"); // Infineon Süd
+        terminalStops.add("6588"); // Weixdorf
+        terminalStops.add("302"); // Bühlau
+        terminalStops.add("344"); // Pennrich Gleisschleife
+        terminalStops.add("338"); // Gorbitz
+        terminalStops.add("148"); // Wölfnitz
+        terminalStops.add("191"); // Leutewitz
+        terminalStops.add("522"); // Messe
+        terminalStops.add("165"); // Coschütz
+        terminalStops.add("133"); // Südvorstadt
+        terminalStops.add("314"); // Zschernitz
+        terminalStops.add("68"); // Striesen
+        terminalStops.add("75"); // Laubegast
+        terminalStops.add("101"); // Kleinzschachwitz
+        terminalStops.add("98"); // Niedersedlitz
+        terminalStops.add("791"); // Prohlis
+
+        return new Graph(vertexMap, edgeMap, transferMap, terminalStops);
     }
 
     private static boolean check(Graph graph, ArrayList<Edge> route) {
@@ -253,7 +318,7 @@ public class IM_Challenge {
             if (lastEdge != null) {
                 if (graph.getEdges().containsKey(edge.getId())) {
                     if (graph.getEdges().get(edge.getId()).containsTrips(edge.getActiveTrip().getDepartureTime()) && graph.getEdges().get(edge.getId()).getTrips(edge.getActiveTrip().getDepartureTime()).contains(edge.getActiveTrip())) {
-                        if (lastEdge.getActiveTrip().getLine() == edge.getActiveTrip().getLine()) {
+                        if (lastEdge.getActiveTrip().getLine() == edge.getActiveTrip().getLine() && lastEdge.getDeparture() != edge.getArrival()) {
                             lastEdge = edge;
                         }
                         else {
@@ -344,7 +409,7 @@ public class IM_Challenge {
     }
 
     private static void printUnnecessaryTrips(ArrayList<List<Edge>> unnecessaryTrips) {
-        log("printRoutes");
+        log("printRoutes "+unnecessaryTrips.size());
         deleteIfExists(unnecessaryCSV);
 
         CSVWriter writer = null;
@@ -385,7 +450,7 @@ public class IM_Challenge {
     }
 
     private static void printWaitingTime(ArrayList<List<Edge>> longWaitingTime) {
-        log("printWaitingTime");
+        log("printWaitingTime "+longWaitingTime.size());
         deleteIfExists(waitingCSV);
 
         CSVWriter writer = null;

@@ -49,19 +49,19 @@ public class Dijkstra {
             /*** Find best trips on edges to unvisited neighbors ***/
             ArrayList<Edge> compareEdgeTrips = new ArrayList<>();
             for (Edge edge : edgesToUnvisitedNeighbors) {
-                Trip lastTrip = null;
+                Edge lastEdge = null;
                 if (edge.getDeparture() == startEdge.getArrival()) {
-                    lastTrip = startEdge.getActiveTrip();
+                    lastEdge = startEdge;
                 }
                 else if (tripTo.containsKey(edge.getDeparture())) {
-                    lastTrip = tripTo.get(edge.getDeparture()).getActiveTrip();
+                    lastEdge = tripTo.get(edge.getDeparture());
                 }
                 else {
                     log("getShortestPath | ERROR: Previous trip not found");
                     return null;
                 }
 
-                Trip bestTrip = graph.findNextShortestTrip(edge, lastTrip, 86400);
+                Trip bestTrip = graph.findNextShortestTrip(edge, lastEdge, 86400);
                 if (bestTrip != null) {
 //                    log("getShortestPath | New edge for comparison: " + edge.toString());
                     edge.setActiveTrip(bestTrip);

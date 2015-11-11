@@ -16,6 +16,7 @@ public class Graph {
     private HashMap<String, Transfer> transferMap;
     private ArrayList<List<Edge>> longWaitingTime;
     private ArrayList<List<Edge>> unnecessaryTrips;
+    private ArrayList<String> terminalStops;
 
     public Graph() {
         vertexMap = new HashMap<>();
@@ -25,12 +26,14 @@ public class Graph {
         unnecessaryTrips = new ArrayList<>();
     }
 
-    public Graph(HashMap<String, Vertex> vertexMap, HashMap<String, Edge> edgeMap, HashMap<String, Transfer> transferMap) {
+    public Graph(HashMap<String, Vertex> vertexMap, HashMap<String, Edge> edgeMap, HashMap<String, Transfer> transferMap, ArrayList<String> terminalStops) {
         this.vertexMap = vertexMap;
         this.edgeMap = edgeMap;
         this.transferMap = transferMap;
         longWaitingTime = new ArrayList<>();
         unnecessaryTrips = new ArrayList<>();
+        this.terminalStops = terminalStops;
+        log(this.terminalStops.size()+" terminal stops");
     }
 
     public Graph(Graph graph) {
@@ -39,6 +42,7 @@ public class Graph {
         this.transferMap = new HashMap<>(graph.getTransferMap());
         this.longWaitingTime = new ArrayList<>(graph.getLongWaitingTime());
         this.unnecessaryTrips = new ArrayList<>(graph.getUnnecessaryTrips());
+        this.terminalStops = new ArrayList<>(graph.getTerminalStops());
     }
 
     public void resetGraph() {
@@ -74,7 +78,6 @@ public class Graph {
         /*** Remove visited edges ***/
         log("searchNextShortestEdgeWith | From " + lastEdge.getArrival().getName() + " with " + with.size() + " unvisited edges at " + timeFromSeconds(lastEdge.getActiveTrip().getArrivalTime()));
         Edge shortestEdge = null;
-        Trip lastTrip = lastEdge.getActiveTrip();
         ArrayList<Edge> unvisited = new ArrayList<>(with);
 
         /*** Remove edges with other departure vertices than current vertex ***/
@@ -91,7 +94,7 @@ public class Graph {
         if (unvisited.size() > 0) {
             for (Edge edge : unvisited) {
 //                log("searchNextShortestEdgeWith | Checking " + edge.toString());
-                Trip thisTrip = findNextShortestTrip(edge, lastTrip, -1);
+                Trip thisTrip = findNextShortestTrip(edge, lastEdge, -1);
                 if (thisTrip != null && (shortestEdge == null || thisTrip.getDepartureTime() < shortestEdge.getActiveTrip().getDepartureTime())) {
                     log("searchNextShortestEdgeWith | Found better trip at " + timeFromSeconds(thisTrip.getDepartureTime()) + " on line " + thisTrip.getLine() + " | " + edge.getDeparture().getName() + " -> " + edge.getArrival().getName());
                     edge.setActiveTrip(thisTrip);
@@ -121,45 +124,51 @@ public class Graph {
         return shortestEdge;
     }
 
-    public Trip findNextShortestTrip(Edge edge, Trip activeTrip, int maxWait) {
+    public Trip findNextShortestTrip(Edge newEdge, Edge lastEdge, int maxWait) {
         if (maxWait == -1) {
             maxWait = 3600;
         }
         Trip bestTrip = null;
+        Trip activeTrip = lastEdge.getActiveTrip();
         int arrival = activeTrip.getArrivalTime();
         int line = activeTrip.getLine();
         String ahsb = activeTrip.getArrivalHSB();
+        boolean terminalStop = false;
+
+
         int wait = 0;
         ArrayList<Trip> possibleTrips = new ArrayList<>();
 //        log("findNextShortestTrip | " + edge.toString() + ", coming from " + ahsb + " at " + timeFromSeconds(arrival));
 
         /*** Find possible trips, including transfer times, limited time window ***/
-        while (wait <= 86400) {
+        while (wait <= maxWait) {
             int thisDeparture = arrival + wait;
-            if (edge.containsTrips(thisDeparture)) {
+            if (newEdge.containsTrips(thisDeparture)) {
 //                log("findNextShortestTrip | Waiting " + wait + " seconds until " + timeFromSeconds(thisDeparture));
-                for (Trip trip : edge.getTrips(thisDeparture)) {
+                for (Trip trip : newEdge.getTrips(thisDeparture)) {
 //                    log("findNextShortestTrip | Checking " + trip.toString());
 
                     /*** Same train, cancel further search, tolerate waiting time up to 10 minutes ***/
                     if (line == trip.getLine() && trip.getDepartureTime() - arrival < 600) {
-//                        log("findNextShortestTrip | Same train is continuing on edge, cancel search");
-                        return trip;
+                        if (lastEdge.getDeparture() != newEdge.getArrival()) {
+//                            log("findNextShortestTrip | Same train is continuing on edge, cancel search");
+                            return trip;
+                        }
                     }
 
+                    /*** Check transfer time ***/
+                    // else
+                    String transferId = ahsb + trip.getDepartureHSB();
+                    int transferTime = 0;
+                    if (transferMap.containsKey(transferId)) {
+                        transferTime = transferMap.get(transferId).getTime();
+                    }
                     else {
-                        String transferId = ahsb + trip.getDepartureHSB();
-                        int transferTime = 0;
-                        if (transferMap.containsKey(transferId)) {
-                            transferTime = transferMap.get(transferId).getTime();
-                        }
-                        else {
-                            log("WARNING: No transfer time for " + ahsb + " -> " + trip.getDepartureHSB() + " on edge " + edge.getDeparture().getName() + " -> " + edge.getArrival().getName());
-                        }
+                        log("WARNING: No transfer time for " + ahsb + " -> " + trip.getDepartureHSB() + " on edge " + newEdge.getDeparture().getName() + " -> " + newEdge.getArrival().getName());
+                    }
 
-                        if (trip.getDepartureTime() >= (arrival + transferTime)) {
-                            possibleTrips.add(trip);
-                        }
+                    if (trip.getDepartureTime() >= (arrival + transferTime)) {
+                        possibleTrips.add(trip);
                     }
                 }
             }
@@ -214,6 +223,10 @@ public class Graph {
 
     public ArrayList<List<Edge>> getUnnecessaryTrips() {
         return unnecessaryTrips;
+    }
+
+    public ArrayList<String> getTerminalStops() {
+        return terminalStops;
     }
 
 
